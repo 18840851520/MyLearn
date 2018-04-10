@@ -16,6 +16,7 @@
 		2E155A55207B472700A950DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A54207B472700A950DD /* main.m */; };
 		2E155A5F207B472800A950DD /* MyLearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A5E207B472800A950DD /* MyLearnTests.m */; };
 		2E155A6A207B472800A950DD /* MyLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A69207B472800A950DD /* MyLearnUITests.m */; };
+		2E155A7A207B485300A950DD /* ShapeLayerLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A79207B485300A950DD /* ShapeLayerLearn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		2E155A65207B472800A950DD /* MyLearnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLearnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E155A69207B472800A950DD /* MyLearnUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLearnUITests.m; sourceTree = "<group>"; };
 		2E155A6B207B472800A950DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E155A78207B485200A950DD /* ShapeLayerLearn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapeLayerLearn.h; sourceTree = "<group>"; };
+		2E155A79207B485300A950DD /* ShapeLayerLearn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeLayerLearn.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,7 @@
 		2E155A41207B472600A950DD /* MyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				2E155A77207B483A00A950DD /* Animation */,
 				2E155A42207B472600A950DD /* AppDelegate.h */,
 				2E155A43207B472600A950DD /* AppDelegate.m */,
 				2E155A45207B472600A950DD /* ViewController.h */,
@@ -133,6 +137,15 @@
 				2E155A6B207B472800A950DD /* Info.plist */,
 			);
 			path = MyLearnUITests;
+			sourceTree = "<group>";
+		};
+		2E155A77207B483A00A950DD /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				2E155A78207B485200A950DD /* ShapeLayerLearn.h */,
+				2E155A79207B485300A950DD /* ShapeLayerLearn.m */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +280,7 @@
 			files = (
 				2E155A47207B472600A950DD /* ViewController.m in Sources */,
 				2E155A4D207B472600A950DD /* MyLearn.xcdatamodeld in Sources */,
+				2E155A7A207B485300A950DD /* ShapeLayerLearn.m in Sources */,
 				2E155A55207B472700A950DD /* main.m in Sources */,
 				2E155A44207B472600A950DD /* AppDelegate.m in Sources */,
 			);

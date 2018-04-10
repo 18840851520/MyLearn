@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ShapeLayerLearn.h"
 
 @interface ViewController ()
 
@@ -16,13 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    ShapeLayerLearn *shape = [[ShapeLayerLearn alloc] initWithFrame:CGRectMake(10, 10, 80, 80)];
+    
+    [self.view addSubview:shape];
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

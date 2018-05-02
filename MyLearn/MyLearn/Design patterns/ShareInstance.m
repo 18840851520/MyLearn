@@ -19,15 +19,6 @@
  <#statements#>
  }
  
- 内存区块 5块
- 1.栈区   临时变量没有分配空间 像[NSString StringWithFormate:@""]
- 2.堆区   （程序员手动分配空间，释放也是程序员释放，alloc，malloc calloc    ARC（自动管理 需注意循环引用）MRC release CFRelease()）
- 3.全局区  （静态，全区）编译时分配，app结束时由系统释放
- 4.常量区  编译时分配，app结束时由系统释放
- 5.代码区
- 
- 单例有没有子类 （没有）
- 
  */
 
 static ShareInstance *__shareInstance;

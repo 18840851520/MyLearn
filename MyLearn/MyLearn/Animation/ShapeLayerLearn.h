@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShapeLayerLearn : UIView
+@interface ShapeLayerLearn : UIView<UITableViewDataSource>
 
 @end

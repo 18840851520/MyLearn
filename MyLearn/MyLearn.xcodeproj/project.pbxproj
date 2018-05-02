@@ -18,6 +18,11 @@
 		2E155A6A207B472800A950DD /* MyLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A69207B472800A950DD /* MyLearnUITests.m */; };
 		2E155A7A207B485300A950DD /* ShapeLayerLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A79207B485300A950DD /* ShapeLayerLearn.m */; };
 		2E515CB320847F0E0008C7BE /* ShareInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E515CB220847F0E0008C7BE /* ShareInstance.m */; };
+		2ECC6F01209461A7004BF4A1 /* Hospital.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F00209461A7004BF4A1 /* Hospital.m */; };
+		2ECC6F0A209462A7004BF4A1 /* OutpatientService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F09209462A7004BF4A1 /* OutpatientService.m */; };
+		2ECC6F0D2094633E004BF4A1 /* Registration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F0C2094633E004BF4A1 /* Registration.m */; };
+		2ECC6F1020946545004BF4A1 /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F0F20946545004BF4A1 /* Medicine.m */; };
+		2ECC6F1320946561004BF4A1 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F1220946561004BF4A1 /* Patient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,16 @@
 		2E155A79207B485300A950DD /* ShapeLayerLearn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeLayerLearn.m; sourceTree = "<group>"; };
 		2E515CB120847F0E0008C7BE /* ShareInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareInstance.h; sourceTree = "<group>"; };
 		2E515CB220847F0E0008C7BE /* ShareInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareInstance.m; sourceTree = "<group>"; };
+		2ECC6EFF209461A7004BF4A1 /* Hospital.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hospital.h; sourceTree = "<group>"; };
+		2ECC6F00209461A7004BF4A1 /* Hospital.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hospital.m; sourceTree = "<group>"; };
+		2ECC6F08209462A7004BF4A1 /* OutpatientService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutpatientService.h; sourceTree = "<group>"; };
+		2ECC6F09209462A7004BF4A1 /* OutpatientService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OutpatientService.m; sourceTree = "<group>"; };
+		2ECC6F0B2094633E004BF4A1 /* Registration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Registration.h; sourceTree = "<group>"; };
+		2ECC6F0C2094633E004BF4A1 /* Registration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Registration.m; sourceTree = "<group>"; };
+		2ECC6F0E20946545004BF4A1 /* Medicine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Medicine.h; sourceTree = "<group>"; };
+		2ECC6F0F20946545004BF4A1 /* Medicine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Medicine.m; sourceTree = "<group>"; };
+		2ECC6F1120946561004BF4A1 /* Patient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
+		2ECC6F1220946561004BF4A1 /* Patient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +124,7 @@
 		2E155A41207B472600A950DD /* MyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				2ECC6EF620944DB8004BF4A1 /* Facade */,
 				2E515CB020847EB50008C7BE /* Design patterns */,
 				2E155A77207B483A00A950DD /* Animation */,
 				2E155A42207B472600A950DD /* AppDelegate.h */,
@@ -159,6 +175,23 @@
 				2E515CB220847F0E0008C7BE /* ShareInstance.m */,
 			);
 			path = "Design patterns";
+			sourceTree = "<group>";
+		};
+		2ECC6EF620944DB8004BF4A1 /* Facade */ = {
+			isa = PBXGroup;
+			children = (
+				2ECC6EFF209461A7004BF4A1 /* Hospital.h */,
+				2ECC6F00209461A7004BF4A1 /* Hospital.m */,
+				2ECC6F08209462A7004BF4A1 /* OutpatientService.h */,
+				2ECC6F09209462A7004BF4A1 /* OutpatientService.m */,
+				2ECC6F0B2094633E004BF4A1 /* Registration.h */,
+				2ECC6F0C2094633E004BF4A1 /* Registration.m */,
+				2ECC6F0E20946545004BF4A1 /* Medicine.h */,
+				2ECC6F0F20946545004BF4A1 /* Medicine.m */,
+				2ECC6F1120946561004BF4A1 /* Patient.h */,
+				2ECC6F1220946561004BF4A1 /* Patient.m */,
+			);
+			path = Facade;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +326,12 @@
 			files = (
 				2E155A47207B472600A950DD /* ViewController.m in Sources */,
 				2E155A4D207B472600A950DD /* MyLearn.xcdatamodeld in Sources */,
+				2ECC6F0D2094633E004BF4A1 /* Registration.m in Sources */,
+				2ECC6F01209461A7004BF4A1 /* Hospital.m in Sources */,
+				2ECC6F1320946561004BF4A1 /* Patient.m in Sources */,
 				2E155A7A207B485300A950DD /* ShapeLayerLearn.m in Sources */,
+				2ECC6F1020946545004BF4A1 /* Medicine.m in Sources */,
+				2ECC6F0A209462A7004BF4A1 /* OutpatientService.m in Sources */,
 				2E155A55207B472700A950DD /* main.m in Sources */,
 				2E515CB320847F0E0008C7BE /* ShareInstance.m in Sources */,
 				2E155A44207B472600A950DD /* AppDelegate.m in Sources */,

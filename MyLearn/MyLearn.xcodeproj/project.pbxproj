@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0C763720A1A1DE009124D6 /* ThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C763620A1A1DE009124D6 /* ThreadViewController.m */; };
+		2E0C763A20A1A27B009124D6 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C763920A1A27B009124D6 /* GCDViewController.m */; };
+		2E0C763E20A29CBB009124D6 /* PThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C763D20A29CBB009124D6 /* PThreadViewController.m */; };
+		2E0C768420A3F5FF009124D6 /* ZModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C768320A3F5FF009124D6 /* ZModel.m */; };
+		2E0C768820A3F655009124D6 /* ZTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C768620A3F655009124D6 /* ZTableViewCell.m */; };
+		2E0C768920A3F655009124D6 /* ZTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E0C768720A3F655009124D6 /* ZTableViewCell.xib */; };
+		2E0C768C20A410C2009124D6 /* ZViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C768B20A410C2009124D6 /* ZViewModel.m */; };
+		2E0C769020A411ED009124D6 /* ZMVVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C768E20A411ED009124D6 /* ZMVVMViewController.m */; };
+		2E0C769120A411ED009124D6 /* ZMVVMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E0C768F20A411ED009124D6 /* ZMVVMViewController.xib */; };
+		2E0C769720A4123C009124D6 /* ZTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C769620A4123C009124D6 /* ZTableViewDelegate.m */; };
+		2E0C769A20A41254009124D6 /* ZTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C769920A41254009124D6 /* ZTableViewDataSource.m */; };
+		2E0C769D20A41C86009124D6 /* FacadeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C769C20A41C86009124D6 /* FacadeViewController.m */; };
+		2E0C76A020A41CBB009124D6 /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C769F20A41CBB009124D6 /* AnimationViewController.m */; };
 		2E155A44207B472600A950DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A43207B472600A950DD /* AppDelegate.m */; };
 		2E155A47207B472600A950DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A46207B472600A950DD /* ViewController.m */; };
 		2E155A4A207B472600A950DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E155A48207B472600A950DD /* Main.storyboard */; };
@@ -43,6 +56,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E0C763520A1A1DE009124D6 /* ThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadViewController.h; sourceTree = "<group>"; };
+		2E0C763620A1A1DE009124D6 /* ThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadViewController.m; sourceTree = "<group>"; };
+		2E0C763820A1A27B009124D6 /* GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
+		2E0C763920A1A27B009124D6 /* GCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
+		2E0C763C20A29CBB009124D6 /* PThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PThreadViewController.h; sourceTree = "<group>"; };
+		2E0C763D20A29CBB009124D6 /* PThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PThreadViewController.m; sourceTree = "<group>"; };
+		2E0C768220A3F5FF009124D6 /* ZModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZModel.h; sourceTree = "<group>"; };
+		2E0C768320A3F5FF009124D6 /* ZModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZModel.m; sourceTree = "<group>"; };
+		2E0C768520A3F655009124D6 /* ZTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTableViewCell.h; sourceTree = "<group>"; };
+		2E0C768620A3F655009124D6 /* ZTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTableViewCell.m; sourceTree = "<group>"; };
+		2E0C768720A3F655009124D6 /* ZTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZTableViewCell.xib; sourceTree = "<group>"; };
+		2E0C768A20A410C2009124D6 /* ZViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZViewModel.h; sourceTree = "<group>"; };
+		2E0C768B20A410C2009124D6 /* ZViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZViewModel.m; sourceTree = "<group>"; };
+		2E0C768D20A411ED009124D6 /* ZMVVMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMVVMViewController.h; sourceTree = "<group>"; };
+		2E0C768E20A411ED009124D6 /* ZMVVMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMVVMViewController.m; sourceTree = "<group>"; };
+		2E0C768F20A411ED009124D6 /* ZMVVMViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMVVMViewController.xib; sourceTree = "<group>"; };
+		2E0C769520A4123C009124D6 /* ZTableViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTableViewDelegate.h; sourceTree = "<group>"; };
+		2E0C769620A4123C009124D6 /* ZTableViewDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTableViewDelegate.m; sourceTree = "<group>"; };
+		2E0C769820A41254009124D6 /* ZTableViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZTableViewDataSource.h; sourceTree = "<group>"; };
+		2E0C769920A41254009124D6 /* ZTableViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZTableViewDataSource.m; sourceTree = "<group>"; };
+		2E0C769B20A41C86009124D6 /* FacadeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacadeViewController.h; sourceTree = "<group>"; };
+		2E0C769C20A41C86009124D6 /* FacadeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FacadeViewController.m; sourceTree = "<group>"; };
+		2E0C769E20A41CBB009124D6 /* AnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationViewController.h; sourceTree = "<group>"; };
+		2E0C769F20A41CBB009124D6 /* AnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationViewController.m; sourceTree = "<group>"; };
 		2E155A3F207B472600A950DD /* MyLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E155A42207B472600A950DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2E155A43207B472600A950DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -101,6 +138,101 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E0C754D209FFA18009124D6 /* Grand  center dispatch */ = {
+			isa = PBXGroup;
+			children = (
+				2E0C763820A1A27B009124D6 /* GCDViewController.h */,
+				2E0C763920A1A27B009124D6 /* GCDViewController.m */,
+			);
+			path = "Grand  center dispatch";
+			sourceTree = "<group>";
+		};
+		2E0C763420A1A185009124D6 /* NSThread */ = {
+			isa = PBXGroup;
+			children = (
+				2E0C763520A1A1DE009124D6 /* ThreadViewController.h */,
+				2E0C763620A1A1DE009124D6 /* ThreadViewController.m */,
+			);
+			path = NSThread;
+			sourceTree = "<group>";
+		};
+		2E0C763B20A29C87009124D6 /* PThread */ = {
+			isa = PBXGroup;
+			children = (
+				2E0C763C20A29CBB009124D6 /* PThreadViewController.h */,
+				2E0C763D20A29CBB009124D6 /* PThreadViewController.m */,
+			);
+			path = PThread;
+			sourceTree = "<group>";
+		};
+		2E0C767320A3EA0A009124D6 /* MVVMForDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				2E0C768120A3ED2E009124D6 /* TableViewProtocol */,
+				2E0C768020A3ED28009124D6 /* Controller */,
+				2E0C767F20A3ED1D009124D6 /* ViewModel */,
+				2E0C767E20A3ED17009124D6 /* Model */,
+				2E0C767D20A3ED0F009124D6 /* View */,
+			);
+			path = MVVMForDelegate;
+			sourceTree = "<group>";
+		};
+		2E0C767D20A3ED0F009124D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E0C768520A3F655009124D6 /* ZTableViewCell.h */,
+				2E0C768620A3F655009124D6 /* ZTableViewCell.m */,
+				2E0C768720A3F655009124D6 /* ZTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E0C767E20A3ED17009124D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2E0C768220A3F5FF009124D6 /* ZModel.h */,
+				2E0C768320A3F5FF009124D6 /* ZModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2E0C767F20A3ED1D009124D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2E0C768A20A410C2009124D6 /* ZViewModel.h */,
+				2E0C768B20A410C2009124D6 /* ZViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2E0C768020A3ED28009124D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2E0C768D20A411ED009124D6 /* ZMVVMViewController.h */,
+				2E0C768E20A411ED009124D6 /* ZMVVMViewController.m */,
+				2E0C768F20A411ED009124D6 /* ZMVVMViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2E0C768120A3ED2E009124D6 /* TableViewProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				2E0C769520A4123C009124D6 /* ZTableViewDelegate.h */,
+				2E0C769620A4123C009124D6 /* ZTableViewDelegate.m */,
+				2E0C769820A41254009124D6 /* ZTableViewDataSource.h */,
+				2E0C769920A41254009124D6 /* ZTableViewDataSource.m */,
+			);
+			path = TableViewProtocol;
+			sourceTree = "<group>";
+		};
+		2E0C76A120A434F0009124D6 /* MVVMForKVO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MVVMForKVO;
+			sourceTree = "<group>";
+		};
 		2E155A36207B472600A950DD = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +256,11 @@
 		2E155A41207B472600A950DD /* MyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				2E0C76A120A434F0009124D6 /* MVVMForKVO */,
+				2E0C767320A3EA0A009124D6 /* MVVMForDelegate */,
+				2E0C763B20A29C87009124D6 /* PThread */,
+				2E0C763420A1A185009124D6 /* NSThread */,
+				2E0C754D209FFA18009124D6 /* Grand  center dispatch */,
 				2ECC6EF620944DB8004BF4A1 /* Facade */,
 				2E515CB020847EB50008C7BE /* Design patterns */,
 				2E155A77207B483A00A950DD /* Animation */,
@@ -164,6 +301,8 @@
 			children = (
 				2E155A78207B485200A950DD /* ShapeLayerLearn.h */,
 				2E155A79207B485300A950DD /* ShapeLayerLearn.m */,
+				2E0C769E20A41CBB009124D6 /* AnimationViewController.h */,
+				2E0C769F20A41CBB009124D6 /* AnimationViewController.m */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -190,6 +329,8 @@
 				2ECC6F0F20946545004BF4A1 /* Medicine.m */,
 				2ECC6F1120946561004BF4A1 /* Patient.h */,
 				2ECC6F1220946561004BF4A1 /* Patient.m */,
+				2E0C769B20A41C86009124D6 /* FacadeViewController.h */,
+				2E0C769C20A41C86009124D6 /* FacadeViewController.m */,
 			);
 			path = Facade;
 			sourceTree = "<group>";
@@ -297,6 +438,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E0C768920A3F655009124D6 /* ZTableViewCell.xib in Resources */,
+				2E0C769120A411ED009124D6 /* ZMVVMViewController.xib in Resources */,
 				2E155A52207B472700A950DD /* LaunchScreen.storyboard in Resources */,
 				2E155A4F207B472700A950DD /* Assets.xcassets in Resources */,
 				2E155A4A207B472600A950DD /* Main.storyboard in Resources */,
@@ -324,17 +467,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E0C763720A1A1DE009124D6 /* ThreadViewController.m in Sources */,
+				2E0C769A20A41254009124D6 /* ZTableViewDataSource.m in Sources */,
+				2E0C768420A3F5FF009124D6 /* ZModel.m in Sources */,
 				2E155A47207B472600A950DD /* ViewController.m in Sources */,
 				2E155A4D207B472600A950DD /* MyLearn.xcdatamodeld in Sources */,
 				2ECC6F0D2094633E004BF4A1 /* Registration.m in Sources */,
 				2ECC6F01209461A7004BF4A1 /* Hospital.m in Sources */,
 				2ECC6F1320946561004BF4A1 /* Patient.m in Sources */,
+				2E0C769020A411ED009124D6 /* ZMVVMViewController.m in Sources */,
 				2E155A7A207B485300A950DD /* ShapeLayerLearn.m in Sources */,
+				2E0C769D20A41C86009124D6 /* FacadeViewController.m in Sources */,
+				2E0C768820A3F655009124D6 /* ZTableViewCell.m in Sources */,
 				2ECC6F1020946545004BF4A1 /* Medicine.m in Sources */,
 				2ECC6F0A209462A7004BF4A1 /* OutpatientService.m in Sources */,
+				2E0C763E20A29CBB009124D6 /* PThreadViewController.m in Sources */,
+				2E0C763A20A1A27B009124D6 /* GCDViewController.m in Sources */,
+				2E0C768C20A410C2009124D6 /* ZViewModel.m in Sources */,
 				2E155A55207B472700A950DD /* main.m in Sources */,
 				2E515CB320847F0E0008C7BE /* ShareInstance.m in Sources */,
 				2E155A44207B472600A950DD /* AppDelegate.m in Sources */,
+				2E0C769720A4123C009124D6 /* ZTableViewDelegate.m in Sources */,
+				2E0C76A020A41CBB009124D6 /* AnimationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

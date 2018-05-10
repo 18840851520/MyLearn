@@ -7,40 +7,61 @@
 //
 
 #import "ViewController.h"
-#import "ShapeLayerLearn.h"
-#import "Hospital.h"
+#import "AnimationViewController.h"
+#import "FacadeViewController.h"
+#import "ZMVVMViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView* tableView;
+
+@property (nonatomic, strong) NSArray *typeArray;
 
 @end
 
 @implementation ViewController
 
-static int i = 0;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    ShapeLayerLearn *shape = [[ShapeLayerLearn alloc] initWithFrame:CGRectMake(10, 10, 80, 80)];
+    self.typeArray = @[@"动画",@"单例",@"Facade",@"MVVM"];
     
-    [self.view addSubview:shape];
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    [self.view addSubview:self.tableView];
     
-    Hospital *hospital = [[Hospital alloc] init];
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        Patient *pa = [[Patient alloc] init];
-        pa.name = [NSString stringWithFormat:@"病人%d",i++];
-        pa.isCard = arc4random() % 2;
-        pa.outpatientService = arc4random() % 4;
-        if((int)pa.outpatientService != 0){
-            pa.registrationType = arc4random() % 4;
-            if((int)pa.registrationType != 0){
-                pa.medicineType = arc4random() % 3;
-            }
-        }
-        [hospital getPatientService:pa];
-    }];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
 }
 
-
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return _typeArray.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
+    if(!cell){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellID"];
+    }
+    cell.textLabel.text = self.typeArray[indexPath.row];
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIViewController *vc;
+    if(indexPath.row == 0){
+        vc = [[AnimationViewController alloc] init];
+    }else if (indexPath.row == 1){
+        
+    }else if (indexPath.row == 2){
+        vc = [[FacadeViewController alloc] init];
+    }else{
+        vc = [[ZMVVMViewController alloc] init];
+    }
+    vc.title = self.typeArray[indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

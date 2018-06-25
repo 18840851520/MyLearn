@@ -10,6 +10,7 @@
 #import "AnimationViewController.h"
 #import "FacadeViewController.h"
 #import "ZMVVMViewController.h"
+#import "BlueToothInstance.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -21,11 +22,20 @@
 
 @implementation ViewController
 
-
+- (void)printfLog{
+    NSLog(@"2");
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.typeArray = @[@"动画",@"单例",@"Facade",@"MVVM"];
+    dispatch_sync(dispatch_queue_create("net.bujige.testQueue", DISPATCH_QUEUE_CONCURRENT), ^{
+        NSLog(@"1");
+        
+        [self performSelector:@selector(printfLog) withObject:nil afterDelay:0];
+        NSLog(@"3");
+    });
+    
+    self.typeArray = @[@"动画",@"单例",@"Facade",@"MVVM",@"BlueTooth"];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];

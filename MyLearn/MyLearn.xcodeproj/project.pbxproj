@@ -31,6 +31,8 @@
 		2E155A6A207B472800A950DD /* MyLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A69207B472800A950DD /* MyLearnUITests.m */; };
 		2E155A7A207B485300A950DD /* ShapeLayerLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A79207B485300A950DD /* ShapeLayerLearn.m */; };
 		2E515CB320847F0E0008C7BE /* ShareInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E515CB220847F0E0008C7BE /* ShareInstance.m */; };
+		2E7E84B920AC1EA20093E65B /* BlueToothInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E84B820AC1EA20093E65B /* BlueToothInstance.m */; };
+		2E7E84BC20AC251B0093E65B /* CentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E84BB20AC251B0093E65B /* CentralManager.m */; };
 		2ECC6F01209461A7004BF4A1 /* Hospital.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F00209461A7004BF4A1 /* Hospital.m */; };
 		2ECC6F0A209462A7004BF4A1 /* OutpatientService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F09209462A7004BF4A1 /* OutpatientService.m */; };
 		2ECC6F0D2094633E004BF4A1 /* Registration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F0C2094633E004BF4A1 /* Registration.m */; };
@@ -101,6 +103,10 @@
 		2E155A79207B485300A950DD /* ShapeLayerLearn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeLayerLearn.m; sourceTree = "<group>"; };
 		2E515CB120847F0E0008C7BE /* ShareInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareInstance.h; sourceTree = "<group>"; };
 		2E515CB220847F0E0008C7BE /* ShareInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareInstance.m; sourceTree = "<group>"; };
+		2E7E84B720AC1EA20093E65B /* BlueToothInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueToothInstance.h; sourceTree = "<group>"; };
+		2E7E84B820AC1EA20093E65B /* BlueToothInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueToothInstance.m; sourceTree = "<group>"; };
+		2E7E84BA20AC251B0093E65B /* CentralManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CentralManager.h; sourceTree = "<group>"; };
+		2E7E84BB20AC251B0093E65B /* CentralManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CentralManager.m; sourceTree = "<group>"; };
 		2ECC6EFF209461A7004BF4A1 /* Hospital.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hospital.h; sourceTree = "<group>"; };
 		2ECC6F00209461A7004BF4A1 /* Hospital.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hospital.m; sourceTree = "<group>"; };
 		2ECC6F08209462A7004BF4A1 /* OutpatientService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutpatientService.h; sourceTree = "<group>"; };
@@ -256,6 +262,7 @@
 		2E155A41207B472600A950DD /* MyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				2E7E84B320AC1E600093E65B /* BlueToothInstance */,
 				2E0C76A120A434F0009124D6 /* MVVMForKVO */,
 				2E0C767320A3EA0A009124D6 /* MVVMForDelegate */,
 				2E0C763B20A29C87009124D6 /* PThread */,
@@ -314,6 +321,17 @@
 				2E515CB220847F0E0008C7BE /* ShareInstance.m */,
 			);
 			path = "Design patterns";
+			sourceTree = "<group>";
+		};
+		2E7E84B320AC1E600093E65B /* BlueToothInstance */ = {
+			isa = PBXGroup;
+			children = (
+				2E7E84B720AC1EA20093E65B /* BlueToothInstance.h */,
+				2E7E84B820AC1EA20093E65B /* BlueToothInstance.m */,
+				2E7E84BA20AC251B0093E65B /* CentralManager.h */,
+				2E7E84BB20AC251B0093E65B /* CentralManager.m */,
+			);
+			path = BlueToothInstance;
 			sourceTree = "<group>";
 		};
 		2ECC6EF620944DB8004BF4A1 /* Facade */ = {
@@ -471,6 +489,7 @@
 				2E0C769A20A41254009124D6 /* ZTableViewDataSource.m in Sources */,
 				2E0C768420A3F5FF009124D6 /* ZModel.m in Sources */,
 				2E155A47207B472600A950DD /* ViewController.m in Sources */,
+				2E7E84B920AC1EA20093E65B /* BlueToothInstance.m in Sources */,
 				2E155A4D207B472600A950DD /* MyLearn.xcdatamodeld in Sources */,
 				2ECC6F0D2094633E004BF4A1 /* Registration.m in Sources */,
 				2ECC6F01209461A7004BF4A1 /* Hospital.m in Sources */,
@@ -489,6 +508,7 @@
 				2E155A44207B472600A950DD /* AppDelegate.m in Sources */,
 				2E0C769720A4123C009124D6 /* ZTableViewDelegate.m in Sources */,
 				2E0C76A020A41CBB009124D6 /* AnimationViewController.m in Sources */,
+				2E7E84BC20AC251B0093E65B /* CentralManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

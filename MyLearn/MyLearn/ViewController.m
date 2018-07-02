@@ -11,6 +11,8 @@
 #import "FacadeViewController.h"
 #import "ZMVVMViewController.h"
 #import "BlueToothInstance.h"
+#import "ChainProgrammingViewController.h"
+#import "RuntimeViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -35,7 +37,7 @@
         NSLog(@"3");
     });
     
-    self.typeArray = @[@"动画",@"单例",@"Facade",@"MVVM",@"BlueTooth"];
+    self.typeArray = @[@"动画",@"单例",@"Facade(门面模式)",@"MVVM",@"BlueTooth",@"链式编程",@"runtime"];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
@@ -60,14 +62,25 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UIViewController *vc;
+    switch (indexPath.row) {
+        case 6:
+            {
+                vc = [[RuntimeViewController alloc] init];
+            }
+            break;
+        default:
+            break;
+    }
     if(indexPath.row == 0){
         vc = [[AnimationViewController alloc] init];
     }else if (indexPath.row == 1){
         
     }else if (indexPath.row == 2){
         vc = [[FacadeViewController alloc] init];
+    }else if(indexPath.row == 5){
+        vc = [[ChainProgrammingViewController alloc] init];
     }else{
-        vc = [[ZMVVMViewController alloc] init];
+//        vc = [[ZMVVMViewController alloc] init];
     }
     vc.title = self.typeArray[indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];

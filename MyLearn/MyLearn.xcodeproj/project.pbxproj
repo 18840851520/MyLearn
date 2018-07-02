@@ -31,6 +31,11 @@
 		2E155A6A207B472800A950DD /* MyLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A69207B472800A950DD /* MyLearnUITests.m */; };
 		2E155A7A207B485300A950DD /* ShapeLayerLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A79207B485300A950DD /* ShapeLayerLearn.m */; };
 		2E515CB320847F0E0008C7BE /* ShareInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E515CB220847F0E0008C7BE /* ShareInstance.m */; };
+		2E6D9DC520E1214600F65B6F /* ChainProgrammingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D9DC320E1214600F65B6F /* ChainProgrammingViewController.m */; };
+		2E6D9DC620E1214600F65B6F /* ChainProgrammingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6D9DC420E1214600F65B6F /* ChainProgrammingViewController.xib */; };
+		2E6D9DC920E1218D00F65B6F /* Calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D9DC820E1218D00F65B6F /* Calculate.m */; };
+		2E6D9E1620E4824B00F65B6F /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D9E1420E4824B00F65B6F /* RuntimeViewController.m */; };
+		2E6D9E1720E4824B00F65B6F /* RuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6D9E1520E4824B00F65B6F /* RuntimeViewController.xib */; };
 		2E7E84B920AC1EA20093E65B /* BlueToothInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E84B820AC1EA20093E65B /* BlueToothInstance.m */; };
 		2E7E84BC20AC251B0093E65B /* CentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E84BB20AC251B0093E65B /* CentralManager.m */; };
 		2ECC6F01209461A7004BF4A1 /* Hospital.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F00209461A7004BF4A1 /* Hospital.m */; };
@@ -103,6 +108,14 @@
 		2E155A79207B485300A950DD /* ShapeLayerLearn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeLayerLearn.m; sourceTree = "<group>"; };
 		2E515CB120847F0E0008C7BE /* ShareInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareInstance.h; sourceTree = "<group>"; };
 		2E515CB220847F0E0008C7BE /* ShareInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareInstance.m; sourceTree = "<group>"; };
+		2E6D9DC220E1214600F65B6F /* ChainProgrammingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChainProgrammingViewController.h; sourceTree = "<group>"; };
+		2E6D9DC320E1214600F65B6F /* ChainProgrammingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChainProgrammingViewController.m; sourceTree = "<group>"; };
+		2E6D9DC420E1214600F65B6F /* ChainProgrammingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChainProgrammingViewController.xib; sourceTree = "<group>"; };
+		2E6D9DC720E1218D00F65B6F /* Calculate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Calculate.h; sourceTree = "<group>"; };
+		2E6D9DC820E1218D00F65B6F /* Calculate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Calculate.m; sourceTree = "<group>"; };
+		2E6D9E1320E4824B00F65B6F /* RuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
+		2E6D9E1420E4824B00F65B6F /* RuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
+		2E6D9E1520E4824B00F65B6F /* RuntimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuntimeViewController.xib; sourceTree = "<group>"; };
 		2E7E84B720AC1EA20093E65B /* BlueToothInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueToothInstance.h; sourceTree = "<group>"; };
 		2E7E84B820AC1EA20093E65B /* BlueToothInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueToothInstance.m; sourceTree = "<group>"; };
 		2E7E84BA20AC251B0093E65B /* CentralManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CentralManager.h; sourceTree = "<group>"; };
@@ -262,6 +275,8 @@
 		2E155A41207B472600A950DD /* MyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				2E6D9DCA20E1CA5300F65B6F /* Runtime */,
+				2E6D9DC120E120DC00F65B6F /* 链式编程 */,
 				2E7E84B320AC1E600093E65B /* BlueToothInstance */,
 				2E0C76A120A434F0009124D6 /* MVVMForKVO */,
 				2E0C767320A3EA0A009124D6 /* MVVMForDelegate */,
@@ -321,6 +336,28 @@
 				2E515CB220847F0E0008C7BE /* ShareInstance.m */,
 			);
 			path = "Design patterns";
+			sourceTree = "<group>";
+		};
+		2E6D9DC120E120DC00F65B6F /* 链式编程 */ = {
+			isa = PBXGroup;
+			children = (
+				2E6D9DC220E1214600F65B6F /* ChainProgrammingViewController.h */,
+				2E6D9DC320E1214600F65B6F /* ChainProgrammingViewController.m */,
+				2E6D9DC420E1214600F65B6F /* ChainProgrammingViewController.xib */,
+				2E6D9DC720E1218D00F65B6F /* Calculate.h */,
+				2E6D9DC820E1218D00F65B6F /* Calculate.m */,
+			);
+			path = "链式编程";
+			sourceTree = "<group>";
+		};
+		2E6D9DCA20E1CA5300F65B6F /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				2E6D9E1320E4824B00F65B6F /* RuntimeViewController.h */,
+				2E6D9E1420E4824B00F65B6F /* RuntimeViewController.m */,
+				2E6D9E1520E4824B00F65B6F /* RuntimeViewController.xib */,
+			);
+			path = Runtime;
 			sourceTree = "<group>";
 		};
 		2E7E84B320AC1E600093E65B /* BlueToothInstance */ = {
@@ -458,8 +495,10 @@
 			files = (
 				2E0C768920A3F655009124D6 /* ZTableViewCell.xib in Resources */,
 				2E0C769120A411ED009124D6 /* ZMVVMViewController.xib in Resources */,
+				2E6D9E1720E4824B00F65B6F /* RuntimeViewController.xib in Resources */,
 				2E155A52207B472700A950DD /* LaunchScreen.storyboard in Resources */,
 				2E155A4F207B472700A950DD /* Assets.xcassets in Resources */,
+				2E6D9DC620E1214600F65B6F /* ChainProgrammingViewController.xib in Resources */,
 				2E155A4A207B472600A950DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,11 +524,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E6D9DC520E1214600F65B6F /* ChainProgrammingViewController.m in Sources */,
 				2E0C763720A1A1DE009124D6 /* ThreadViewController.m in Sources */,
 				2E0C769A20A41254009124D6 /* ZTableViewDataSource.m in Sources */,
 				2E0C768420A3F5FF009124D6 /* ZModel.m in Sources */,
 				2E155A47207B472600A950DD /* ViewController.m in Sources */,
 				2E7E84B920AC1EA20093E65B /* BlueToothInstance.m in Sources */,
+				2E6D9DC920E1218D00F65B6F /* Calculate.m in Sources */,
 				2E155A4D207B472600A950DD /* MyLearn.xcdatamodeld in Sources */,
 				2ECC6F0D2094633E004BF4A1 /* Registration.m in Sources */,
 				2ECC6F01209461A7004BF4A1 /* Hospital.m in Sources */,
@@ -502,6 +543,7 @@
 				2ECC6F0A209462A7004BF4A1 /* OutpatientService.m in Sources */,
 				2E0C763E20A29CBB009124D6 /* PThreadViewController.m in Sources */,
 				2E0C763A20A1A27B009124D6 /* GCDViewController.m in Sources */,
+				2E6D9E1620E4824B00F65B6F /* RuntimeViewController.m in Sources */,
 				2E0C768C20A410C2009124D6 /* ZViewModel.m in Sources */,
 				2E155A55207B472700A950DD /* main.m in Sources */,
 				2E515CB320847F0E0008C7BE /* ShareInstance.m in Sources */,

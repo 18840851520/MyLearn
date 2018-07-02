@@ -15,9 +15,11 @@
     if(!patient.medicineType){
         patient.medicineType = arc4random() % 2;
     }
-    NSLog(@"%@进入门诊%ld",patient.name,patient.outpatientService);
-    sleep(arc4random()%200/100.f);
-    [Medicine needGetMedicin:patient];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(arc4random() % 3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"%@进入门诊%ld",patient.name,patient.outpatientService);
+        sleep(arc4random()%200/100.f);
+        [Medicine needGetMedicin:patient];
+    });
 }
 
 @end

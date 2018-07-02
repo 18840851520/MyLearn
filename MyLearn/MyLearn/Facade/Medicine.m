@@ -12,7 +12,9 @@
 
 + (void)needGetMedicin:(Patient *)patient{
     
-    NSLog(@"%@拿药%ld",patient.name,patient.medicineType);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(arc4random() % 5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"%@拿药%ld",patient.name,patient.medicineType);
+    });
 }
 
 @end

@@ -13,6 +13,7 @@
 #import "BlueToothInstance.h"
 #import "ChainProgrammingViewController.h"
 #import "RuntimeViewController.h"
+#import "RunLoopViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -37,7 +38,7 @@
         NSLog(@"3");
     });
     
-    self.typeArray = @[@"动画",@"单例",@"Facade(门面模式)",@"MVVM",@"BlueTooth",@"链式编程",@"runtime"];
+    self.typeArray = @[@"动画",@"单例",@"Facade(门面模式)",@"MVVM",@"BlueTooth",@"链式编程",@"runtime",@"RunLoop"];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
@@ -64,9 +65,10 @@
     UIViewController *vc;
     switch (indexPath.row) {
         case 6:
-            {
-                vc = [[RuntimeViewController alloc] init];
-            }
+            vc = [[RuntimeViewController alloc] init];
+            break;
+        case 7:
+            vc = [[RunLoopViewController alloc] init];
             break;
         default:
             break;

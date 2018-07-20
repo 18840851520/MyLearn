@@ -31,6 +31,16 @@
 		2E155A6A207B472800A950DD /* MyLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A69207B472800A950DD /* MyLearnUITests.m */; };
 		2E155A7A207B485300A950DD /* ShapeLayerLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A79207B485300A950DD /* ShapeLayerLearn.m */; };
 		2E515CB320847F0E0008C7BE /* ShareInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E515CB220847F0E0008C7BE /* ShareInstance.m */; };
+		2E69399F20EA13BD00A3EC2D /* RuntimeGetSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E69399E20EA13BD00A3EC2D /* RuntimeGetSelector.m */; };
+		2E6939B920EB68AE00A3EC2D /* RuntimeGetSelector+Associated.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6939B820EB68AE00A3EC2D /* RuntimeGetSelector+Associated.m */; };
+		2E6939BF20F8811400A3EC2D /* RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6939BD20F8811400A3EC2D /* RunLoopViewController.m */; };
+		2E6939C020F8811400A3EC2D /* RunLoopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6939BE20F8811400A3EC2D /* RunLoopViewController.xib */; };
+		2E6939C420FF311C00A3EC2D /* JHSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6939C320FF311C00A3EC2D /* JHSlideView.m */; };
+		2E6939C820FF31B000A3EC2D /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6939C720FF31B000A3EC2D /* LoginView.m */; };
+		2E6939CE20FF31EF00A3EC2D /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6939CD20FF31EF00A3EC2D /* LoginView.xib */; };
+		2E6939D1210060BB00A3EC2D /* JHBounceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6939D0210060BB00A3EC2D /* JHBounceView.m */; };
+		2E6939D521007DE000A3EC2D /* 123456.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E6939D421007DE000A3EC2D /* 123456.png */; };
+		2E6939D82101DDB100A3EC2D /* NextAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6939D72101DDB100A3EC2D /* NextAnimationViewController.m */; };
 		2E6D9DC520E1214600F65B6F /* ChainProgrammingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D9DC320E1214600F65B6F /* ChainProgrammingViewController.m */; };
 		2E6D9DC620E1214600F65B6F /* ChainProgrammingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6D9DC420E1214600F65B6F /* ChainProgrammingViewController.xib */; };
 		2E6D9DC920E1218D00F65B6F /* Calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D9DC820E1218D00F65B6F /* Calculate.m */; };
@@ -108,6 +118,23 @@
 		2E155A79207B485300A950DD /* ShapeLayerLearn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeLayerLearn.m; sourceTree = "<group>"; };
 		2E515CB120847F0E0008C7BE /* ShareInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareInstance.h; sourceTree = "<group>"; };
 		2E515CB220847F0E0008C7BE /* ShareInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareInstance.m; sourceTree = "<group>"; };
+		2E69399D20EA13BD00A3EC2D /* RuntimeGetSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeGetSelector.h; sourceTree = "<group>"; };
+		2E69399E20EA13BD00A3EC2D /* RuntimeGetSelector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeGetSelector.m; sourceTree = "<group>"; };
+		2E6939B720EB68AE00A3EC2D /* RuntimeGetSelector+Associated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RuntimeGetSelector+Associated.h"; sourceTree = "<group>"; };
+		2E6939B820EB68AE00A3EC2D /* RuntimeGetSelector+Associated.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RuntimeGetSelector+Associated.m"; sourceTree = "<group>"; };
+		2E6939BC20F8811400A3EC2D /* RunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopViewController.h; sourceTree = "<group>"; };
+		2E6939BD20F8811400A3EC2D /* RunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopViewController.m; sourceTree = "<group>"; };
+		2E6939BE20F8811400A3EC2D /* RunLoopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RunLoopViewController.xib; sourceTree = "<group>"; };
+		2E6939C220FF311C00A3EC2D /* JHSlideView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHSlideView.h; sourceTree = "<group>"; };
+		2E6939C320FF311C00A3EC2D /* JHSlideView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHSlideView.m; sourceTree = "<group>"; };
+		2E6939C620FF31B000A3EC2D /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		2E6939C720FF31B000A3EC2D /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		2E6939CD20FF31EF00A3EC2D /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		2E6939CF210060BB00A3EC2D /* JHBounceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHBounceView.h; sourceTree = "<group>"; };
+		2E6939D0210060BB00A3EC2D /* JHBounceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHBounceView.m; sourceTree = "<group>"; };
+		2E6939D421007DE000A3EC2D /* 123456.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123456.png; sourceTree = "<group>"; };
+		2E6939D62101DDB100A3EC2D /* NextAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextAnimationViewController.h; sourceTree = "<group>"; };
+		2E6939D72101DDB100A3EC2D /* NextAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextAnimationViewController.m; sourceTree = "<group>"; };
 		2E6D9DC220E1214600F65B6F /* ChainProgrammingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChainProgrammingViewController.h; sourceTree = "<group>"; };
 		2E6D9DC320E1214600F65B6F /* ChainProgrammingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChainProgrammingViewController.m; sourceTree = "<group>"; };
 		2E6D9DC420E1214600F65B6F /* ChainProgrammingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChainProgrammingViewController.xib; sourceTree = "<group>"; };
@@ -275,6 +302,7 @@
 		2E155A41207B472600A950DD /* MyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				2E6939BB20F87D7300A3EC2D /* RunLoop */,
 				2E6D9DCA20E1CA5300F65B6F /* Runtime */,
 				2E6D9DC120E120DC00F65B6F /* 链式编程 */,
 				2E7E84B320AC1E600093E65B /* BlueToothInstance */,
@@ -321,10 +349,14 @@
 		2E155A77207B483A00A950DD /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				2E155A78207B485200A950DD /* ShapeLayerLearn.h */,
-				2E155A79207B485300A950DD /* ShapeLayerLearn.m */,
+				2E6939C520FF317C00A3EC2D /* Class */,
 				2E0C769E20A41CBB009124D6 /* AnimationViewController.h */,
 				2E0C769F20A41CBB009124D6 /* AnimationViewController.m */,
+				2E6939C620FF31B000A3EC2D /* LoginView.h */,
+				2E6939C720FF31B000A3EC2D /* LoginView.m */,
+				2E6939CD20FF31EF00A3EC2D /* LoginView.xib */,
+				2E6939D62101DDB100A3EC2D /* NextAnimationViewController.h */,
+				2E6939D72101DDB100A3EC2D /* NextAnimationViewController.m */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -336,6 +368,30 @@
 				2E515CB220847F0E0008C7BE /* ShareInstance.m */,
 			);
 			path = "Design patterns";
+			sourceTree = "<group>";
+		};
+		2E6939BB20F87D7300A3EC2D /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				2E6939BC20F8811400A3EC2D /* RunLoopViewController.h */,
+				2E6939BD20F8811400A3EC2D /* RunLoopViewController.m */,
+				2E6939BE20F8811400A3EC2D /* RunLoopViewController.xib */,
+			);
+			path = RunLoop;
+			sourceTree = "<group>";
+		};
+		2E6939C520FF317C00A3EC2D /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				2E6939D421007DE000A3EC2D /* 123456.png */,
+				2E155A78207B485200A950DD /* ShapeLayerLearn.h */,
+				2E155A79207B485300A950DD /* ShapeLayerLearn.m */,
+				2E6939C220FF311C00A3EC2D /* JHSlideView.h */,
+				2E6939C320FF311C00A3EC2D /* JHSlideView.m */,
+				2E6939CF210060BB00A3EC2D /* JHBounceView.h */,
+				2E6939D0210060BB00A3EC2D /* JHBounceView.m */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		2E6D9DC120E120DC00F65B6F /* 链式编程 */ = {
@@ -356,6 +412,10 @@
 				2E6D9E1320E4824B00F65B6F /* RuntimeViewController.h */,
 				2E6D9E1420E4824B00F65B6F /* RuntimeViewController.m */,
 				2E6D9E1520E4824B00F65B6F /* RuntimeViewController.xib */,
+				2E69399D20EA13BD00A3EC2D /* RuntimeGetSelector.h */,
+				2E69399E20EA13BD00A3EC2D /* RuntimeGetSelector.m */,
+				2E6939B720EB68AE00A3EC2D /* RuntimeGetSelector+Associated.h */,
+				2E6939B820EB68AE00A3EC2D /* RuntimeGetSelector+Associated.m */,
 			);
 			path = Runtime;
 			sourceTree = "<group>";
@@ -493,7 +553,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E6939D521007DE000A3EC2D /* 123456.png in Resources */,
+				2E6939C020F8811400A3EC2D /* RunLoopViewController.xib in Resources */,
 				2E0C768920A3F655009124D6 /* ZTableViewCell.xib in Resources */,
+				2E6939CE20FF31EF00A3EC2D /* LoginView.xib in Resources */,
 				2E0C769120A411ED009124D6 /* ZMVVMViewController.xib in Resources */,
 				2E6D9E1720E4824B00F65B6F /* RuntimeViewController.xib in Resources */,
 				2E155A52207B472700A950DD /* LaunchScreen.storyboard in Resources */,
@@ -532,22 +595,29 @@
 				2E7E84B920AC1EA20093E65B /* BlueToothInstance.m in Sources */,
 				2E6D9DC920E1218D00F65B6F /* Calculate.m in Sources */,
 				2E155A4D207B472600A950DD /* MyLearn.xcdatamodeld in Sources */,
+				2E6939D82101DDB100A3EC2D /* NextAnimationViewController.m in Sources */,
 				2ECC6F0D2094633E004BF4A1 /* Registration.m in Sources */,
 				2ECC6F01209461A7004BF4A1 /* Hospital.m in Sources */,
 				2ECC6F1320946561004BF4A1 /* Patient.m in Sources */,
 				2E0C769020A411ED009124D6 /* ZMVVMViewController.m in Sources */,
+				2E6939D1210060BB00A3EC2D /* JHBounceView.m in Sources */,
 				2E155A7A207B485300A950DD /* ShapeLayerLearn.m in Sources */,
 				2E0C769D20A41C86009124D6 /* FacadeViewController.m in Sources */,
+				2E6939B920EB68AE00A3EC2D /* RuntimeGetSelector+Associated.m in Sources */,
 				2E0C768820A3F655009124D6 /* ZTableViewCell.m in Sources */,
 				2ECC6F1020946545004BF4A1 /* Medicine.m in Sources */,
 				2ECC6F0A209462A7004BF4A1 /* OutpatientService.m in Sources */,
 				2E0C763E20A29CBB009124D6 /* PThreadViewController.m in Sources */,
 				2E0C763A20A1A27B009124D6 /* GCDViewController.m in Sources */,
 				2E6D9E1620E4824B00F65B6F /* RuntimeViewController.m in Sources */,
+				2E69399F20EA13BD00A3EC2D /* RuntimeGetSelector.m in Sources */,
 				2E0C768C20A410C2009124D6 /* ZViewModel.m in Sources */,
 				2E155A55207B472700A950DD /* main.m in Sources */,
 				2E515CB320847F0E0008C7BE /* ShareInstance.m in Sources */,
 				2E155A44207B472600A950DD /* AppDelegate.m in Sources */,
+				2E6939C820FF31B000A3EC2D /* LoginView.m in Sources */,
+				2E6939BF20F8811400A3EC2D /* RunLoopViewController.m in Sources */,
+				2E6939C420FF311C00A3EC2D /* JHSlideView.m in Sources */,
 				2E0C769720A4123C009124D6 /* ZTableViewDelegate.m in Sources */,
 				2E0C76A020A41CBB009124D6 /* AnimationViewController.m in Sources */,
 				2E7E84BC20AC251B0093E65B /* CentralManager.m in Sources */,

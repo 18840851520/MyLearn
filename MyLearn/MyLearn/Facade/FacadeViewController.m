@@ -11,7 +11,9 @@
 #import "Patient.h"
 
 @interface FacadeViewController ()
-
+{
+    NSTimer *timer;
+}
 @end
 
 @implementation FacadeViewController
@@ -24,7 +26,7 @@ static int i = 0;
     self.view.backgroundColor = [UIColor whiteColor];
     
     Hospital *hospital = [[Hospital alloc] init];
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+    timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
         Patient *pa = [[Patient alloc] init];
         pa.name = [NSString stringWithFormat:@"病人%d",i++];
         pa.isCard = arc4random() % 2;
@@ -37,6 +39,9 @@ static int i = 0;
         }
         [hospital getPatientService:pa];
     }];
+}
+- (void)dealloc{
+    [timer invalidate];
 }
 
 - (void)didReceiveMemoryWarning {

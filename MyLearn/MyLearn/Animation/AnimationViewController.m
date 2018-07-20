@@ -8,8 +8,14 @@
 
 #import "AnimationViewController.h"
 #import "ShapeLayerLearn.h"
+#import "LoginView.h"
+#import "JHBounceView.h"
+#import "NextAnimationViewController.h"
 
 @interface AnimationViewController ()
+
+@property (nonatomic, strong) LoginView *loginView;
+@property (nonatomic, strong) LoginView *forgetView;
 
 @end
 
@@ -18,26 +24,80 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
-    ShapeLayerLearn *shape = [[ShapeLayerLearn alloc] initWithFrame:CGRectMake(10, 80, 80, 80)];
+    UIImageView *bgImage = [[UIImageView alloc] initWithFrame:self.view.frame];
+    bgImage.image = [UIImage imageNamed:@"123456"];
+    bgImage.contentMode = UIViewContentModeRight;
+    [self.view addSubview:bgImage];
     
-    [self.view addSubview:shape];
+//    ShapeLayerLearn *shape = [[ShapeLayerLearn alloc] initWithFrame:CGRectMake(10, 80, 80, 80)];
+//
+//    [self.view addSubview:shape];
+    
+    self.loginView = [[NSBundle mainBundle] loadNibNamed:@"LoginView" owner:nil options:nil].lastObject;
+    self.loginView.center = CGPointMake(CGRectGetWidth(self.view.bounds)/2, CGRectGetHeight(self.view.bounds) * 6 / 5);
+    self.loginView.minT = 0.9;
+    
+    __weak typeof(self)weakSelf = self;
+    self.loginView.selectBlock = ^{
+        weakSelf.forgetView.isSelect = NO;
+    };
+    self.loginView.loginBlock = ^{
+        JHBounceView *view = [[JHBounceView alloc] initWithSuperView:weakSelf.view];
+        view.startAnimation = YES;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            __block typeof(view)blockview = view;
+            [view endAnimation:^{
+                [weakSelf presentNextVC];
+            }];
+        });
+    };
+    [self.view addSubview:self.loginView];
+    
+    self.forgetView = [[NSBundle mainBundle] loadNibNamed:@"LoginView" owner:nil options:nil].lastObject;
+    self.forgetView.center = CGPointMake(CGRectGetWidth(self.view.bounds)/2, CGRectGetHeight(self.view.bounds) * 8 / 5);
+    self.forgetView.minT = 0.9;
+    
+    self.forgetView.selectBlock = ^{
+        weakSelf.loginView.isSelect = NO;
+    };
+    [self.view addSubview:self.forgetView];
+    
+    self.forgetView.isSelect = NO;
+    self.loginView.isSelect = YES;
+    
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.navigationController.navigationBarHidden = YES;
+    
+    [UIView animateWithDuration:0.8 animations:^{
+        self.loginView.center = CGPointMake(CGRectGetWidth(self.view.bounds)/2, CGRectGetHeight(self.view.bounds) * 2 / 5);
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+    [UIView animateWithDuration:1 animations:^{
+        self.forgetView.center = CGPointMake(CGRectGetWidth(self.view.bounds)/2, CGRectGetHeight(self.view.bounds) * 3 / 5);
+    }];
+}
+- (void)presentNextVC{
+    NextAnimationViewController *vc = [[NextAnimationViewController alloc] init];
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
+}
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

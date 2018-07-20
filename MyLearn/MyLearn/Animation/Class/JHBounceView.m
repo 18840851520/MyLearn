@@ -51,9 +51,10 @@
         _bounceAnimation=[CABasicAnimation animationWithKeyPath:@"transform.scale"];
     }
     _bounceAnimation.fromValue=[NSNumber numberWithFloat:1];
-    _bounceAnimation.toValue=[NSNumber numberWithFloat:2.5];
-    _bounceAnimation.duration=0.3;
+    _bounceAnimation.toValue=[NSNumber numberWithFloat:3];
+    _bounceAnimation.duration=0.2;
     _bounceAnimation.autoreverses = YES;
+    _bounceAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];;
     _bounceAnimation.repeatCount = CGFLOAT_MAX;
     [self.bounceView.layer addAnimation:_bounceAnimation forKey:@"zoom"];
 }
@@ -66,7 +67,7 @@
 
     bounceAnimation.toValue=[NSValue valueWithCGRect:CGRectMake(0, 0, CGRectGetHeight(self.bounds), CGRectGetHeight(self.bounds))];
     bounceAnimation.delegate = self;
-    bounceAnimation.duration=0.8;
+    bounceAnimation.duration=0.5;
     bounceAnimation.repeatCount = 1;
     bounceAnimation.removedOnCompletion = NO;
     bounceAnimation.fillMode = kCAFillModeForwards;

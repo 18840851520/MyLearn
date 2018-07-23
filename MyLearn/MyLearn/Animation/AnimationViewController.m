@@ -74,13 +74,13 @@
     self.navigationController.navigationBarHidden = YES;
     
     [UIView animateWithDuration:0.8 animations:^{
-        self.loginView.center = CGPointMake(CGRectGetWidth(self.view.bounds)/2, CGRectGetHeight(self.view.bounds) * 2 / 5);
+        self.loginView.center = CGPointMake(CGRectGetWidth(self.view.bounds)/2, CGRectGetHeight(self.view.bounds) * 3 / 7);
         
     } completion:^(BOOL finished) {
         
     }];
     [UIView animateWithDuration:1 animations:^{
-        self.forgetView.center = CGPointMake(CGRectGetWidth(self.view.bounds)/2, CGRectGetHeight(self.view.bounds) * 3 / 5);
+        self.forgetView.center = CGPointMake(CGRectGetWidth(self.view.bounds)/2, CGRectGetHeight(self.view.bounds) * 4 / 7);
     }];
 }
 - (void)presentNextVC{

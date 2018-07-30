@@ -24,7 +24,7 @@
     
     RuntimeGetSelector *rum = [RuntimeGetSelector new];
     rum.defaultColor = [UIColor whiteColor];
-    NSLog(@"%@",rum.defaultColor);
+    NSLog(@"%s %@",__FUNCTION__,rum.defaultColor);
     
     NSLog(@"self->isa:%@",object_getClass(rum));
     NSLog(@"self class:%@",[rum class]);
@@ -34,7 +34,7 @@
     rum.name = @"123";
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    NSLog(@"");
+    NSLog(@"%s",__FUNCTION__);
 }
 //方法替换
 + (void)load{

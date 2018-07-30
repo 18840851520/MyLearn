@@ -31,6 +31,7 @@
 		2E155A6A207B472800A950DD /* MyLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A69207B472800A950DD /* MyLearnUITests.m */; };
 		2E155A7A207B485300A950DD /* ShapeLayerLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A79207B485300A950DD /* ShapeLayerLearn.m */; };
 		2E515CB320847F0E0008C7BE /* ShareInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E515CB220847F0E0008C7BE /* ShareInstance.m */; };
+		2E57905B2106CC6E00521E9B /* GCDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E57905A2106CC6E00521E9B /* GCDViewController.xib */; };
 		2E69399F20EA13BD00A3EC2D /* RuntimeGetSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E69399E20EA13BD00A3EC2D /* RuntimeGetSelector.m */; };
 		2E6939B920EB68AE00A3EC2D /* RuntimeGetSelector+Associated.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6939B820EB68AE00A3EC2D /* RuntimeGetSelector+Associated.m */; };
 		2E6939BF20F8811400A3EC2D /* RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6939BD20F8811400A3EC2D /* RunLoopViewController.m */; };
@@ -118,6 +119,7 @@
 		2E155A79207B485300A950DD /* ShapeLayerLearn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeLayerLearn.m; sourceTree = "<group>"; };
 		2E515CB120847F0E0008C7BE /* ShareInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareInstance.h; sourceTree = "<group>"; };
 		2E515CB220847F0E0008C7BE /* ShareInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareInstance.m; sourceTree = "<group>"; };
+		2E57905A2106CC6E00521E9B /* GCDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCDViewController.xib; sourceTree = "<group>"; };
 		2E69399D20EA13BD00A3EC2D /* RuntimeGetSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeGetSelector.h; sourceTree = "<group>"; };
 		2E69399E20EA13BD00A3EC2D /* RuntimeGetSelector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeGetSelector.m; sourceTree = "<group>"; };
 		2E6939B720EB68AE00A3EC2D /* RuntimeGetSelector+Associated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RuntimeGetSelector+Associated.h"; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			children = (
 				2E0C763820A1A27B009124D6 /* GCDViewController.h */,
 				2E0C763920A1A27B009124D6 /* GCDViewController.m */,
+				2E57905A2106CC6E00521E9B /* GCDViewController.xib */,
 			);
 			path = "Grand  center dispatch";
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				2E0C768920A3F655009124D6 /* ZTableViewCell.xib in Resources */,
 				2E6939CE20FF31EF00A3EC2D /* LoginView.xib in Resources */,
 				2E0C769120A411ED009124D6 /* ZMVVMViewController.xib in Resources */,
+				2E57905B2106CC6E00521E9B /* GCDViewController.xib in Resources */,
 				2E6D9E1720E4824B00F65B6F /* RuntimeViewController.xib in Resources */,
 				2E155A52207B472700A950DD /* LaunchScreen.storyboard in Resources */,
 				2E155A4F207B472700A950DD /* Assets.xcassets in Resources */,

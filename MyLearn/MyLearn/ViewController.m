@@ -14,6 +14,7 @@
 #import "ChainProgrammingViewController.h"
 #import "RuntimeViewController.h"
 #import "RunLoopViewController.h"
+#import "GCDViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -26,19 +27,19 @@
 @implementation ViewController
 
 - (void)printfLog{
-    NSLog(@"2");
+    NSLog(@"ViewController：2");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     dispatch_sync(dispatch_queue_create("net.bujige.testQueue", DISPATCH_QUEUE_CONCURRENT), ^{
-        NSLog(@"1");
+        NSLog(@"ViewController：1");
         
         [self performSelector:@selector(printfLog) withObject:nil afterDelay:0];
-        NSLog(@"3");
+        NSLog(@"ViewController：3");
     });
     
-    self.typeArray = @[@"动画",@"单例",@"Facade(门面模式)",@"MVVM",@"BlueTooth",@"链式编程",@"runtime",@"RunLoop"];
+    self.typeArray = @[@"动画",@"单例",@"Facade(门面模式)",@"MVVM",@"BlueTooth",@"链式编程",@"runtime",@"RunLoop",@"GCD"];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
@@ -70,6 +71,9 @@
         case 7:
             vc = [[RunLoopViewController alloc] init];
             break;
+        case 8:
+            vc = [[GCDViewController alloc] init];
+            break;
         default:
             break;
     }
@@ -82,7 +86,7 @@
     }else if(indexPath.row == 5){
         vc = [[ChainProgrammingViewController alloc] init];
     }else{
-//        vc = [[ZMVVMViewController alloc] init];
+        
     }
     vc.title = self.typeArray[indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];

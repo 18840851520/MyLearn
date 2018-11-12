@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B80C85AFDCC8BD5B500F3C9 /* libPods-MyLearn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DB261F5B6F54A8FB7D3046 /* libPods-MyLearn.a */; };
 		2E0C763720A1A1DE009124D6 /* ThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C763620A1A1DE009124D6 /* ThreadViewController.m */; };
 		2E0C763A20A1A27B009124D6 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C763920A1A27B009124D6 /* GCDViewController.m */; };
 		2E0C763E20A29CBB009124D6 /* PThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C763D20A29CBB009124D6 /* PThreadViewController.m */; };
@@ -54,6 +55,9 @@
 		2ECC6F0D2094633E004BF4A1 /* Registration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F0C2094633E004BF4A1 /* Registration.m */; };
 		2ECC6F1020946545004BF4A1 /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F0F20946545004BF4A1 /* Medicine.m */; };
 		2ECC6F1320946561004BF4A1 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F1220946561004BF4A1 /* Patient.m */; };
+		A7400A012199749600639DD9 /* MasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7400A002199749600639DD9 /* MasonryViewController.m */; };
+		A7400A082199752700639DD9 /* MasonryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7400A062199752700639DD9 /* MasonryTableViewCell.m */; };
+		A7400A092199752700639DD9 /* MasonryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7400A072199752700639DD9 /* MasonryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +163,14 @@
 		2ECC6F0F20946545004BF4A1 /* Medicine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Medicine.m; sourceTree = "<group>"; };
 		2ECC6F1120946561004BF4A1 /* Patient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
 		2ECC6F1220946561004BF4A1 /* Patient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
+		2F516F27BF3DDDDA33CFCA77 /* Pods-MyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyLearn/Pods-MyLearn.debug.xcconfig"; sourceTree = "<group>"; };
+		A74009FF2199749600639DD9 /* MasonryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryViewController.h; sourceTree = "<group>"; };
+		A7400A002199749600639DD9 /* MasonryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryViewController.m; sourceTree = "<group>"; };
+		A7400A052199752700639DD9 /* MasonryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryTableViewCell.h; sourceTree = "<group>"; };
+		A7400A062199752700639DD9 /* MasonryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryTableViewCell.m; sourceTree = "<group>"; };
+		A7400A072199752700639DD9 /* MasonryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasonryTableViewCell.xib; sourceTree = "<group>"; };
+		E777DC7AA9508A681849E450 /* Pods-MyLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLearn.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyLearn/Pods-MyLearn.release.xcconfig"; sourceTree = "<group>"; };
+		F8DB261F5B6F54A8FB7D3046 /* libPods-MyLearn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyLearn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B80C85AFDCC8BD5B500F3C9 /* libPods-MyLearn.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +302,8 @@
 				2E155A5D207B472800A950DD /* MyLearnTests */,
 				2E155A68207B472800A950DD /* MyLearnUITests */,
 				2E155A40207B472600A950DD /* Products */,
+				45A9895D5738E2F41C413AD0 /* Pods */,
+				3B89FB3F643D2174A94FF29F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -305,6 +320,7 @@
 		2E155A41207B472600A950DD /* MyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				A74009FA219970D600639DD9 /* Masonry */,
 				2E6939BB20F87D7300A3EC2D /* RunLoop */,
 				2E6D9DCA20E1CA5300F65B6F /* Runtime */,
 				2E6D9DC120E120DC00F65B6F /* 链式编程 */,
@@ -453,6 +469,43 @@
 			path = Facade;
 			sourceTree = "<group>";
 		};
+		3B89FB3F643D2174A94FF29F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8DB261F5B6F54A8FB7D3046 /* libPods-MyLearn.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45A9895D5738E2F41C413AD0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F516F27BF3DDDDA33CFCA77 /* Pods-MyLearn.debug.xcconfig */,
+				E777DC7AA9508A681849E450 /* Pods-MyLearn.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A74009FA219970D600639DD9 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				A74009FE2199711300639DD9 /* View */,
+				A74009FF2199749600639DD9 /* MasonryViewController.h */,
+				A7400A002199749600639DD9 /* MasonryViewController.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		A74009FE2199711300639DD9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A7400A052199752700639DD9 /* MasonryTableViewCell.h */,
+				A7400A062199752700639DD9 /* MasonryTableViewCell.m */,
+				A7400A072199752700639DD9 /* MasonryTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -460,6 +513,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E155A6E207B472800A950DD /* Build configuration list for PBXNativeTarget "MyLearn" */;
 			buildPhases = (
+				CAE6C052C4AFD90A78B42538 /* [CP] Check Pods Manifest.lock */,
 				2E155A3B207B472600A950DD /* Sources */,
 				2E155A3C207B472600A950DD /* Frameworks */,
 				2E155A3D207B472600A950DD /* Resources */,
@@ -561,6 +615,7 @@
 				2E0C768920A3F655009124D6 /* ZTableViewCell.xib in Resources */,
 				2E6939CE20FF31EF00A3EC2D /* LoginView.xib in Resources */,
 				2E0C769120A411ED009124D6 /* ZMVVMViewController.xib in Resources */,
+				A7400A092199752700639DD9 /* MasonryTableViewCell.xib in Resources */,
 				2E57905B2106CC6E00521E9B /* GCDViewController.xib in Resources */,
 				2E6D9E1720E4824B00F65B6F /* RuntimeViewController.xib in Resources */,
 				2E155A52207B472700A950DD /* LaunchScreen.storyboard in Resources */,
@@ -586,6 +641,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CAE6C052C4AFD90A78B42538 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyLearn-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2E155A3B207B472600A950DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -604,6 +680,7 @@
 				2ECC6F01209461A7004BF4A1 /* Hospital.m in Sources */,
 				2ECC6F1320946561004BF4A1 /* Patient.m in Sources */,
 				2E0C769020A411ED009124D6 /* ZMVVMViewController.m in Sources */,
+				A7400A082199752700639DD9 /* MasonryTableViewCell.m in Sources */,
 				2E6939D1210060BB00A3EC2D /* JHBounceView.m in Sources */,
 				2E155A7A207B485300A950DD /* ShapeLayerLearn.m in Sources */,
 				2E0C769D20A41C86009124D6 /* FacadeViewController.m in Sources */,
@@ -616,6 +693,7 @@
 				2E6D9E1620E4824B00F65B6F /* RuntimeViewController.m in Sources */,
 				2E69399F20EA13BD00A3EC2D /* RuntimeGetSelector.m in Sources */,
 				2E0C768C20A410C2009124D6 /* ZViewModel.m in Sources */,
+				A7400A012199749600639DD9 /* MasonryViewController.m in Sources */,
 				2E155A55207B472700A950DD /* main.m in Sources */,
 				2E515CB320847F0E0008C7BE /* ShareInstance.m in Sources */,
 				2E155A44207B472600A950DD /* AppDelegate.m in Sources */,
@@ -791,6 +869,7 @@
 		};
 		2E155A6F207B472800A950DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F516F27BF3DDDDA33CFCA77 /* Pods-MyLearn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -808,6 +887,7 @@
 		};
 		2E155A70207B472800A950DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E777DC7AA9508A681849E450 /* Pods-MyLearn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -15,6 +15,7 @@
 #import "RuntimeViewController.h"
 #import "RunLoopViewController.h"
 #import "GCDViewController.h"
+#import "MasonryViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -39,7 +40,7 @@
         NSLog(@"ViewController：3");
     });
     
-    self.typeArray = @[@"动画",@"单例",@"Facade(门面模式)",@"MVVM",@"BlueTooth",@"链式编程",@"runtime",@"RunLoop",@"GCD"];
+    self.typeArray = @[@"动画",@"单例",@"Facade(门面模式)",@"MVVM",@"BlueTooth",@"链式编程",@"runtime",@"RunLoop",@"GCD",@"Masonry"];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
@@ -73,6 +74,9 @@
             break;
         case 8:
             vc = [[GCDViewController alloc] init];
+            break;
+        case 9:
+            vc = [[MasonryViewController alloc] init];
             break;
         default:
             break;

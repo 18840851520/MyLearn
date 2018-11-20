@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -85,13 +85,6 @@
                                 <rect key="frame" x="15" y="59" width="16" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="取单号：C1253" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Oy-Yl-Mnc">
-                                <rect key="frame" x="206" y="149" width="99" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.56078431370000004" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="退款完成" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTb-y6-Fcu">
                                 <rect key="frame" x="250" y="11" width="55" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -116,6 +109,13 @@
                                     <action selector="btnAction:" destination="9B9-aa-rpc" eventType="touchUpInside" id="qwp-PM-Vq9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="取单号：C1253" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Oy-Yl-Mnc">
+                                <rect key="frame" x="206" y="151" width="99" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.56078431370000004" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -123,7 +123,23 @@
                 <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="pia-an-M59"/>
-            <point key="canvasLocation" x="-28" y="80"/>
+            <connections>
+                <outlet property="appointimeLB" destination="eTs-Rv-mhT" id="n79-cw-LJB"/>
+                <outlet property="bgView" destination="nGz-MC-m3G" id="zaR-ZA-upe"/>
+                <outlet property="createTimeLB" destination="TbV-do-B7Z" id="XQS-Y7-zc3"/>
+                <outlet property="lineView" destination="bpz-13-aMc" id="iem-9W-YtD"/>
+                <outlet property="nextImage" destination="BrL-hq-kev" id="o1c-ok-EeQ"/>
+                <outlet property="orderCodeLB" destination="8Oy-Yl-Mnc" id="Qtv-3k-r6V"/>
+                <outlet property="orderTypeLB" destination="2TL-kI-igp" id="SQV-Uh-byz"/>
+                <outlet property="orderTypeStatusLB" destination="zd2-Na-472" id="R9a-38-2xI"/>
+                <outlet property="payBtn" destination="WUL-fG-Abu" id="PYI-Yc-ISb"/>
+                <outlet property="payStatusLB" destination="16I-Oy-rfJ" id="X5S-bh-AGr"/>
+                <outlet property="priceLB" destination="iUJ-bl-ANu" id="1g5-yC-Uu9"/>
+                <outlet property="shopImage" destination="h7P-sN-hsH" id="A8b-89-d5Z"/>
+                <outlet property="shopNameLB" destination="MO1-LZ-ORl" id="6O4-zj-0fK"/>
+                <outlet property="statusLB" destination="rTb-y6-Fcu" id="61w-m0-OpS"/>
+            </connections>
+            <point key="canvasLocation" x="-28.800000000000001" y="79.610194902548727"/>
         </tableViewCell>
     </objects>
     <resources>

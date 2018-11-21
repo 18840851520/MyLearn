@@ -18,9 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSInteger *result = [Calculate markCalculate:^(Calculate *ma) {
-        ma.add(arc4random() % 10).printfResult.sub(arc4random() % 20).printfResult;
+    NSInteger result = [Calculate markCalculate:^(Calculate *ma) {
+        (void)ma.add(arc4random() % 10).printfResult.sub(arc4random() % 20).printfResult;
     }];
+    NSLog(@"%ld",result);
 }
 
 - (void)didReceiveMemoryWarning {

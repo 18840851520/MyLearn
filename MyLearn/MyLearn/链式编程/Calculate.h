@@ -12,7 +12,6 @@
 
 //计算结果
 @property (nonatomic,assign) NSInteger result;
-
 //清零
 - (Calculate *)clear;
 //打印结果

@@ -55,6 +55,7 @@
 		2ECC6F0D2094633E004BF4A1 /* Registration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F0C2094633E004BF4A1 /* Registration.m */; };
 		2ECC6F1020946545004BF4A1 /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F0F20946545004BF4A1 /* Medicine.m */; };
 		2ECC6F1320946561004BF4A1 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F1220946561004BF4A1 /* Patient.m */; };
+		A73F8EE421A3D3AA008DD155 /* UIView+learnCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A73F8EE321A3D3AA008DD155 /* UIView+learnCategory.m */; };
 		A7400A012199749600639DD9 /* MasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7400A002199749600639DD9 /* MasonryViewController.m */; };
 		A7400A082199752700639DD9 /* MasonryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7400A062199752700639DD9 /* MasonryTableViewCell.m */; };
 		A7400A092199752700639DD9 /* MasonryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7400A072199752700639DD9 /* MasonryTableViewCell.xib */; };
@@ -164,6 +165,9 @@
 		2ECC6F1120946561004BF4A1 /* Patient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
 		2ECC6F1220946561004BF4A1 /* Patient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
 		2F516F27BF3DDDDA33CFCA77 /* Pods-MyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyLearn/Pods-MyLearn.debug.xcconfig"; sourceTree = "<group>"; };
+		A73F8EE121A3D298008DD155 /* UIView+learn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+learn.h"; sourceTree = "<group>"; };
+		A73F8EE221A3D3AA008DD155 /* UIView+learnCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+learnCategory.h"; sourceTree = "<group>"; };
+		A73F8EE321A3D3AA008DD155 /* UIView+learnCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+learnCategory.m"; sourceTree = "<group>"; };
 		A74009FF2199749600639DD9 /* MasonryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryViewController.h; sourceTree = "<group>"; };
 		A7400A002199749600639DD9 /* MasonryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryViewController.m; sourceTree = "<group>"; };
 		A7400A052199752700639DD9 /* MasonryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryTableViewCell.h; sourceTree = "<group>"; };
@@ -335,6 +339,9 @@
 				2E155A77207B483A00A950DD /* Animation */,
 				2E155A42207B472600A950DD /* AppDelegate.h */,
 				2E155A43207B472600A950DD /* AppDelegate.m */,
+				A73F8EE121A3D298008DD155 /* UIView+learn.h */,
+				A73F8EE221A3D3AA008DD155 /* UIView+learnCategory.h */,
+				A73F8EE321A3D3AA008DD155 /* UIView+learnCategory.m */,
 				2E155A45207B472600A950DD /* ViewController.h */,
 				2E155A46207B472600A950DD /* ViewController.m */,
 				2E155A48207B472600A950DD /* Main.storyboard */,
@@ -673,6 +680,7 @@
 				2E0C768420A3F5FF009124D6 /* ZModel.m in Sources */,
 				2E155A47207B472600A950DD /* ViewController.m in Sources */,
 				2E7E84B920AC1EA20093E65B /* BlueToothInstance.m in Sources */,
+				A73F8EE421A3D3AA008DD155 /* UIView+learnCategory.m in Sources */,
 				2E6D9DC920E1218D00F65B6F /* Calculate.m in Sources */,
 				2E155A4D207B472600A950DD /* MyLearn.xcdatamodeld in Sources */,
 				2E6939D82101DDB100A3EC2D /* NextAnimationViewController.m in Sources */,

@@ -26,7 +26,7 @@
     [super updateConstraints];
 }
 - (void)layoutSubviews{
-    [super layoutSubviews];
+      [super layoutSubviews];
     [self loadMakeConstraints];
 }
 - (void)loadMakeConstraints{
@@ -34,8 +34,8 @@
 
     bgView.frame = self.bounds;
     [self.payStatusLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(bgView.mas_left).offset(15);
-        make.top.mas_equalTo(bgView.mas_top).offset(12);
+        make.left.equalTo(bgView.mas_left).offset(15);
+        make.top.equalTo(bgView.mas_top).offset(12);
     }];
     [self.statusLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.payStatusLB.mas_centerY);
@@ -47,10 +47,11 @@
         make.right.equalTo(self.statusLB.mas_left).offset(-15);
     }];
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(bgView.mas_left).and.right.equalTo(bgView.mas_right);
+        make.left.equalTo(bgView.mas_left);
+        make.right.equalTo(bgView.mas_right);
     }];
     [self.shopImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.equalTo(CGSizeMake(30, 30));
+        make.size.mas_equalTo(CGSizeMake(30, 30));
         make.left.equalTo(bgView.mas_left).offset(15);
     }];
 }

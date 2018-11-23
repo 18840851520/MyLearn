@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^successBlock)(void);
+typedef void (^failBlock)(NSString *errorMessage);
+
 @interface Calculate : NSObject
 
 //计算结果
@@ -22,4 +25,5 @@
 - (Calculate *(^)(NSInteger))sub;
 
 +(NSInteger)markCalculate:(void (^)(Calculate *))block;
+
 @end

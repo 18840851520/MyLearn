@@ -55,7 +55,11 @@
 		2ECC6F0D2094633E004BF4A1 /* Registration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F0C2094633E004BF4A1 /* Registration.m */; };
 		2ECC6F1020946545004BF4A1 /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F0F20946545004BF4A1 /* Medicine.m */; };
 		2ECC6F1320946561004BF4A1 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F1220946561004BF4A1 /* Patient.m */; };
-		A73F8EE421A3D3AA008DD155 /* UIView+learnCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A73F8EE321A3D3AA008DD155 /* UIView+learnCategory.m */; };
+		A72D180A21A78F7900783B70 /* ErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72D180921A78F7900783B70 /* ErrorViewController.m */; };
+		A72D180D21A79F6B00783B70 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72D180C21A79F6B00783B70 /* File.swift */; };
+		A72D181221A7D44E00783B70 /* LearnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72D181021A7D44E00783B70 /* LearnViewController.m */; };
+		A72D181321A7D44E00783B70 /* LearnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A72D181121A7D44E00783B70 /* LearnViewController.xib */; };
+		A72D181621A7DED800783B70 /* ZNetServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A72D181521A7DED800783B70 /* ZNetServer.m */; };
 		A7400A012199749600639DD9 /* MasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7400A002199749600639DD9 /* MasonryViewController.m */; };
 		A7400A082199752700639DD9 /* MasonryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7400A062199752700639DD9 /* MasonryTableViewCell.m */; };
 		A7400A092199752700639DD9 /* MasonryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7400A072199752700639DD9 /* MasonryTableViewCell.xib */; };
@@ -165,9 +169,16 @@
 		2ECC6F1120946561004BF4A1 /* Patient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
 		2ECC6F1220946561004BF4A1 /* Patient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
 		2F516F27BF3DDDDA33CFCA77 /* Pods-MyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyLearn/Pods-MyLearn.debug.xcconfig"; sourceTree = "<group>"; };
-		A73F8EE121A3D298008DD155 /* UIView+learn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+learn.h"; sourceTree = "<group>"; };
-		A73F8EE221A3D3AA008DD155 /* UIView+learnCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+learnCategory.h"; sourceTree = "<group>"; };
-		A73F8EE321A3D3AA008DD155 /* UIView+learnCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+learnCategory.m"; sourceTree = "<group>"; };
+		A72D180821A78F7900783B70 /* ErrorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorViewController.h; sourceTree = "<group>"; };
+		A72D180921A78F7900783B70 /* ErrorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErrorViewController.m; sourceTree = "<group>"; };
+		A72D180B21A79F6A00783B70 /* MyLearn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyLearn-Bridging-Header.h"; sourceTree = "<group>"; };
+		A72D180C21A79F6B00783B70 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		A72D180F21A7D44E00783B70 /* LearnViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LearnViewController.h; sourceTree = "<group>"; };
+		A72D181021A7D44E00783B70 /* LearnViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnViewController.m; sourceTree = "<group>"; };
+		A72D181121A7D44E00783B70 /* LearnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnViewController.xib; sourceTree = "<group>"; };
+		A72D181421A7DED800783B70 /* ZNetServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNetServer.h; sourceTree = "<group>"; };
+		A72D181521A7DED800783B70 /* ZNetServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNetServer.m; sourceTree = "<group>"; };
+		A72D181721A7E21C00783B70 /* URLConfigs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLConfigs.h; sourceTree = "<group>"; };
 		A74009FF2199749600639DD9 /* MasonryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryViewController.h; sourceTree = "<group>"; };
 		A7400A002199749600639DD9 /* MasonryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryViewController.m; sourceTree = "<group>"; };
 		A7400A052199752700639DD9 /* MasonryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryTableViewCell.h; sourceTree = "<group>"; };
@@ -324,6 +335,8 @@
 		2E155A41207B472600A950DD /* MyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				A72D180E21A7D43900783B70 /* Learn */,
+				A72D180721A78F5700783B70 /* Error */,
 				A74009FA219970D600639DD9 /* Masonry */,
 				2E6939BB20F87D7300A3EC2D /* RunLoop */,
 				2E6D9DCA20E1CA5300F65B6F /* Runtime */,
@@ -339,10 +352,11 @@
 				2E155A77207B483A00A950DD /* Animation */,
 				2E155A42207B472600A950DD /* AppDelegate.h */,
 				2E155A43207B472600A950DD /* AppDelegate.m */,
-				A73F8EE121A3D298008DD155 /* UIView+learn.h */,
-				A73F8EE221A3D3AA008DD155 /* UIView+learnCategory.h */,
-				A73F8EE321A3D3AA008DD155 /* UIView+learnCategory.m */,
 				2E155A45207B472600A950DD /* ViewController.h */,
+				A72D181421A7DED800783B70 /* ZNetServer.h */,
+				A72D181521A7DED800783B70 /* ZNetServer.m */,
+				A72D181721A7E21C00783B70 /* URLConfigs.h */,
+				A72D180C21A79F6B00783B70 /* File.swift */,
 				2E155A46207B472600A950DD /* ViewController.m */,
 				2E155A48207B472600A950DD /* Main.storyboard */,
 				2E155A4E207B472700A950DD /* Assets.xcassets */,
@@ -350,6 +364,7 @@
 				2E155A53207B472700A950DD /* Info.plist */,
 				2E155A54207B472700A950DD /* main.m */,
 				2E155A4B207B472600A950DD /* MyLearn.xcdatamodeld */,
+				A72D180B21A79F6A00783B70 /* MyLearn-Bridging-Header.h */,
 			);
 			path = MyLearn;
 			sourceTree = "<group>";
@@ -493,6 +508,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A72D180721A78F5700783B70 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				A72D180821A78F7900783B70 /* ErrorViewController.h */,
+				A72D180921A78F7900783B70 /* ErrorViewController.m */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		A72D180E21A7D43900783B70 /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+				A72D180F21A7D44E00783B70 /* LearnViewController.h */,
+				A72D181021A7D44E00783B70 /* LearnViewController.m */,
+				A72D181121A7D44E00783B70 /* LearnViewController.xib */,
+			);
+			path = Learn;
+			sourceTree = "<group>";
+		};
 		A74009FA219970D600639DD9 /* Masonry */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,6 +615,7 @@
 				TargetAttributes = {
 					2E155A3E207B472600A950DD = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1010;
 					};
 					2E155A59207B472800A950DD = {
 						CreatedOnToolsVersion = 9.3;
@@ -619,6 +654,7 @@
 			files = (
 				2E6939D521007DE000A3EC2D /* 123456.png in Resources */,
 				2E6939C020F8811400A3EC2D /* RunLoopViewController.xib in Resources */,
+				A72D181321A7D44E00783B70 /* LearnViewController.xib in Resources */,
 				2E0C768920A3F655009124D6 /* ZTableViewCell.xib in Resources */,
 				2E6939CE20FF31EF00A3EC2D /* LoginView.xib in Resources */,
 				2E0C769120A411ED009124D6 /* ZMVVMViewController.xib in Resources */,
@@ -680,7 +716,6 @@
 				2E0C768420A3F5FF009124D6 /* ZModel.m in Sources */,
 				2E155A47207B472600A950DD /* ViewController.m in Sources */,
 				2E7E84B920AC1EA20093E65B /* BlueToothInstance.m in Sources */,
-				A73F8EE421A3D3AA008DD155 /* UIView+learnCategory.m in Sources */,
 				2E6D9DC920E1218D00F65B6F /* Calculate.m in Sources */,
 				2E155A4D207B472600A950DD /* MyLearn.xcdatamodeld in Sources */,
 				2E6939D82101DDB100A3EC2D /* NextAnimationViewController.m in Sources */,
@@ -691,11 +726,14 @@
 				A7400A082199752700639DD9 /* MasonryTableViewCell.m in Sources */,
 				2E6939D1210060BB00A3EC2D /* JHBounceView.m in Sources */,
 				2E155A7A207B485300A950DD /* ShapeLayerLearn.m in Sources */,
+				A72D180A21A78F7900783B70 /* ErrorViewController.m in Sources */,
+				A72D180D21A79F6B00783B70 /* File.swift in Sources */,
 				2E0C769D20A41C86009124D6 /* FacadeViewController.m in Sources */,
 				2E6939B920EB68AE00A3EC2D /* RuntimeGetSelector+Associated.m in Sources */,
 				2E0C768820A3F655009124D6 /* ZTableViewCell.m in Sources */,
 				2ECC6F1020946545004BF4A1 /* Medicine.m in Sources */,
 				2ECC6F0A209462A7004BF4A1 /* OutpatientService.m in Sources */,
+				A72D181621A7DED800783B70 /* ZNetServer.m in Sources */,
 				2E0C763E20A29CBB009124D6 /* PThreadViewController.m in Sources */,
 				2E0C763A20A1A27B009124D6 /* GCDViewController.m in Sources */,
 				2E6D9E1620E4824B00F65B6F /* RuntimeViewController.m in Sources */,
@@ -707,6 +745,7 @@
 				2E155A44207B472600A950DD /* AppDelegate.m in Sources */,
 				2E6939C820FF31B000A3EC2D /* LoginView.m in Sources */,
 				2E6939BF20F8811400A3EC2D /* RunLoopViewController.m in Sources */,
+				A72D181221A7D44E00783B70 /* LearnViewController.m in Sources */,
 				2E6939C420FF311C00A3EC2D /* JHSlideView.m in Sources */,
 				2E0C769720A4123C009124D6 /* ZTableViewDelegate.m in Sources */,
 				2E0C76A020A41CBB009124D6 /* AnimationViewController.m in Sources */,
@@ -880,15 +919,20 @@
 			baseConfigurationReference = 2F516F27BF3DDDDA33CFCA77 /* Pods-MyLearn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BUZAPGG9HU;
+				DEVELOPMENT_TEAM = 3RL239SV7K;
 				INFOPLIST_FILE = MyLearn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hualuoyongheng.MyLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyLearn/MyLearn-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -898,15 +942,19 @@
 			baseConfigurationReference = E777DC7AA9508A681849E450 /* Pods-MyLearn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BUZAPGG9HU;
+				DEVELOPMENT_TEAM = 3RL239SV7K;
 				INFOPLIST_FILE = MyLearn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hualuoyongheng.MyLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyLearn/MyLearn-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -914,6 +962,7 @@
 		2E155A72207B472800A950DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BUZAPGG9HU;
@@ -933,6 +982,7 @@
 		2E155A73207B472800A950DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BUZAPGG9HU;
@@ -952,6 +1002,7 @@
 		2E155A75207B472800A950DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BUZAPGG9HU;
 				INFOPLIST_FILE = MyLearnUITests/Info.plist;
@@ -970,6 +1021,7 @@
 		2E155A76207B472800A950DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BUZAPGG9HU;
 				INFOPLIST_FILE = MyLearnUITests/Info.plist;

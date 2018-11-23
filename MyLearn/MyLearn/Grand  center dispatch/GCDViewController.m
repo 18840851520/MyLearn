@@ -20,8 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"1");
-    dispatch_sync(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_global_queue(0,0), ^{
         NSLog(@"2");
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"4");
+            self.view.backgroundColor = [UIColor greenColor];
+        });
     });
     NSLog(@"3");
 }

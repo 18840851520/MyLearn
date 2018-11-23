@@ -5,6 +5,7 @@ target 'MyLearn' do
     # Masonry
     pod 'Masonry'
     pod 'YYCategories'
+    pod 'AFNetworking'
 end
 
 

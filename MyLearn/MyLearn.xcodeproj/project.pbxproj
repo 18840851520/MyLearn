@@ -55,6 +55,8 @@
 		2ECC6F0D2094633E004BF4A1 /* Registration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F0C2094633E004BF4A1 /* Registration.m */; };
 		2ECC6F1020946545004BF4A1 /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F0F20946545004BF4A1 /* Medicine.m */; };
 		2ECC6F1320946561004BF4A1 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F1220946561004BF4A1 /* Patient.m */; };
+		A720FA9821B7C0400063BF69 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A720FA9621B7C0400063BF69 /* VideoViewController.m */; };
+		A720FA9921B7C0400063BF69 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A720FA9721B7C0400063BF69 /* VideoViewController.xib */; };
 		A72D180A21A78F7900783B70 /* ErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72D180921A78F7900783B70 /* ErrorViewController.m */; };
 		A72D180D21A79F6B00783B70 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72D180C21A79F6B00783B70 /* File.swift */; };
 		A72D181221A7D44E00783B70 /* LearnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72D181021A7D44E00783B70 /* LearnViewController.m */; };
@@ -169,6 +171,9 @@
 		2ECC6F1120946561004BF4A1 /* Patient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
 		2ECC6F1220946561004BF4A1 /* Patient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
 		2F516F27BF3DDDDA33CFCA77 /* Pods-MyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyLearn/Pods-MyLearn.debug.xcconfig"; sourceTree = "<group>"; };
+		A720FA9521B7C0400063BF69 /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		A720FA9621B7C0400063BF69 /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		A720FA9721B7C0400063BF69 /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
 		A72D180821A78F7900783B70 /* ErrorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorViewController.h; sourceTree = "<group>"; };
 		A72D180921A78F7900783B70 /* ErrorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErrorViewController.m; sourceTree = "<group>"; };
 		A72D180B21A79F6A00783B70 /* MyLearn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyLearn-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -335,6 +340,7 @@
 		2E155A41207B472600A950DD /* MyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				A720FA9421B7C0040063BF69 /* Video */,
 				A72D180E21A7D43900783B70 /* Learn */,
 				A72D180721A78F5700783B70 /* Error */,
 				A74009FA219970D600639DD9 /* Masonry */,
@@ -508,6 +514,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A720FA9421B7C0040063BF69 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				A720FA9521B7C0400063BF69 /* VideoViewController.h */,
+				A720FA9621B7C0400063BF69 /* VideoViewController.m */,
+				A720FA9721B7C0400063BF69 /* VideoViewController.xib */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		A72D180721A78F5700783B70 /* Error */ = {
 			isa = PBXGroup;
 			children = (
@@ -660,6 +676,7 @@
 				2E0C769120A411ED009124D6 /* ZMVVMViewController.xib in Resources */,
 				A7400A092199752700639DD9 /* MasonryTableViewCell.xib in Resources */,
 				2E57905B2106CC6E00521E9B /* GCDViewController.xib in Resources */,
+				A720FA9921B7C0400063BF69 /* VideoViewController.xib in Resources */,
 				2E6D9E1720E4824B00F65B6F /* RuntimeViewController.xib in Resources */,
 				2E155A52207B472700A950DD /* LaunchScreen.storyboard in Resources */,
 				2E155A4F207B472700A950DD /* Assets.xcassets in Resources */,
@@ -738,6 +755,7 @@
 				2E0C763A20A1A27B009124D6 /* GCDViewController.m in Sources */,
 				2E6D9E1620E4824B00F65B6F /* RuntimeViewController.m in Sources */,
 				2E69399F20EA13BD00A3EC2D /* RuntimeGetSelector.m in Sources */,
+				A720FA9821B7C0400063BF69 /* VideoViewController.m in Sources */,
 				2E0C768C20A410C2009124D6 /* ZViewModel.m in Sources */,
 				A7400A012199749600639DD9 /* MasonryViewController.m in Sources */,
 				2E155A55207B472700A950DD /* main.m in Sources */,
@@ -923,7 +941,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3RL239SV7K;
 				INFOPLIST_FILE = MyLearn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -946,7 +964,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3RL239SV7K;
 				INFOPLIST_FILE = MyLearn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

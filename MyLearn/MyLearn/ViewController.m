@@ -17,6 +17,8 @@
 #import "GCDViewController.h"
 #import "MasonryViewController.h"
 #import "ErrorViewController.h"
+#import "VideoViewController.h"
+
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView* tableView;
@@ -40,7 +42,7 @@
         NSLog(@"ViewController：3");
     });
     
-    self.typeArray = @[@"动画",@"单例",@"Facade(门面模式)",@"MVVM",@"BlueTooth",@"链式编程",@"runtime",@"RunLoop",@"GCD",@"Masonry",@"验证"];
+    self.typeArray = @[@"动画",@"单例",@"Facade(门面模式)",@"MVVM",@"BlueTooth",@"链式编程",@"runtime",@"RunLoop",@"GCD",@"Masonry",@"验证",@"视频"];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
@@ -80,6 +82,9 @@
             break;
         case 10:
             vc = [[ErrorViewController alloc] init];
+            break;
+        case 11:
+            vc = [[VideoViewController alloc] init];
             break;
         default:
             break;

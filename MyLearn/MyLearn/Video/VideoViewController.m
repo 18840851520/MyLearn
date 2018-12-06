@@ -8,7 +8,10 @@
 
 #import "VideoViewController.h"
 #import <AVFoundation/AVFoundation.h>
-@interface VideoViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+#import "ToolsVideo.h"
+#import "VideoCollectionViewCell.h"
+
+@interface VideoViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 //播放对象
 @property (nonatomic, strong) AVPlayer *player;
 //
@@ -17,13 +20,18 @@
 @property (nonatomic, copy) NSURL *videoUrl;
 
 @property (weak, nonatomic) IBOutlet UIButton *videoBtn;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+
+@property (nonatomic, copy) NSMutableArray *imageArr;
 @end
 
 @implementation VideoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.title = @"视频剪辑";
+    self.navigationController.title = @"GIF剪辑";
+    [self.collectionView registerNib:[UINib nibWithNibName:@"VideoCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"VideoCollectionViewCell"];
 }
 - (IBAction)chooseAction:(id)sender {
     if(!self.videoUrl)
@@ -49,7 +57,31 @@
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+- (void)setImageArr:(NSMutableArray *)imageArr{
+    _imageArr = imageArr;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionView reloadData];
+    });
+}
 - (void)loadVideo{
+    self.progressView.hidden = NO;
+    __weak typeof(self) weakSelf = self;
+    [ToolsVideo decompositionWithVideoPath:self.videoUrl andFps:60 progressBlock:^(CGFloat progress) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.progressView.progress = progress;
+        });
+    } decompositionCompleteBlock:^(BOOL isSuccess, id  _Nonnull decompositionImgs) {
+        if (isSuccess) {
+            self.imageArr = [NSMutableArray arrayWithArray:[(NSArray <UIImage *>*)decompositionImgs mutableCopy]];
+        }else{
+            if ([decompositionImgs isKindOfClass:[NSError class]]) {
+                NSError *error = (NSError *)decompositionImgs;
+                NSLog(@"%@",error.domain);
+            }else{
+                NSLog(@"%@",(NSString *)decompositionImgs);
+            }
+        }
+    }];
     AVPlayerItem *playerItem = [[AVPlayerItem alloc] initWithURL:self.videoUrl];
     self.currentPlayItem = playerItem;
     self.player = [AVPlayer playerWithPlayerItem:playerItem];
@@ -64,4 +96,16 @@
     [self.player play]; 
 }
 
+#pragma mark collectionView Delegate
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    VideoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"VideoCollectionViewCell" forIndexPath:indexPath];
+    cell.imageView.image = self.imageArr[indexPath.row];
+    return cell;
+}
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return self.imageArr.count;
+}
 @end

@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoViewController">
             <connections>
+                <outlet property="collectionView" destination="Xpg-bq-ahL" id="bHK-dO-VeO"/>
+                <outlet property="progressView" destination="0G4-84-R4z" id="KUT-Xo-Dvy"/>
                 <outlet property="videoBtn" destination="hju-Gw-eBj" id="zhO-2h-4Ue"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,26 +28,48 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="Ywl-fd-X9H"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="thb-Kh-mVc">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="thb-Kh-mVc">
                         <size key="itemSize" width="150" height="150"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="4wY-zA-kIS"/>
+                        <outlet property="delegate" destination="-1" id="alu-dB-X6O"/>
+                    </connections>
                 </collectionView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hju-Gw-eBj">
-                    <rect key="frame" x="73" y="139" width="238" height="226"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hju-Gw-eBj">
+                    <rect key="frame" x="0.0" y="127" width="375" height="375"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="hju-Gw-eBj" secondAttribute="height" multiplier="1:1" id="GsG-T8-aoB"/>
+                    </constraints>
                     <state key="normal" title="选择视频"/>
                     <connections>
                         <action selector="chooseAction:" destination="-1" eventType="touchUpInside" id="qHf-95-v7R"/>
                     </connections>
                 </button>
+                <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0G4-84-R4z">
+                    <rect key="frame" x="0.0" y="515" width="375" height="2"/>
+                    <color key="tintColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </progressView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyD-li-bfG">
+                    <rect key="frame" x="297" y="59" width="62" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="合成视频"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Xpg-bq-ahL" firstAttribute="top" secondItem="0G4-84-R4z" secondAttribute="bottom" id="G9Y-vx-acV"/>
                 <constraint firstItem="Xpg-bq-ahL" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="GCP-gu-Kk2"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Xpg-bq-ahL" secondAttribute="trailing" id="R7v-bK-dld"/>
+                <constraint firstItem="hju-Gw-eBj" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="VaZ-SG-0oQ"/>
+                <constraint firstItem="Xpg-bq-ahL" firstAttribute="top" secondItem="hju-Gw-eBj" secondAttribute="bottom" constant="15" id="XRJ-XD-lM4"/>
+                <constraint firstAttribute="trailing" secondItem="0G4-84-R4z" secondAttribute="trailing" id="XUP-pd-dR9"/>
+                <constraint firstItem="0G4-84-R4z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bbj-9M-ik3"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="hju-Gw-eBj" secondAttribute="trailing" id="fBh-6m-WeS"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Xpg-bq-ahL" secondAttribute="bottom" id="rTY-XO-wJH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>

@@ -62,6 +62,9 @@
 		A72D181221A7D44E00783B70 /* LearnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72D181021A7D44E00783B70 /* LearnViewController.m */; };
 		A72D181321A7D44E00783B70 /* LearnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A72D181121A7D44E00783B70 /* LearnViewController.xib */; };
 		A72D181621A7DED800783B70 /* ZNetServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A72D181521A7DED800783B70 /* ZNetServer.m */; };
+		A7350FAE21B8B50E00856CA5 /* ToolsVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = A7350FAD21B8B50E00856CA5 /* ToolsVideo.m */; };
+		A7350FB221B8CB1C00856CA5 /* VideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7350FB021B8CB1C00856CA5 /* VideoCollectionViewCell.m */; };
+		A7350FB321B8CB1C00856CA5 /* VideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7350FB121B8CB1C00856CA5 /* VideoCollectionViewCell.xib */; };
 		A7400A012199749600639DD9 /* MasonryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7400A002199749600639DD9 /* MasonryViewController.m */; };
 		A7400A082199752700639DD9 /* MasonryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7400A062199752700639DD9 /* MasonryTableViewCell.m */; };
 		A7400A092199752700639DD9 /* MasonryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7400A072199752700639DD9 /* MasonryTableViewCell.xib */; };
@@ -184,6 +187,11 @@
 		A72D181421A7DED800783B70 /* ZNetServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNetServer.h; sourceTree = "<group>"; };
 		A72D181521A7DED800783B70 /* ZNetServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNetServer.m; sourceTree = "<group>"; };
 		A72D181721A7E21C00783B70 /* URLConfigs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLConfigs.h; sourceTree = "<group>"; };
+		A7350FAC21B8B50E00856CA5 /* ToolsVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolsVideo.h; sourceTree = "<group>"; };
+		A7350FAD21B8B50E00856CA5 /* ToolsVideo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolsVideo.m; sourceTree = "<group>"; };
+		A7350FAF21B8CB1C00856CA5 /* VideoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoCollectionViewCell.h; sourceTree = "<group>"; };
+		A7350FB021B8CB1C00856CA5 /* VideoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoCollectionViewCell.m; sourceTree = "<group>"; };
+		A7350FB121B8CB1C00856CA5 /* VideoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCollectionViewCell.xib; sourceTree = "<group>"; };
 		A74009FF2199749600639DD9 /* MasonryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryViewController.h; sourceTree = "<group>"; };
 		A7400A002199749600639DD9 /* MasonryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryViewController.m; sourceTree = "<group>"; };
 		A7400A052199752700639DD9 /* MasonryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryTableViewCell.h; sourceTree = "<group>"; };
@@ -344,7 +352,6 @@
 				A72D180E21A7D43900783B70 /* Learn */,
 				A72D180721A78F5700783B70 /* Error */,
 				A74009FA219970D600639DD9 /* Masonry */,
-				2E6939BB20F87D7300A3EC2D /* RunLoop */,
 				2E6D9DCA20E1CA5300F65B6F /* Runtime */,
 				2E6D9DC120E120DC00F65B6F /* 链式编程 */,
 				2E7E84B320AC1E600093E65B /* BlueToothInstance */,
@@ -359,11 +366,11 @@
 				2E155A42207B472600A950DD /* AppDelegate.h */,
 				2E155A43207B472600A950DD /* AppDelegate.m */,
 				2E155A45207B472600A950DD /* ViewController.h */,
+				2E155A46207B472600A950DD /* ViewController.m */,
 				A72D181421A7DED800783B70 /* ZNetServer.h */,
 				A72D181521A7DED800783B70 /* ZNetServer.m */,
 				A72D181721A7E21C00783B70 /* URLConfigs.h */,
 				A72D180C21A79F6B00783B70 /* File.swift */,
-				2E155A46207B472600A950DD /* ViewController.m */,
 				2E155A48207B472600A950DD /* Main.storyboard */,
 				2E155A4E207B472700A950DD /* Assets.xcassets */,
 				2E155A50207B472700A950DD /* LaunchScreen.storyboard */,
@@ -456,6 +463,7 @@
 		2E6D9DCA20E1CA5300F65B6F /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
+				2E6939BB20F87D7300A3EC2D /* RunLoop */,
 				2E6D9E1320E4824B00F65B6F /* RuntimeViewController.h */,
 				2E6D9E1420E4824B00F65B6F /* RuntimeViewController.m */,
 				2E6D9E1520E4824B00F65B6F /* RuntimeViewController.xib */,
@@ -520,6 +528,11 @@
 				A720FA9521B7C0400063BF69 /* VideoViewController.h */,
 				A720FA9621B7C0400063BF69 /* VideoViewController.m */,
 				A720FA9721B7C0400063BF69 /* VideoViewController.xib */,
+				A7350FAC21B8B50E00856CA5 /* ToolsVideo.h */,
+				A7350FAD21B8B50E00856CA5 /* ToolsVideo.m */,
+				A7350FAF21B8CB1C00856CA5 /* VideoCollectionViewCell.h */,
+				A7350FB021B8CB1C00856CA5 /* VideoCollectionViewCell.m */,
+				A7350FB121B8CB1C00856CA5 /* VideoCollectionViewCell.xib */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -680,6 +693,7 @@
 				2E6D9E1720E4824B00F65B6F /* RuntimeViewController.xib in Resources */,
 				2E155A52207B472700A950DD /* LaunchScreen.storyboard in Resources */,
 				2E155A4F207B472700A950DD /* Assets.xcassets in Resources */,
+				A7350FB321B8CB1C00856CA5 /* VideoCollectionViewCell.xib in Resources */,
 				2E6D9DC620E1214600F65B6F /* ChainProgrammingViewController.xib in Resources */,
 				2E155A4A207B472600A950DD /* Main.storyboard in Resources */,
 			);
@@ -730,6 +744,7 @@
 				2E6D9DC520E1214600F65B6F /* ChainProgrammingViewController.m in Sources */,
 				2E0C763720A1A1DE009124D6 /* ThreadViewController.m in Sources */,
 				2E0C769A20A41254009124D6 /* ZTableViewDataSource.m in Sources */,
+				A7350FAE21B8B50E00856CA5 /* ToolsVideo.m in Sources */,
 				2E0C768420A3F5FF009124D6 /* ZModel.m in Sources */,
 				2E155A47207B472600A950DD /* ViewController.m in Sources */,
 				2E7E84B920AC1EA20093E65B /* BlueToothInstance.m in Sources */,
@@ -760,6 +775,7 @@
 				A7400A012199749600639DD9 /* MasonryViewController.m in Sources */,
 				2E155A55207B472700A950DD /* main.m in Sources */,
 				2E515CB320847F0E0008C7BE /* ShareInstance.m in Sources */,
+				A7350FB221B8CB1C00856CA5 /* VideoCollectionViewCell.m in Sources */,
 				2E155A44207B472600A950DD /* AppDelegate.m in Sources */,
 				2E6939C820FF31B000A3EC2D /* LoginView.m in Sources */,
 				2E6939BF20F8811400A3EC2D /* RunLoopViewController.m in Sources */,

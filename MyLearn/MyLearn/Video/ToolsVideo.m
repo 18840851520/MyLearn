@@ -8,6 +8,7 @@
 
 #import "ToolsVideo.h"
 #import <AVFoundation/AVFoundation.h>
+#import <CoreServices/CoreServices.h>
 
 @implementation ToolsVideo
 
@@ -39,13 +40,10 @@
     //防止时间出现偏差
     imgGenerator.requestedTimeToleranceBefore = kCMTimeZero;
     imgGenerator.requestedTimeToleranceAfter = kCMTimeZero;
-    NSInteger timesCount = [times count];
+    
+    __block NSInteger timesCount = [times count];
     //异步获取帧图片
     [imgGenerator generateCGImagesAsynchronouslyForTimes:times completionHandler:^(CMTime requestedTime, CGImageRef  _Nullable image, CMTime actualTime, AVAssetImageGeneratorResult result, NSError * _Nullable error) {
-        if (progressBlock) {
-            CGFloat progress = requestedTime.value * 1.0 / timesCount;
-            progressBlock(progress);
-        }
         BOOL isSuccess = NO;
         switch (result) {
             case AVAssetImageGeneratorCancelled:
@@ -55,8 +53,8 @@
                 NSLog(@"Failed");
                 break;
             case AVAssetImageGeneratorSucceeded: {
-                UIImage *frameImg = [UIImage imageWithCGImage:image];
-                [imagesArr addObject:frameImg];
+                UIImage *img = [UIImage imageWithCGImage:[UIImage imageWithData:UIImageJPEGRepresentation([UIImage imageWithCGImage:image], 0.3)].CGImage];
+                [imagesArr addObject:img];
                 if (requestedTime.value == timesCount) {
                     isSuccess = YES;
                     NSLog(@"completed");
@@ -68,7 +66,17 @@
             if (completeBlock) {
                 completeBlock(isSuccess,imagesArr);
             }
+        }else if(error){
+            if (completeBlock) {
+                completeBlock(NO,error);
+            }
         }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (progressBlock) {
+                CGFloat progress = requestedTime.value * 1.0 / timesCount;
+                progressBlock(progress);
+            }
+        });
     }];
 }
 
@@ -82,16 +90,20 @@
     }
     //设置mov路径
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
-    
     NSString *movieLocalPath = [[paths objectAtIndex:0]stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.mov",@"video"]];
     //    转成UTF-8编码
     unlink([movieLocalPath UTF8String]);
-    NSURL *videoUrl = [NSURL URLWithString:movieLocalPath];
+    NSLog(@"path->%@",movieLocalPath);
+    NSURL *videoUrl = [NSURL fileURLWithPath:movieLocalPath];
     
     NSError *error = nil;
     //图像和音频写成一个完整的视频文件
     AVAssetWriter *videoWriter = [[AVAssetWriter alloc] initWithURL:videoUrl fileType:AVFileTypeQuickTimeMovie error:&error];
-    
+    NSParameterAssert(videoWriter);
+    if (error) {
+        NSLog(@"error =%@",[error localizedDescription]);
+        return;
+    }
     //获取首图尺寸
     UIImage *image = imagesArr.firstObject;
     CGSize imageSize = CGSizeMake(CGImageGetWidth(image.CGImage), CGImageGetHeight(image.CGImage));
@@ -105,10 +117,9 @@
     NSDictionary *bufferAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:kCVPixelFormatType_32ARGB], kCVPixelBufferPixelFormatTypeKey, nil];
     //添加像素缓冲区
     AVAssetWriterInputPixelBufferAdaptor *adaptor = [AVAssetWriterInputPixelBufferAdaptor assetWriterInputPixelBufferAdaptorWithAssetWriterInput:writerInput sourcePixelBufferAttributes:bufferAttributes];
-    
     NSParameterAssert(writerInput);
     NSParameterAssert([videoWriter canAddInput:writerInput]);
-    
+    //
     if ([videoWriter canAddInput:writerInput]) {
         [videoWriter addInput:writerInput];
     }
@@ -128,20 +139,23 @@
                 }];
                 break;
             }
-        
             CVPixelBufferRef buffer = NULL;
-            UIImage *currentImg = imagesArr[count];
+            UIImage *currentImg = imagesArr[count-1];
             buffer = (CVPixelBufferRef)[self pixelBufferFromCGImage:currentImg.CGImage size:imageSize];
-            if (progress) {
-                CGFloat progressValue = count * 1.0 / imagesArr.count;
-                progress(progressValue);
-            }
+            //进度需要回到主线程
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (progress) {
+                    CGFloat progressValue = count * 1.0 / imagesArr.count;
+                    progress(progressValue);
+                }
+            });
             if (buffer) {
                 if(![adaptor appendPixelBuffer:buffer withPresentationTime:CMTimeMake(count, fps)]) {
-                    NSLog(@"FAIL");
-                    if (complete) {
-                        complete(NO,@"Failed");
-                    }
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if (complete) {
+                            complete(NO,@"Failed");
+                        }
+                    });
                 } else {
                     CFRelease(buffer);
                     buffer = NULL;
@@ -150,6 +164,40 @@
         }
     }];
 }
++(NSString *)exportGifImages:(NSArray*)images delays:(NSArray*)delays loopCount:(NSUInteger)loopCount
+{
+    NSString *fileName = [NSString stringWithFormat: @"%.0f.%@", [NSDate timeIntervalSinceReferenceDate] * 1000.0, @"gif"];
+    NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:fileName];
+    CGImageDestinationRef destination = CGImageDestinationCreateWithURL((__bridge CFURLRef)[NSURL fileURLWithPath:filePath],
+                                                                        kUTTypeGIF, images.count, NULL);
+    if(!loopCount){
+        loopCount = 0;
+    }
+    NSDictionary *gifProperties = @{ (__bridge id)kCGImagePropertyGIFDictionary: @{
+                                             (__bridge id)kCGImagePropertyGIFLoopCount: @(loopCount), // 0 means loop forever
+                                             }
+                                     };
+    float delay = 0.1; //默认每一帧间隔0.1秒
+    for(int i= 0 ; i <images.count ;i ++){
+        UIImage *itemImage = images[i];
+        if(delays && i<delays.count){
+            delay = [delays[i] floatValue];
+        }
+        //每一帧对应的延迟时间
+        NSDictionary *frameProperties = @{(__bridge id)kCGImagePropertyGIFDictionary: @{
+                                                  (__bridge id)kCGImagePropertyGIFDelayTime: @(delay), // a float (not double!) in seconds, rounded to centiseconds in the GIF data
+                                                  }
+                                          };
+        CGImageDestinationAddImage(destination,itemImage.CGImage, (__bridge CFDictionaryRef)frameProperties);
+    }
+    CGImageDestinationSetProperties(destination, (__bridge CFDictionaryRef)gifProperties);
+    if (!CGImageDestinationFinalize(destination)) {
+        NSLog(@"failed to finalize image destination");
+    }
+    CFRelease(destination);
+    return filePath;
+}
+//裁剪图片大小
 + (CVPixelBufferRef)pixelBufferFromCGImage:(CGImageRef)image size:(CGSize)size {
     
     NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:

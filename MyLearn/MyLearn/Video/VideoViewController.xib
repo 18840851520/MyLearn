@@ -54,10 +54,24 @@
                     <rect key="frame" x="0.0" y="515" width="375" height="2"/>
                     <color key="tintColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </progressView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyD-li-bfG">
-                    <rect key="frame" x="297" y="59" width="62" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyD-li-bfG">
+                    <rect key="frame" x="295" y="92" width="80" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="l3M-F1-kaJ"/>
+                        <constraint firstAttribute="width" constant="80" id="z49-xu-fwf"/>
+                    </constraints>
                     <state key="normal" title="合成视频"/>
+                    <connections>
+                        <action selector="compoundAction:" destination="-1" eventType="touchUpInside" id="wZD-A0-Buz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMo-Pr-PDd">
+                    <rect key="frame" x="215" y="92" width="80" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="BJc-fw-vyX"/>
+                        <constraint firstAttribute="width" constant="80" id="dw0-1m-gs4"/>
+                    </constraints>
+                    <state key="normal" title="合成动图"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -69,8 +83,12 @@
                 <constraint firstItem="Xpg-bq-ahL" firstAttribute="top" secondItem="hju-Gw-eBj" secondAttribute="bottom" constant="15" id="XRJ-XD-lM4"/>
                 <constraint firstAttribute="trailing" secondItem="0G4-84-R4z" secondAttribute="trailing" id="XUP-pd-dR9"/>
                 <constraint firstItem="0G4-84-R4z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bbj-9M-ik3"/>
+                <constraint firstItem="AyD-li-bfG" firstAttribute="leading" secondItem="hMo-Pr-PDd" secondAttribute="trailing" id="cS4-VZ-2Ej"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="hju-Gw-eBj" secondAttribute="trailing" id="fBh-6m-WeS"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Xpg-bq-ahL" secondAttribute="bottom" id="rTY-XO-wJH"/>
+                <constraint firstItem="hju-Gw-eBj" firstAttribute="top" secondItem="hMo-Pr-PDd" secondAttribute="bottom" id="uCZ-v7-JcN"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="AyD-li-bfG" secondAttribute="trailing" id="udm-kY-fXQ"/>
+                <constraint firstItem="hju-Gw-eBj" firstAttribute="top" secondItem="AyD-li-bfG" secondAttribute="bottom" id="vVw-7w-AAv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>

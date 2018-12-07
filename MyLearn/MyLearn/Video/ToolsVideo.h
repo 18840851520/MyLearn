@@ -32,7 +32,13 @@ typedef void(^ToolsProgressBlock)(CGFloat progress);
                          andFPS:(int32_t)fps
                   progressBlock:(ToolsProgressBlock)progress
      decompositionCompleteBlock:(ToolsDecompositionCompleteBlock)complete;
-
+/**
+ *@brief 图片合成动图
+ *@param    imagesArr 图片数组    fps 帧率     progress 执行进度   complete 完成回调
+ */
++(NSString *)exportGifImages:(NSArray*)images
+                      delays:(NSArray*)delays
+                   loopCount:(NSUInteger)loopCount;
 
 @end
 

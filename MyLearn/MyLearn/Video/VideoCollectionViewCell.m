@@ -14,5 +14,15 @@
     [super awakeFromNib];
     // Initialization code
 }
+- (IBAction)addImage:(id)sender {
+    if (self.addBlock) {
+        self.addBlock(self);
+    }
+}
+- (IBAction)delAction:(id)sender {
+    if (self.delBlock) {
+        self.delBlock(self);
+    }
+}
 
 @end

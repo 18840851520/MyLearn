@@ -24,14 +24,49 @@
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
 @property (nonatomic, copy) NSMutableArray *imageArr;
+//操作记录
+@property (nonatomic, strong) NSMutableArray *operationArray;
+
 @end
 
 @implementation VideoViewController
+
+- (NSMutableArray *)operationArray{
+    if (!_operationArray) {
+        _operationArray = [NSMutableArray array];
+    }
+    return _operationArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.title = @"GIF剪辑";
     [self.collectionView registerNib:[UINib nibWithNibName:@"VideoCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"VideoCollectionViewCell"];
+}
+- (IBAction)compoundAction:(id)sender {
+    [ToolsVideo syntheticVideoWithImage:self.imageArr andFPS:10 progressBlock:^(CGFloat progress) {
+        self.progressView.progress = progress;
+    } decompositionCompleteBlock:^(BOOL isSuccess, id  _Nonnull decompositionImgs) {
+        if (isSuccess) {
+            NSString *path = (NSString *)decompositionImgs;
+            UISaveVideoAtPathToSavedPhotosAlbum(path, self, @selector(savedPhotoImage:didFinishSavingWithError:contextInfo:), nil);
+        }else{
+            if ([decompositionImgs isKindOfClass:[NSError class]]) {
+                NSError *error = (NSError *)decompositionImgs;
+                NSLog(@"%@",error.domain);
+            }else{
+                NSLog(@"%@",(NSString *)decompositionImgs);
+            }
+        }
+    }];
+}
+- (void)savedPhotoImage:(NSString*)path didFinishSavingWithError: (NSError *)error contextInfo: (void *)contextInfo {
+    if (error) {
+        NSLog(@"保存视频失败%@", error.localizedDescription);
+    }
+    else {
+        NSLog(@"保存视频成功");
+    }
 }
 - (IBAction)chooseAction:(id)sender {
     if(!self.videoUrl)
@@ -66,10 +101,8 @@
 - (void)loadVideo{
     self.progressView.hidden = NO;
     __weak typeof(self) weakSelf = self;
-    [ToolsVideo decompositionWithVideoPath:self.videoUrl andFps:60 progressBlock:^(CGFloat progress) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            weakSelf.progressView.progress = progress;
-        });
+    [ToolsVideo decompositionWithVideoPath:self.videoUrl andFps:10 progressBlock:^(CGFloat progress) {
+        weakSelf.progressView.progress = progress;
     } decompositionCompleteBlock:^(BOOL isSuccess, id  _Nonnull decompositionImgs) {
         if (isSuccess) {
             self.imageArr = [NSMutableArray arrayWithArray:[(NSArray <UIImage *>*)decompositionImgs mutableCopy]];
@@ -92,14 +125,20 @@
     
     self.videoBtn.backgroundColor = [UIColor blackColor];
     [self.videoBtn.layer addSublayer:avLayer];
-    
-    [self.player play]; 
+//    [self.player play]; 
 }
 
 #pragma mark collectionView Delegate
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     VideoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"VideoCollectionViewCell" forIndexPath:indexPath];
     cell.imageView.image = self.imageArr[indexPath.row];
+    __block typeof(self)weakSelf = self;
+    cell.delBlock = ^(UIView * delCell) {
+        NSIndexPath *index = [weakSelf.collectionView indexPathForCell:(UICollectionViewCell *)delCell];
+        [weakSelf.operationArray addObject:@{@"indexPath":index,@"image":self.imageArr[index.row]}];
+        [weakSelf.imageArr removeObjectAtIndex:index.row];
+        [weakSelf.collectionView reloadData];
+    };
     return cell;
 }
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{

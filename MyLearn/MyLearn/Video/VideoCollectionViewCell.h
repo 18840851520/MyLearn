@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+@property (nonatomic, copy) void (^addBlock)(UIView *);
+@property (nonatomic, copy) void (^delBlock)(UIView *);
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,29 +12,61 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="VideoCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="82" height="95"/>
+            <rect key="frame" x="0.0" y="0.0" width="163" height="181"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="82" height="95"/>
+                <rect key="frame" x="0.0" y="0.0" width="163" height="181"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5cu-c3-H8D">
-                        <rect key="frame" x="0.0" y="0.0" width="82" height="95"/>
+                        <rect key="frame" x="0.0" y="0.0" width="163" height="181"/>
                     </imageView>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciW-dS-MrW">
+                        <rect key="frame" x="10" y="10" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="9fD-Hw-R8p"/>
+                            <constraint firstAttribute="width" constant="30" id="eHd-af-CDa"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                        <state key="normal" image="加号"/>
+                        <connections>
+                            <action selector="addImage:" destination="gTV-IL-0wX" eventType="touchUpInside" id="BlM-IK-TS6"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1X-xc-OQT">
+                        <rect key="frame" x="123" y="10" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="TEa-VJ-Xg1"/>
+                            <constraint firstAttribute="width" constant="30" id="sEm-87-moA"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                        <state key="normal" image="删除"/>
+                        <connections>
+                            <action selector="delAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Hen-55-JNy"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="J1X-xc-OQT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="22I-HI-gbI"/>
                 <constraint firstItem="5cu-c3-H8D" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DLC-XE-h5E"/>
                 <constraint firstAttribute="trailing" secondItem="5cu-c3-H8D" secondAttribute="trailing" id="I4g-Zs-2tg"/>
+                <constraint firstAttribute="trailing" secondItem="J1X-xc-OQT" secondAttribute="trailing" constant="10" id="IGP-Uv-nCN"/>
+                <constraint firstItem="ciW-dS-MrW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="JEB-OY-Xec"/>
                 <constraint firstItem="5cu-c3-H8D" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="atg-3F-f5a"/>
+                <constraint firstItem="ciW-dS-MrW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="cPv-4n-egm"/>
                 <constraint firstAttribute="bottom" secondItem="5cu-c3-H8D" secondAttribute="bottom" id="j8J-Oq-X9I"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
-            <size key="customSize" width="82" height="95"/>
+            <size key="customSize" width="163" height="181"/>
             <connections>
                 <outlet property="imageView" destination="5cu-c3-H8D" id="rgc-dS-E3r"/>
             </connections>
-            <point key="canvasLocation" x="158.40000000000001" y="162.3688155922039"/>
+            <point key="canvasLocation" x="223.19999999999999" y="201.04947526236884"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="删除" width="200" height="200"/>
+        <image name="加号" width="200" height="200"/>
+    </resources>
 </document>

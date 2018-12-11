@@ -34,11 +34,14 @@ typedef void(^ToolsProgressBlock)(CGFloat progress);
      decompositionCompleteBlock:(ToolsDecompositionCompleteBlock)complete;
 /**
  *@brief 图片合成动图
- *@param    imagesArr 图片数组    fps 帧率     progress 执行进度   complete 完成回调
+ *@param    images 图片数组    delays 延迟    loopCount 重复
  */
 +(NSString *)exportGifImages:(NSArray*)images
                       delays:(NSArray*)delays
                    loopCount:(NSUInteger)loopCount;
+
++ (UIImage *)getVideoPreViewImage;
+
 
 @end
 

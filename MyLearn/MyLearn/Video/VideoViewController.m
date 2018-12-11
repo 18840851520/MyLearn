@@ -68,6 +68,9 @@
         NSLog(@"保存视频成功");
     }
 }
+- (IBAction)GIFAction:(id)sender {
+    
+}
 - (IBAction)chooseAction:(id)sender {
     if(!self.videoUrl)
         [self chooseVideo];

@@ -45,6 +45,8 @@
 		A73506A921C10273000E1990 /* ZLPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A735068821C10273000E1990 /* ZLPhotoModel.m */; };
 		A73506AA21C10273000E1990 /* ZLEditVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A735068921C10273000E1990 /* ZLEditVideoController.m */; };
 		A73506AB21C10273000E1990 /* ZLPhotoConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A735068A21C10273000E1990 /* ZLPhotoConfiguration.m */; };
+		A7402EE021C1F72A009ED924 /* 帮助.png in Resources */ = {isa = PBXBuildFile; fileRef = A7402EDE21C1F729009ED924 /* 帮助.png */; };
+		A7402EE121C1F72A009ED924 /* 历史.png in Resources */ = {isa = PBXBuildFile; fileRef = A7402EDF21C1F72A009ED924 /* 历史.png */; };
 		A792DE7521BFA3AB00F35092 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A792DE7421BFA3AB00F35092 /* AppDelegate.m */; };
 		A792DE7821BFA3AB00F35092 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A792DE7721BFA3AB00F35092 /* ViewController.m */; };
 		A792DE7B21BFA3AB00F35092 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A792DE7921BFA3AB00F35092 /* Main.storyboard */; };
@@ -138,6 +140,8 @@
 		A735068821C10273000E1990 /* ZLPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoModel.m; sourceTree = "<group>"; };
 		A735068921C10273000E1990 /* ZLEditVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLEditVideoController.m; sourceTree = "<group>"; };
 		A735068A21C10273000E1990 /* ZLPhotoConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoConfiguration.m; sourceTree = "<group>"; };
+		A7402EDE21C1F729009ED924 /* 帮助.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "帮助.png"; sourceTree = "<group>"; };
+		A7402EDF21C1F72A009ED924 /* 历史.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "历史.png"; sourceTree = "<group>"; };
 		A792DE7021BFA3AB00F35092 /* NoName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoName.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A792DE7321BFA3AB00F35092 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A792DE7421BFA3AB00F35092 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -196,52 +200,52 @@
 		A735064521C10272000E1990 /* PhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				A735064621C10273000E1990 /* ZLCustomCamera.h */,
-				A735064721C10273000E1990 /* ZLPhotoBrowser.h */,
-				A735064821C10273000E1990 /* ZLBigImageCell.m */,
-				A735064921C10273000E1990 /* ZLEditViewController.h */,
-				A735064A21C10273000E1990 /* ToastUtils.h */,
-				A735064B21C10273000E1990 /* UIImage+ZLPhotoBrowser.h */,
-				A735064C21C10273000E1990 /* ZLPlayer.h */,
-				A735064D21C10273000E1990 /* ZLPhotoBrowserCell.m */,
-				A735064E21C10273000E1990 /* ZLForceTouchPreviewController.m */,
-				A735064F21C10273000E1990 /* UIButton+EnlargeTouchArea.h */,
-				A735065021C10273000E1990 /* ZLCollectionCell.h */,
-				A735065121C10273000E1990 /* ZLNoAuthorityViewController.h */,
-				A735065221C10273000E1990 /* ZLPhotoManager.m */,
-				A735065321C10273000E1990 /* ZLPhotoConfiguration.h */,
-				A735065421C10273000E1990 /* ZLDefine.h */,
 				A735065521C10273000E1990 /* Animation */,
+				A735068421C10273000E1990 /* NSBundle+ZLPhotoBrowser.h */,
+				A735066321C10273000E1990 /* NSBundle+ZLPhotoBrowser.m */,
+				A735067E21C10273000E1990 /* resource */,
+				A735064A21C10273000E1990 /* ToastUtils.h */,
+				A735066921C10273000E1990 /* ToastUtils.m */,
+				A735064F21C10273000E1990 /* UIButton+EnlargeTouchArea.h */,
+				A735067D21C10273000E1990 /* UIButton+EnlargeTouchArea.m */,
+				A735064B21C10273000E1990 /* UIImage+ZLPhotoBrowser.h */,
+				A735066821C10273000E1990 /* UIImage+ZLPhotoBrowser.m */,
+				A735066421C10273000E1990 /* ZLBigImageCell.h */,
+				A735064821C10273000E1990 /* ZLBigImageCell.m */,
+				A735065021C10273000E1990 /* ZLCollectionCell.h */,
+				A735066C21C10273000E1990 /* ZLCollectionCell.m */,
+				A735064621C10273000E1990 /* ZLCustomCamera.h */,
+				A735066621C10273000E1990 /* ZLCustomCamera.m */,
+				A735065421C10273000E1990 /* ZLDefine.h */,
 				A735065D21C10273000E1990 /* ZLEditVideoController.h */,
-				A735065E21C10273000E1990 /* ZLPhotoModel.h */,
-				A735065F21C10273000E1990 /* ZLThumbnailViewController.h */,
+				A735068921C10273000E1990 /* ZLEditVideoController.m */,
+				A735064921C10273000E1990 /* ZLEditViewController.h */,
+				A735066A21C10273000E1990 /* ZLEditViewController.m */,
+				A735067C21C10273000E1990 /* ZLForceTouchPreviewController.h */,
+				A735064E21C10273000E1990 /* ZLForceTouchPreviewController.m */,
+				A735066E21C10273000E1990 /* ZLImageEditTools */,
+				A735065121C10273000E1990 /* ZLNoAuthorityViewController.h */,
+				A735066D21C10273000E1990 /* ZLNoAuthorityViewController.m */,
 				A735066021C10273000E1990 /* ZLPhotoActionSheet.h */,
+				A735068621C10273000E1990 /* ZLPhotoActionSheet.m */,
+				A735064721C10273000E1990 /* ZLPhotoBrowser.h */,
+				A735066521C10273000E1990 /* ZLPhotoBrowser.m */,
+				A735068221C10273000E1990 /* ZLPhotoBrowserCell.h */,
+				A735064D21C10273000E1990 /* ZLPhotoBrowserCell.m */,
+				A735065321C10273000E1990 /* ZLPhotoConfiguration.h */,
+				A735068A21C10273000E1990 /* ZLPhotoConfiguration.m */,
+				A735066B21C10273000E1990 /* ZLPhotoManager.h */,
+				A735065221C10273000E1990 /* ZLPhotoManager.m */,
+				A735065E21C10273000E1990 /* ZLPhotoModel.h */,
+				A735068821C10273000E1990 /* ZLPhotoModel.m */,
+				A735064C21C10273000E1990 /* ZLPlayer.h */,
+				A735066721C10273000E1990 /* ZLPlayer.m */,
+				A735068721C10273000E1990 /* ZLProgressHUD.h */,
 				A735066121C10273000E1990 /* ZLProgressHUD.m */,
 				A735066221C10273000E1990 /* ZLShowBigImgViewController.h */,
-				A735066321C10273000E1990 /* NSBundle+ZLPhotoBrowser.m */,
-				A735066421C10273000E1990 /* ZLBigImageCell.h */,
-				A735066521C10273000E1990 /* ZLPhotoBrowser.m */,
-				A735066621C10273000E1990 /* ZLCustomCamera.m */,
-				A735066721C10273000E1990 /* ZLPlayer.m */,
-				A735066821C10273000E1990 /* UIImage+ZLPhotoBrowser.m */,
-				A735066921C10273000E1990 /* ToastUtils.m */,
-				A735066A21C10273000E1990 /* ZLEditViewController.m */,
-				A735066B21C10273000E1990 /* ZLPhotoManager.h */,
-				A735066C21C10273000E1990 /* ZLCollectionCell.m */,
-				A735066D21C10273000E1990 /* ZLNoAuthorityViewController.m */,
-				A735066E21C10273000E1990 /* ZLImageEditTools */,
-				A735067C21C10273000E1990 /* ZLForceTouchPreviewController.h */,
-				A735067D21C10273000E1990 /* UIButton+EnlargeTouchArea.m */,
-				A735067E21C10273000E1990 /* resource */,
-				A735068221C10273000E1990 /* ZLPhotoBrowserCell.h */,
 				A735068321C10273000E1990 /* ZLShowBigImgViewController.m */,
-				A735068421C10273000E1990 /* NSBundle+ZLPhotoBrowser.h */,
+				A735065F21C10273000E1990 /* ZLThumbnailViewController.h */,
 				A735068521C10273000E1990 /* ZLThumbnailViewController.m */,
-				A735068621C10273000E1990 /* ZLPhotoActionSheet.m */,
-				A735068721C10273000E1990 /* ZLProgressHUD.h */,
-				A735068821C10273000E1990 /* ZLPhotoModel.m */,
-				A735068921C10273000E1990 /* ZLEditVideoController.m */,
-				A735068A21C10273000E1990 /* ZLPhotoConfiguration.m */,
 			);
 			path = PhotoBrowser;
 			sourceTree = "<group>";
@@ -324,6 +328,8 @@
 				A735064221C0FFE3000E1990 /* ToolsVideo.m */,
 				A735063D21C0F9CE000E1990 /* ImageCollectionViewCell.h */,
 				A735063E21C0F9CE000E1990 /* ImageCollectionViewCell.m */,
+				A7402EDE21C1F729009ED924 /* 帮助.png */,
+				A7402EDF21C1F72A009ED924 /* 历史.png */,
 				A735063721C0F805000E1990 /* add.png */,
 				A735063621C0F805000E1990 /* prompt.png */,
 				A792DE7921BFA3AB00F35092 /* Main.storyboard */,
@@ -422,11 +428,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A735063921C0F805000E1990 /* add.png in Resources */,
+				A7402EE121C1F72A009ED924 /* 历史.png in Resources */,
 				A73506A521C10273000E1990 /* ZLPhotoBrowserCell.xib in Resources */,
 				A73506A421C10273000E1990 /* ZLPhotoActionSheet.xib in Resources */,
 				A73506A321C10273000E1990 /* ZLPhotoBrowser.bundle in Resources */,
 				A792DE8E21BFA3CC00F35092 /* LoginViewController.xib in Resources */,
 				A792DEA321BFA94C00F35092 /* RegisterViewController.xib in Resources */,
+				A7402EE021C1F72A009ED924 /* 帮助.png in Resources */,
 				A792DE8021BFA3AD00F35092 /* LaunchScreen.storyboard in Resources */,
 				A792DE7D21BFA3AD00F35092 /* Assets.xcassets in Resources */,
 				A792DE7B21BFA3AB00F35092 /* Main.storyboard in Resources */,

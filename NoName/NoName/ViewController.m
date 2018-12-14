@@ -24,16 +24,25 @@
     
 }
 - (IBAction)selectImage:(id)sender {
+    self.actionSheet.configuration.allowSelectVideo = NO;
+    self.actionSheet.configuration.allowSelectImage = YES;
     [self.actionSheet showPhotoLibrary];
 }
-- (void)selectVideo{
-    
+- (IBAction)selectVideo:(id)sender {
+    self.actionSheet.configuration.allowSelectVideo = YES;
+    self.actionSheet.configuration.allowSelectImage = NO;
+    [self.actionSheet showPhotoLibrary];
 }
+
 - (ZLPhotoActionSheet *)actionSheet{
     if (!_actionSheet) {
         _actionSheet = [[ZLPhotoActionSheet alloc] init];
+        _actionSheet.configuration.navBarColor = [UIColor colorForMainColor];
     }
     _actionSheet.sender = self;
+    _actionSheet.selectImageBlock = ^(NSArray<UIImage *> * _Nullable images, NSArray<PHAsset *> * _Nonnull assets, BOOL isOriginal) {
+        
+    };
     return _actionSheet;
 }
 

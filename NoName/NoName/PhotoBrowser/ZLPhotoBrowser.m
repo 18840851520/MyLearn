@@ -44,7 +44,7 @@
     _configuration = configuration;
     
     [UIApplication sharedApplication].statusBarStyle = self.configuration.statusBarStyle;
-    [self.navigationBar setBackgroundImage:[self imageWithColor:configuration.navBarColor] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setBackgroundImage:[self imageWithColor:[UIColor colorForMainColor]] forBarMetrics:UIBarMetricsDefault];
     [self.navigationBar setTintColor:configuration.navTitleColor];
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: configuration.navTitleColor}];
     [self.navigationBar setBackIndicatorImage:GetImageWithName(@"zl_navBack")];

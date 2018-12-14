@@ -23,7 +23,7 @@
     UIColor *result = nil;
     unsigned int colorCode = 0;
     unsigned char redByte, greenByte, blueByte;
-    NSString *inColorString = @"2877e7";
+    NSString *inColorString = @"00FDFF";
     if (nil != inColorString)
     {
         NSScanner *scanner = [NSScanner scannerWithString:inColorString];

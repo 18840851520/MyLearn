@@ -34,7 +34,7 @@ typedef void(^ToolsProgressBlock)(CGFloat progress);
      decompositionCompleteBlock:(ToolsDecompositionCompleteBlock)complete;
 /**
  *@brief 图片合成动图
- *@param    images 图片数组    delays 延迟    loopCount 重复
+ *@param    images 图片数组    delays 延迟    loopCount 重复次数
  */
 +(NSString *)exportGifImages:(NSArray*)images
                       delays:(NSArray*)delays

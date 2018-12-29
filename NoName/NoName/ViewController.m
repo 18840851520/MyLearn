@@ -8,14 +8,17 @@
 
 #import "ViewController.h"
 #import "ZLPhotoActionSheet.h"
-#import "ToolsVideo.h"
+#import "ZLPhotoModel.h"
 
+#import "ToolsVideo.h"
+#import <UIImage+GIF.h>
 @interface ViewController ()
 
 @property (nonatomic, strong) ZLPhotoActionSheet *actionSheet;
 
 @property (nonatomic, strong, readonly) ZLPhotoConfiguration *configuration;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIImageView *gifImageView;
 
 @end
 
@@ -44,15 +47,26 @@
     _actionSheet.sender = self;
     __weak typeof(self)weakSelf = self;
     _actionSheet.selectImageBlock = ^(NSArray<UIImage *> * _Nullable images, NSArray<PHAsset *> * _Nonnull assets, BOOL isOriginal) {
-        [weakSelf loadGIF:[ToolsVideo exportGifImages:images delays:nil loopCount:nil]];
+        
         
     };
     return _actionSheet;
 }
+- (void)type:(NSArray<UIImage *> *)images assets:(NSArray<PHAsset *>*)assets{
+    PHAsset *ass = (PHAsset *)[assets firstObject];
+    ZLAlbumListModel *listmodel 
+    ZLPhotoModel *model = [ZLPhotoModel modelWithAsset:ass type:<#(ZLAssetMediaType)#> duration:<#(NSString *)#>]
+    if ([ass mediaType] == 1) {
+        [weakSelf loadGIF:[ToolsVideo exportGifImages:images delays:nil loopCount:nil]];
+    }
+}
 - (void)loadGIF:(NSString *)path{
+    
     NSData *gifData = [NSData dataWithContentsOfFile:path];
-    [self.webView loadData:gifData MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
-    self.webView.opaque = NO;
+    NSString *filepath = [[NSBundle bundleWithPath:[[NSBundle mainBundle] bundlePath]] pathForResource:@"abc.gif" ofType:nil];
+   
+    self.gifImageView.image= [UIImage sd_animatedGIFWithData:gifData];
+
 }
 
 @end

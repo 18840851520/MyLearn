@@ -71,12 +71,19 @@
                                         <rect key="frame" x="15" y="50" width="345" height="459"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </webView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h2Z-hA-LfX">
+                                        <rect key="frame" x="30" y="100" width="315" height="359"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="iie-lO-9Nd" firstAttribute="leading" secondItem="dwk-GT-drH" secondAttribute="leading" constant="15" id="7ja-tf-lUp"/>
+                                    <constraint firstAttribute="bottom" secondItem="h2Z-hA-LfX" secondAttribute="bottom" constant="100" id="COL-9j-AFP"/>
+                                    <constraint firstAttribute="trailing" secondItem="h2Z-hA-LfX" secondAttribute="trailing" constant="30" id="EoG-a4-Bqv"/>
                                     <constraint firstAttribute="trailing" secondItem="iie-lO-9Nd" secondAttribute="trailing" constant="15" id="Syu-2j-FNB"/>
+                                    <constraint firstItem="h2Z-hA-LfX" firstAttribute="leading" secondItem="dwk-GT-drH" secondAttribute="leading" constant="30" id="UOD-L2-qFL"/>
                                     <constraint firstAttribute="bottom" secondItem="iie-lO-9Nd" secondAttribute="bottom" constant="50" id="hyz-En-hfc"/>
+                                    <constraint firstItem="h2Z-hA-LfX" firstAttribute="top" secondItem="dwk-GT-drH" secondAttribute="top" constant="100" id="ius-VI-GnF"/>
                                     <constraint firstItem="iie-lO-9Nd" firstAttribute="top" secondItem="dwk-GT-drH" secondAttribute="top" constant="50" id="rdN-I4-fWb"/>
                                 </constraints>
                             </view>
@@ -105,6 +112,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="gifImageView" destination="h2Z-hA-LfX" id="6S7-gP-sFF"/>
                         <outlet property="webView" destination="iie-lO-9Nd" id="ltq-kB-0LA"/>
                     </connections>
                 </viewController>

@@ -188,7 +188,7 @@
                                              (__bridge id)kCGImagePropertyGIFLoopCount: @(loopCount), // 0 means loop forever
                                              }
                                      };
-    float delay = 0.1; //默认每一帧间隔0.1秒
+    float delay = 0.3; //默认每一帧间隔0.1秒
     for(int i= 0 ; i <images.count ;i ++){
         UIImage *itemImage = images[i];
         if(delays && i<delays.count){

@@ -8,12 +8,14 @@
 
 #import "ViewController.h"
 #import "ZLPhotoActionSheet.h"
+#import "ToolsVideo.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong) ZLPhotoActionSheet *actionSheet;
 
 @property (nonatomic, strong, readonly) ZLPhotoConfiguration *configuration;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
@@ -40,10 +42,17 @@
         _actionSheet.configuration.navBarColor = [UIColor colorForMainColor];
     }
     _actionSheet.sender = self;
+    __weak typeof(self)weakSelf = self;
     _actionSheet.selectImageBlock = ^(NSArray<UIImage *> * _Nullable images, NSArray<PHAsset *> * _Nonnull assets, BOOL isOriginal) {
+        [weakSelf loadGIF:[ToolsVideo exportGifImages:images delays:nil loopCount:nil]];
         
     };
     return _actionSheet;
+}
+- (void)loadGIF:(NSString *)path{
+    NSData *gifData = [NSData dataWithContentsOfFile:path];
+    [self.webView loadData:gifData MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
+    self.webView.opaque = NO;
 }
 
 @end

@@ -67,13 +67,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dwk-GT-drH">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fRh-v2-vAS">
-                                        <rect key="frame" x="67" y="132" width="240" height="313"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
+                                    <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iie-lO-9Nd">
+                                        <rect key="frame" x="15" y="50" width="345" height="459"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </webView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="iie-lO-9Nd" firstAttribute="leading" secondItem="dwk-GT-drH" secondAttribute="leading" constant="15" id="7ja-tf-lUp"/>
+                                    <constraint firstAttribute="trailing" secondItem="iie-lO-9Nd" secondAttribute="trailing" constant="15" id="Syu-2j-FNB"/>
+                                    <constraint firstAttribute="bottom" secondItem="iie-lO-9Nd" secondAttribute="bottom" constant="50" id="hyz-En-hfc"/>
+                                    <constraint firstItem="iie-lO-9Nd" firstAttribute="top" secondItem="dwk-GT-drH" secondAttribute="top" constant="50" id="rdN-I4-fWb"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -99,6 +104,9 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="iie-lO-9Nd" id="ltq-kB-0LA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egC-Je-f6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

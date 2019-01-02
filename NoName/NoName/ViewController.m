@@ -12,6 +12,8 @@
 
 #import "ToolsVideo.h"
 #import <UIImage+GIF.h>
+#import "GIFGenerator.h"
+
 @interface ViewController ()
 
 @property (nonatomic, strong) ZLPhotoActionSheet *actionSheet;
@@ -47,26 +49,34 @@
     _actionSheet.sender = self;
     __weak typeof(self)weakSelf = self;
     _actionSheet.selectImageBlock = ^(NSArray<UIImage *> * _Nullable images, NSArray<PHAsset *> * _Nonnull assets, BOOL isOriginal) {
-        
-        
+        [weakSelf type:images assets:assets];
     };
     return _actionSheet;
 }
 - (void)type:(NSArray<UIImage *> *)images assets:(NSArray<PHAsset *>*)assets{
     PHAsset *ass = (PHAsset *)[assets firstObject];
-    ZLAlbumListModel *listmodel 
-    ZLPhotoModel *model = [ZLPhotoModel modelWithAsset:ass type:<#(ZLAssetMediaType)#> duration:<#(NSString *)#>]
-    if ([ass mediaType] == 1) {
-        [weakSelf loadGIF:[ToolsVideo exportGifImages:images delays:nil loopCount:nil]];
+    if (ass.mediaType == PHAssetMediaTypeImage) {
+        [self loadGIF:[ToolsVideo exportGifImages:images delays:nil loopCount:nil]];
+    }else if(ass.mediaType == PHAssetMediaTypeVideo){
+        __weak typeof(self)weakSelf = self;
+        [[PHImageManager defaultManager] requestAVAssetForVideo:ass options:nil resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
+            NSString *url = [[[info objectForKey:@"PHImageFileSandboxExtensionTokenKey"]componentsSeparatedByString:@";"] lastObject];
+            NSString *movieLocalPath = [NSString stringWithFormat:@"%@.gif",@"preview1"];
+            NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:movieLocalPath];
+            [[GIFGenerator shareGIFGenerator] createGIFfromURL:[NSURL URLWithString:url] loopCount:0 startSecond:0 delayTime:0.1 gifTime:ass.duration gifImagePath:filePath];
+            [GIFGenerator shareGIFGenerator].endBlock = ^(BOOL status, NSError * _Nonnull error) {
+                if (status) {
+                    [weakSelf loadGIF:filePath];
+                }
+            };
+        }];
+    }else{
+        NSLog(@"错误");
     }
 }
 - (void)loadGIF:(NSString *)path{
-    
     NSData *gifData = [NSData dataWithContentsOfFile:path];
-    NSString *filepath = [[NSBundle bundleWithPath:[[NSBundle mainBundle] bundlePath]] pathForResource:@"abc.gif" ofType:nil];
-   
     self.gifImageView.image= [UIImage sd_animatedGIFWithData:gifData];
-
 }
 
 @end

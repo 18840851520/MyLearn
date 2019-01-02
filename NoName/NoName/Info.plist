@@ -20,6 +20,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>是否允许访问摄像机？</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>是否允许访问你的相册？</string>
 	<key>UILaunchStoryboardName</key>

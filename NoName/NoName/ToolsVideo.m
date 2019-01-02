@@ -177,7 +177,7 @@
 }
 +(NSString *)exportGifImages:(NSArray*)images delays:(NSArray*)delays loopCount:(NSUInteger)loopCount
 {
-    NSString *fileName = [NSString stringWithFormat: @"%.0f.%@", [NSDate timeIntervalSinceReferenceDate] * 1000.0, @"gif"];
+    NSString *fileName = @"preview.gif";
     NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:fileName];
     CGImageDestinationRef destination = CGImageDestinationCreateWithURL((__bridge CFURLRef)[NSURL fileURLWithPath:filePath],
                                                                         kUTTypeGIF, images.count, NULL);
@@ -259,7 +259,11 @@
     
 }
 
-- (UIImage*)getVideoPreViewImage:(NSURL *)fileUrl
++ (NSString *)exportGifVideoPath:(NSURL *)fileUrl delays:(NSArray *)delays loopCount:(NSUInteger)loopCount{
+    return nil;
+}
+
++ (UIImage*)getVideoPreViewImage:(NSURL *)fileUrl
 {
     AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:fileUrl options:nil];
     AVAssetImageGenerator *gen = [[AVAssetImageGenerator alloc] initWithAsset:asset];

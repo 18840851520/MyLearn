@@ -36,11 +36,21 @@ typedef void(^ToolsProgressBlock)(CGFloat progress);
  *@brief 图片合成动图
  *@param    images 图片数组    delays 延迟    loopCount 重复次数
  */
-+(NSString *)exportGifImages:(NSArray*)images
++ (NSString *)exportGifImages:(NSArray*)images
                       delays:(NSArray*)delays
                    loopCount:(NSUInteger)loopCount;
-
-+ (UIImage *)getVideoPreViewImage;
+/**
+ *@brief 视频转成动图
+ *@param    fileUrl 视频路径    delays 延迟    loopCount 重复次数
+ */
++ (NSString *)exportGifVideoPath:(NSURL *)fileUrl
+                      delays:(NSArray*)delays
+                   loopCount:(NSUInteger)loopCount;
+/**
+ *@brief 视频预览图
+ *@param    fileUrl 视频路径
+ */
++ (UIImage*)getVideoPreViewImage:(NSURL *)fileUrl;
 
 
 @end

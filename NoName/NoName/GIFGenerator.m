@@ -113,11 +113,15 @@ typedef NS_ENUM(NSInteger, GIFSize) { GIFSizeVeryLow = 1, GIFSizeLow = 2, GIFSiz
     NSError *error = nil;
     CGImageRef previousImageRefCopy = nil;
     CGImageRef imageRef;
-    NSLog(@"starat");
+    NSLog(@"start");
     
     
-    
+    CGFloat process = 0;
     for (NSValue *time in timePoints) {
+        if (self.progressBlock) {
+            self.progressBlock(process/timePoints.count);
+        }
+        process++;
         imageRef = [generator copyCGImageAtTime:[time CMTimeValue] actualTime:nil error:&error];
         if((float)gifSize/10 != 1){
             imageRef = createImageWithScale(imageRef, (float)gifSize/10);
@@ -127,7 +131,6 @@ typedef NS_ENUM(NSInteger, GIFSize) { GIFSizeVeryLow = 1, GIFSizeLow = 2, GIFSiz
             _error =error;
             NSLog(@"Error copying image: %@", error);
             return nil;
-            
         }
         if (imageRef) {
             CGImageRelease(previousImageRefCopy);
@@ -144,12 +147,9 @@ typedef NS_ENUM(NSInteger, GIFSize) { GIFSizeVeryLow = 1, GIFSizeLow = 2, GIFSiz
     }
     NSLog(@"end");
     CGImageRelease(previousImageRefCopy);
-    
     // Finalize the GIF
     if (!CGImageDestinationFinalize(destination)) {
-        
         _error =error;
-        
         NSLog(@"Failed to finalize GIF destination: %@", error);
         if (destination != nil) {
             CFRelease(destination);
@@ -157,7 +157,6 @@ typedef NS_ENUM(NSInteger, GIFSize) { GIFSizeVeryLow = 1, GIFSizeLow = 2, GIFSiz
         return nil;
     }
     CFRelease(destination);
-    
     if (self.endBlock) {
         self.endBlock(!_error, _error);
     }

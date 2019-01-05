@@ -8,9 +8,11 @@
 
 #import "CollectionViewController.h"
 #import "ImageCollectionViewCell.h"
-#import "UserData.h"
+#import "ToolsVideo.h"
+#import <UIImage+GIF.h>
+#import "LookViewController.h"
 
-@interface CollectionViewController ()
+@interface CollectionViewController ()<UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) NSMutableArray *pathArray;
 
@@ -18,14 +20,12 @@
 
 @implementation CollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+static NSString * const reuseIdentifier = @"ImageCollectionViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
         
-    [self.collectionView registerClass:[ImageCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-     self.pathArray = [NSMutableArray arrayWithArray:(NSArray *)[UserData getDataForKey:@"pathArray"]];
+    self.pathArray = [NSMutableArray arrayWithArray:[ToolsVideo getImageArray]];
     [self.collectionView reloadData];
 }
 
@@ -39,10 +39,29 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-        
+    
+    NSString *str = [NSTemporaryDirectory() stringByAppendingPathComponent:[self.pathArray[indexPath.row] valueForKey:@"path"]] ;
+    NSData *gifData = [NSData dataWithContentsOfFile:str];
+    cell.imageView.image = [UIImage imageWithData:gifData];
+
     return cell;
 }
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    return CGSizeMake(CGRectGetWidth(self.view.frame)/2 - 10, CGRectGetWidth(self.view.frame)/2 - 10);
+}
 
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(5, 5, 5, 5);
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+
+    LookViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"LookViewController"];
+    vc.str = [self.pathArray[indexPath.row] valueForKey:@"path"];
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
+}
 #pragma mark <UICollectionViewDelegate>
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking

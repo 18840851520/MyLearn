@@ -60,6 +60,7 @@
 		A792DEA321BFA94C00F35092 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A792DEA121BFA94C00F35092 /* RegisterViewController.xib */; };
 		A792DEA621BFA9B300F35092 /* UIColor+Define.m in Sources */ = {isa = PBXBuildFile; fileRef = A792DEA521BFA9B300F35092 /* UIColor+Define.m */; };
 		A792DEA921BFAAA500F35092 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A792DEA821BFAAA500F35092 /* BaseViewController.m */; };
+		A794230921E094C100497A61 /* LookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A794230821E094C000497A61 /* LookViewController.m */; };
 		A7BFBE8721DCAAEA00CB41B1 /* GIFGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = A7BFBE8621DCAAEA00CB41B1 /* GIFGenerator.m */; };
 		CDDDC94AA2964863C7E40A7E /* libPods-NoName.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 405C75C00D3618CC243053BF /* libPods-NoName.a */; };
 /* End PBXBuildFile section */
@@ -174,6 +175,8 @@
 		A792DEA721BFAAA500F35092 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		A792DEA821BFAAA500F35092 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		A792DEAB21BFAB0600F35092 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A794230721E094C000497A61 /* LookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookViewController.h; sourceTree = "<group>"; };
+		A794230821E094C000497A61 /* LookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookViewController.m; sourceTree = "<group>"; };
 		A7BFBE8521DCAAEA00CB41B1 /* GIFGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GIFGenerator.h; sourceTree = "<group>"; };
 		A7BFBE8621DCAAEA00CB41B1 /* GIFGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GIFGenerator.m; sourceTree = "<group>"; };
 		E93077F6574F5DDACEF4499A /* Pods-NoName.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoName.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoName/Pods-NoName.release.xcconfig"; sourceTree = "<group>"; };
@@ -327,6 +330,8 @@
 				A792DE7721BFA3AB00F35092 /* ViewController.m */,
 				A735063A21C0F96B000E1990 /* CollectionViewController.h */,
 				A735063B21C0F96B000E1990 /* CollectionViewController.m */,
+				A794230721E094C000497A61 /* LookViewController.h */,
+				A794230821E094C000497A61 /* LookViewController.m */,
 				A7BFBE8521DCAAEA00CB41B1 /* GIFGenerator.h */,
 				A7BFBE8621DCAAEA00CB41B1 /* GIFGenerator.m */,
 				A735064321C0FFE4000E1990 /* ToolsVideo.h */,
@@ -522,6 +527,7 @@
 				A792DEA221BFA94C00F35092 /* RegisterViewController.m in Sources */,
 				A735069B21C10273000E1990 /* ZLNoAuthorityViewController.m in Sources */,
 				A735068C21C10273000E1990 /* ZLPhotoBrowserCell.m in Sources */,
+				A794230921E094C100497A61 /* LookViewController.m in Sources */,
 				A735069F21C10273000E1990 /* ZLDrawItem.m in Sources */,
 				A735069D21C10273000E1990 /* ZLImageEditTool.m in Sources */,
 				A735069A21C10273000E1990 /* ZLCollectionCell.m in Sources */,
@@ -707,6 +713,7 @@
 				DEVELOPMENT_TEAM = 3RL239SV7K;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NoName/PrefixHeader.pch";
 				INFOPLIST_FILE = NoName/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -726,6 +733,7 @@
 				DEVELOPMENT_TEAM = 3RL239SV7K;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NoName/PrefixHeader.pch";
 				INFOPLIST_FILE = NoName/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

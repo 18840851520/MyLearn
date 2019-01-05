@@ -16,6 +16,13 @@ typedef void(^ToolsProgressBlock)(CGFloat progress);
 
 @interface ToolsVideo : NSObject
 
++ (NSArray *)getImageArray;
+
++ (BOOL)delImagePath:(NSString *)ide;
+
++ (BOOL)saveImageid:(NSString *)ide Path:(NSString *)path;
+
++ (NSString *)getLastID;
 /**
  *@brief 分解视频
  *@param    fileUrl 视频理解    fps 帧率     progress 执行进度   complete 完成回调
@@ -38,7 +45,8 @@ typedef void(^ToolsProgressBlock)(CGFloat progress);
  */
 + (NSString *)exportGifImages:(NSArray*)images
                       delays:(NSArray*)delays
-                   loopCount:(NSUInteger)loopCount;
+                   loopCount:(NSUInteger)loopCount
+                progressBlock:(ToolsProgressBlock)progress;
 /**
  *@brief 视频转成动图
  *@param    fileUrl 视频路径    delays 延迟    loopCount 重复次数

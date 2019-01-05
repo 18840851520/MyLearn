@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GIFGenerator : NSObject
 
-@property (nonatomic, strong) void (^endBlock)(BOOL status,NSError *error);
+@property (nonatomic, copy) void (^endBlock)(BOOL status,NSError *error);
+@property (nonatomic, copy) void (^progressBlock)(CGFloat process);
 
 +(instancetype)shareGIFGenerator;
 

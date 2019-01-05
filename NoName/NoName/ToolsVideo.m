@@ -12,6 +12,51 @@
 
 @implementation ToolsVideo
 
++ (NSArray *)getImageArray{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *arr = [defaults valueForKey:@"imagePaths"];
+    [defaults synchronize];
+    return arr;
+}
++ (BOOL)delImagePath:(NSString *)ide{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *images = [NSMutableArray arrayWithArray:[self getImageArray]];
+    for (NSDictionary *dict in images) {
+        if ([[dict valueForKey:@"id"] isEqualToString:ide]) {
+            [images removeObject:dict];
+            NSFileManager * manager = [NSFileManager defaultManager];
+            [manager removeItemAtPath:[dict valueForKey:@"path"] error:nil];
+            break;
+        }
+    }
+    [defaults setValue:images forKey:@"imagePaths"];
+    return [defaults synchronize];
+}
++ (NSString *)getLastID{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *images = [NSMutableArray arrayWithArray:[self getImageArray]];
+    
+    NSString *ide;
+    if (images.count) {
+        ide = [NSNumber numberWithInt:[[[images lastObject] valueForKey:@"id"] intValue] + 1].stringValue;
+    }else{
+        ide = @"0";
+    }
+    return ide;
+}
++ (BOOL)saveImageid:(NSString *)ide Path:(NSString *)path{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *images = [NSMutableArray arrayWithArray:[self getImageArray]];
+    
+    NSMutableDictionary *data = [NSMutableDictionary dictionary];
+    [data setValue:ide forKey:@"id"];
+    [data setValue:path forKey:@"path"];
+    [images addObject:data];
+    
+    [defaults setValue:images forKey:@"imagePaths"];
+    return [defaults synchronize];
+}
+
 + (NSDictionary *)getVideoInfoWithSourcePath:(NSString *)path{
     AVURLAsset * asset = [AVURLAsset assetWithURL:[NSURL fileURLWithPath:path]];
     CMTime   time = [asset duration];
@@ -175,7 +220,7 @@
         }
     }];
 }
-+(NSString *)exportGifImages:(NSArray*)images delays:(NSArray*)delays loopCount:(NSUInteger)loopCount
++(NSString *)exportGifImages:(NSArray*)images delays:(NSArray*)delays loopCount:(NSUInteger)loopCount progressBlock:(nonnull ToolsProgressBlock)progress
 {
     NSString *fileName = @"preview.gif";
     NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:fileName];
@@ -190,6 +235,9 @@
                                      };
     float delay = 0.3; //默认每一帧间隔0.1秒
     for(int i= 0 ; i <images.count ;i ++){
+        if (progress) {
+            progress((CGFloat)i / images.count);
+        }
         UIImage *itemImage = images[i];
         if(delays && i<delays.count){
             delay = [delays[i] floatValue];
@@ -200,6 +248,9 @@
                                                   }
                                           };
         CGImageDestinationAddImage(destination,itemImage.CGImage, (__bridge CFDictionaryRef)frameProperties);
+        if (progress) {
+            progress((CGFloat)(i+1) / images.count);
+        }
     }
     CGImageDestinationSetProperties(destination, (__bridge CFDictionaryRef)gifProperties);
     if (!CGImageDestinationFinalize(destination)) {

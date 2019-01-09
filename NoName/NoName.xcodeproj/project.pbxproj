@@ -45,10 +45,10 @@
 		A73506A921C10273000E1990 /* ZLPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A735068821C10273000E1990 /* ZLPhotoModel.m */; };
 		A73506AA21C10273000E1990 /* ZLEditVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A735068921C10273000E1990 /* ZLEditVideoController.m */; };
 		A73506AB21C10273000E1990 /* ZLPhotoConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A735068A21C10273000E1990 /* ZLPhotoConfiguration.m */; };
+		A73E068E21E5CA560060273B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A73E068D21E5CA560060273B /* ViewController.m */; };
 		A7402EE021C1F72A009ED924 /* 帮助.png in Resources */ = {isa = PBXBuildFile; fileRef = A7402EDE21C1F729009ED924 /* 帮助.png */; };
 		A7402EE121C1F72A009ED924 /* 历史.png in Resources */ = {isa = PBXBuildFile; fileRef = A7402EDF21C1F72A009ED924 /* 历史.png */; };
 		A792DE7521BFA3AB00F35092 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A792DE7421BFA3AB00F35092 /* AppDelegate.m */; };
-		A792DE7821BFA3AB00F35092 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A792DE7721BFA3AB00F35092 /* ViewController.m */; };
 		A792DE7B21BFA3AB00F35092 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A792DE7921BFA3AB00F35092 /* Main.storyboard */; };
 		A792DE7D21BFA3AD00F35092 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A792DE7C21BFA3AD00F35092 /* Assets.xcassets */; };
 		A792DE8021BFA3AD00F35092 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A792DE7E21BFA3AD00F35092 /* LaunchScreen.storyboard */; };
@@ -142,13 +142,13 @@
 		A735068821C10273000E1990 /* ZLPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoModel.m; sourceTree = "<group>"; };
 		A735068921C10273000E1990 /* ZLEditVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLEditVideoController.m; sourceTree = "<group>"; };
 		A735068A21C10273000E1990 /* ZLPhotoConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPhotoConfiguration.m; sourceTree = "<group>"; };
+		A73E068C21E5CA560060273B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A73E068D21E5CA560060273B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A7402EDE21C1F729009ED924 /* 帮助.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "帮助.png"; sourceTree = "<group>"; };
 		A7402EDF21C1F72A009ED924 /* 历史.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "历史.png"; sourceTree = "<group>"; };
 		A792DE7021BFA3AB00F35092 /* NoName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoName.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A792DE7321BFA3AB00F35092 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A792DE7421BFA3AB00F35092 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A792DE7621BFA3AB00F35092 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A792DE7721BFA3AB00F35092 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A792DE7A21BFA3AB00F35092 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A792DE7C21BFA3AD00F35092 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A792DE7F21BFA3AD00F35092 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -326,8 +326,8 @@
 				A792DE7321BFA3AB00F35092 /* AppDelegate.h */,
 				A792DEAB21BFAB0600F35092 /* PrefixHeader.pch */,
 				A792DE7421BFA3AB00F35092 /* AppDelegate.m */,
-				A792DE7621BFA3AB00F35092 /* ViewController.h */,
-				A792DE7721BFA3AB00F35092 /* ViewController.m */,
+				A73E068C21E5CA560060273B /* ViewController.h */,
+				A73E068D21E5CA560060273B /* ViewController.m */,
 				A735063A21C0F96B000E1990 /* CollectionViewController.h */,
 				A735063B21C0F96B000E1990 /* CollectionViewController.m */,
 				A794230721E094C000497A61 /* LookViewController.h */,
@@ -538,7 +538,6 @@
 				A735069721C10273000E1990 /* UIImage+ZLPhotoBrowser.m in Sources */,
 				A735069221C10273000E1990 /* ZLProgressHUD.m in Sources */,
 				A7BFBE8721DCAAEA00CB41B1 /* GIFGenerator.m in Sources */,
-				A792DE7821BFA3AB00F35092 /* ViewController.m in Sources */,
 				A735069621C10273000E1990 /* ZLPlayer.m in Sources */,
 				A73506A221C10273000E1990 /* UIButton+EnlargeTouchArea.m in Sources */,
 				A735069521C10273000E1990 /* ZLCustomCamera.m in Sources */,
@@ -552,6 +551,7 @@
 				A735069821C10273000E1990 /* ToastUtils.m in Sources */,
 				A792DE9E21BFA5E300F35092 /* UserData.m in Sources */,
 				A73506A021C10273000E1990 /* ZLClipItem.m in Sources */,
+				A73E068E21E5CA560060273B /* ViewController.m in Sources */,
 				A73506A821C10273000E1990 /* ZLPhotoActionSheet.m in Sources */,
 				A792DE7521BFA3AB00F35092 /* AppDelegate.m in Sources */,
 				A735069321C10273000E1990 /* NSBundle+ZLPhotoBrowser.m in Sources */,

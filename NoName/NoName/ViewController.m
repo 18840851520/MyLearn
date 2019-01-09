@@ -32,9 +32,9 @@
 - (IBAction)saveHistory:(id)sender {
     NSFileManager * manager = [NSFileManager defaultManager];
     NSString *ide = [ToolsVideo getLastID];
-     NSString *name = [NSString stringWithFormat:@"history%@.gif",ide];
+    NSString *name = [NSString stringWithFormat:@"history%@.gif",ide];
     NSString *str = [NSTemporaryDirectory() stringByAppendingPathComponent:name];
-   
+    
     if ([manager copyItemAtPath:_preViewPath toPath:str error:nil]) {
         [self showAlert:[ToolsVideo saveImageid:ide Path:name]];
     }else{

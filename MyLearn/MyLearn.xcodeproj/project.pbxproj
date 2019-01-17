@@ -192,6 +192,7 @@
 		A7350FAF21B8CB1C00856CA5 /* VideoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoCollectionViewCell.h; sourceTree = "<group>"; };
 		A7350FB021B8CB1C00856CA5 /* VideoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoCollectionViewCell.m; sourceTree = "<group>"; };
 		A7350FB121B8CB1C00856CA5 /* VideoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCollectionViewCell.xib; sourceTree = "<group>"; };
+		A73A070221F0622900B21442 /* MyLearn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyLearn.entitlements; sourceTree = "<group>"; };
 		A74009FF2199749600639DD9 /* MasonryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryViewController.h; sourceTree = "<group>"; };
 		A7400A002199749600639DD9 /* MasonryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryViewController.m; sourceTree = "<group>"; };
 		A7400A052199752700639DD9 /* MasonryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryTableViewCell.h; sourceTree = "<group>"; };
@@ -348,6 +349,7 @@
 		2E155A41207B472600A950DD /* MyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				A73A070221F0622900B21442 /* MyLearn.entitlements */,
 				A720FA9421B7C0040063BF69 /* Video */,
 				A72D180E21A7D43900783B70 /* Learn */,
 				A72D180721A78F5700783B70 /* Error */,
@@ -645,6 +647,14 @@
 					2E155A3E207B472600A950DD = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					2E155A59207B472800A950DD = {
 						CreatedOnToolsVersion = 9.3;
@@ -954,6 +964,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MyLearn/MyLearn.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3RL239SV7K;
 				INFOPLIST_FILE = MyLearn/Info.plist;
@@ -977,6 +988,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MyLearn/MyLearn.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3RL239SV7K;
 				INFOPLIST_FILE = MyLearn/Info.plist;

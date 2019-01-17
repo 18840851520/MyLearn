@@ -69,7 +69,7 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h2Z-hA-LfX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     </imageView>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEn-sV-qp7">
                                         <rect key="frame" x="0.0" y="254.5" width="375" height="50"/>
@@ -99,15 +99,28 @@
                                             <constraint firstItem="d91-0s-6wW" firstAttribute="centerY" secondItem="JEn-sV-qp7" secondAttribute="centerY" id="puC-sW-DO3"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjL-OQ-vhD">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                                        <state key="normal" title="还没有选择,点击选择图片">
+                                            <color key="titleColor" red="0.0" green="0.99215686270000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectImage:" destination="bcg-aF-xPe" eventType="touchUpInside" id="2uW-j1-lk1"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="JEn-sV-qp7" firstAttribute="centerX" secondItem="dwk-GT-drH" secondAttribute="centerX" id="2kc-fd-DwV"/>
+                                    <constraint firstItem="hjL-OQ-vhD" firstAttribute="top" secondItem="dwk-GT-drH" secondAttribute="top" id="2v9-ZO-SWE"/>
                                     <constraint firstAttribute="trailing" secondItem="JEn-sV-qp7" secondAttribute="trailing" id="6ah-WM-Pe7"/>
                                     <constraint firstAttribute="trailing" secondItem="h2Z-hA-LfX" secondAttribute="trailing" id="Hte-dg-hjy"/>
+                                    <constraint firstItem="hjL-OQ-vhD" firstAttribute="leading" secondItem="dwk-GT-drH" secondAttribute="leading" id="RCS-iO-m0J"/>
+                                    <constraint firstAttribute="bottom" secondItem="hjL-OQ-vhD" secondAttribute="bottom" id="Ye1-qO-hgr"/>
                                     <constraint firstItem="JEn-sV-qp7" firstAttribute="leading" secondItem="dwk-GT-drH" secondAttribute="leading" id="ddO-jJ-9ef"/>
                                     <constraint firstAttribute="bottom" secondItem="h2Z-hA-LfX" secondAttribute="bottom" id="eXV-yo-hys"/>
                                     <constraint firstItem="h2Z-hA-LfX" firstAttribute="leading" secondItem="dwk-GT-drH" secondAttribute="leading" id="kMk-sx-ABM"/>
+                                    <constraint firstAttribute="trailing" secondItem="hjL-OQ-vhD" secondAttribute="trailing" id="qJT-eA-ytF"/>
                                     <constraint firstItem="h2Z-hA-LfX" firstAttribute="top" secondItem="dwk-GT-drH" secondAttribute="top" id="wwa-lb-fo7"/>
                                     <constraint firstItem="JEn-sV-qp7" firstAttribute="centerY" secondItem="dwk-GT-drH" secondAttribute="centerY" id="yxS-rT-PhT"/>
                                 </constraints>
@@ -121,7 +134,7 @@
                                             <constraint firstAttribute="height" constant="35" id="7wv-VM-j4R"/>
                                         </constraints>
                                         <state key="normal" title="保存到历史">
-                                            <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.0" green="0.99215686270000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.15686274510000001" green="0.46666666670000001" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -174,6 +187,9 @@
                     <navigationItem key="navigationItem" id="npW-cK-pO0">
                         <barButtonItem key="leftBarButtonItem" image="帮助.png" id="Fyn-mJ-GST">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="MmM-85-ybK" kind="push" id="AxD-bI-tHd"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="历史.png" id="jhy-a1-S8V">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -184,6 +200,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="gifImageView" destination="h2Z-hA-LfX" id="6S7-gP-sFF"/>
+                        <outlet property="holderBtn" destination="hjL-OQ-vhD" id="Qj0-pP-OIR"/>
                         <outlet property="progressLB" destination="d91-0s-6wW" id="xbV-k9-3Ye"/>
                         <outlet property="progressView" destination="Fez-IT-Y6Q" id="kg3-AK-Yxv"/>
                         <outlet property="progressbgView" destination="JEn-sV-qp7" id="lML-Nl-7US"/>
@@ -193,6 +210,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egC-Je-f6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-90.400000000000006" y="637.33133433283365"/>
+        </scene>
+        <!--帮助-->
+        <scene sceneID="AkW-SE-UEb">
+            <objects>
+                <viewController id="MmM-85-ybK" customClass="WebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="msO-sv-P7N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYk-oP-Nc4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DYk-oP-Nc4" firstAttribute="top" secondItem="cTo-zt-Ryk" secondAttribute="top" id="CxL-aB-E1T"/>
+                            <constraint firstItem="DYk-oP-Nc4" firstAttribute="leading" secondItem="cTo-zt-Ryk" secondAttribute="leading" id="IfT-uw-5zW"/>
+                            <constraint firstItem="cTo-zt-Ryk" firstAttribute="trailing" secondItem="DYk-oP-Nc4" secondAttribute="trailing" id="et4-LO-Ta2"/>
+                            <constraint firstItem="cTo-zt-Ryk" firstAttribute="bottom" secondItem="DYk-oP-Nc4" secondAttribute="bottom" id="pdZ-Zo-4Ql"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cTo-zt-Ryk"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="帮助" id="2In-Qq-WTp"/>
+                    <connections>
+                        <outlet property="webView" destination="DYk-oP-Nc4" id="LJ7-IP-Qd6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PkI-2L-dIV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737" y="170"/>
         </scene>
         <!--历史-->
         <scene sceneID="KNi-Au-1J8">

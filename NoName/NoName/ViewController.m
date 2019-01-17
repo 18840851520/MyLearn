@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIView *progressbgView;
 @property (weak, nonatomic) IBOutlet UILabel *progressLB;
 @property (weak, nonatomic) IBOutlet UIView *saveView;
+@property (weak, nonatomic) IBOutlet UIButton *holderBtn;
 @property (nonatomic, strong) NSString *preViewPath;
 @end
 
@@ -62,7 +63,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
 - (IBAction)selectImage:(id)sender {
     self.actionSheet.configuration.allowSelectVideo = NO;
@@ -95,6 +95,7 @@
         }else if(progress <= 0){
             self.progressbgView.hidden = YES;
             [self.progressView setProgress:0 animated:NO];
+            self.saveView.hidden = YES;
         }else{
             self.progressbgView.hidden = NO;
         }
@@ -107,6 +108,7 @@
     __weak typeof(self)weakSelf = self;
     self.gifImageView.image = nil;
     [self showProgress:0];
+    self.holderBtn.hidden = images.count!=0 || assets.count != 0;
     
     if (ass.mediaType == PHAssetMediaTypeImage) {
         [self loadGIF:[ToolsVideo exportGifImages:images delays:nil loopCount:0 progressBlock:^(CGFloat progress) {

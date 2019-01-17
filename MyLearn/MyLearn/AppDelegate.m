@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <PushKit/PushKit.h>
 
 @interface AppDelegate ()
 

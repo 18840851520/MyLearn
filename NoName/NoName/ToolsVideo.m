@@ -241,6 +241,8 @@
         UIImage *itemImage = images[i];
         if(delays && i<delays.count){
             delay = [delays[i] floatValue];
+        } else if(i >= delays.count && delays){
+            delay = [[delays lastObject] floatValue];
         }
         //每一帧对应的延迟时间
         NSDictionary *frameProperties = @{(__bridge id)kCGImagePropertyGIFDictionary: @{

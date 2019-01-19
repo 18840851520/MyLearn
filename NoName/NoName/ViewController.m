@@ -25,7 +25,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *progressLB;
 @property (weak, nonatomic) IBOutlet UIView *saveView;
 @property (weak, nonatomic) IBOutlet UIButton *holderBtn;
+@property (weak, nonatomic) IBOutlet UISlider *sliderView;
+@property (weak, nonatomic) IBOutlet UILabel *timeLB;
 @property (nonatomic, strong) NSString *preViewPath;
+
+@property (nonatomic, strong) NSArray *imagesArr;
 @end
 
 @implementation ViewController
@@ -103,14 +107,30 @@
         self.progressLB.text = [NSString stringWithFormat:@"%.2f%%",progress * 100];
     });
 }
+- (IBAction)chang:(UISlider *)sender forEvent:(UIEvent *)event {
+    self.timeLB.text = [NSString stringWithFormat:@"间隔时间:%.2f",sender.value];
+    UITouch *touch = [[event.allTouches allObjects] firstObject];
+    if (touch.phase == UITouchPhaseEnded) {
+        NSLog(@"%@",event);
+        [self showProgress:0];
+        [self loadGIF:[ToolsVideo exportGifImages:self.imagesArr delays:@[[NSNumber numberWithFloat:sender.value]] loopCount:0 progressBlock:^(CGFloat progress) {
+            [self showProgress:progress];
+        }]];
+    }
+}
+
 - (void)type:(NSArray<UIImage *> *)images assets:(NSArray<PHAsset *>*)assets{
     PHAsset *ass = (PHAsset *)[assets firstObject];
     __weak typeof(self)weakSelf = self;
     self.gifImageView.image = nil;
     [self showProgress:0];
     self.holderBtn.hidden = images.count!=0 || assets.count != 0;
+    self.imagesArr = images;
+    self.sliderView.hidden = YES;
+    self.timeLB.hidden = YES;
     
     if (ass.mediaType == PHAssetMediaTypeImage) {
+       
         [self loadGIF:[ToolsVideo exportGifImages:images delays:nil loopCount:0 progressBlock:^(CGFloat progress) {
             [self showProgress:progress];
         }]];

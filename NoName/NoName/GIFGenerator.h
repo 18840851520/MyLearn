@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) void (^endBlock)(BOOL status,NSError *error);
 @property (nonatomic, copy) void (^progressBlock)(CGFloat process);
+@property (nonatomic, assign) CGFloat second;
 
 +(instancetype)shareGIFGenerator;
 

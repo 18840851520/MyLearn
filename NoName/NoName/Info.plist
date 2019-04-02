@@ -23,9 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>是否允许访问摄像机拍摄照片？</string>
+	<string>是否允许摄像机拍摄照片和视频制作GIF？</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>制作GIF需要访问你的相册</string>
+	<string>允许访问你的相册制作GIF</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

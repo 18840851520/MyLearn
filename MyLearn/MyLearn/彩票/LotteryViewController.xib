@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LotteryViewController">
+            <connections>
+                <outlet property="backTF" destination="C5A-Ha-GkV" id="LyD-UC-GTl"/>
+                <outlet property="frontTF" destination="Zmy-FU-ulS" id="Qx6-qw-1Gj"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击空白区域随机一注" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vnk-ww-VER">
+                    <rect key="frame" x="120.5" y="437.5" width="173.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="前区杀号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zmy-FU-ulS">
+                    <rect key="frame" x="20" y="164" width="177" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="endEdit:" destination="-1" eventType="editingDidEnd" id="0pD-7U-pDA"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="后区杀号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C5A-Ha-GkV">
+                    <rect key="frame" x="217" y="164" width="177" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="endEdit:" destination="-1" eventType="editingDidEnd" id="UC4-ty-5rQ"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="逗号隔开" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RT6-Fq-JmR">
+                    <rect key="frame" x="20" y="136" width="61.5" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="C5A-Ha-GkV" firstAttribute="centerY" secondItem="Zmy-FU-ulS" secondAttribute="centerY" id="EJc-b2-mUl"/>
+                <constraint firstItem="Vnk-ww-VER" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="HZM-Jt-DCG"/>
+                <constraint firstItem="Zmy-FU-ulS" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="M2E-vg-914"/>
+                <constraint firstItem="Vnk-ww-VER" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MRU-RK-Cq3"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="C5A-Ha-GkV" secondAttribute="trailing" constant="20" id="WBh-34-edf"/>
+                <constraint firstItem="Zmy-FU-ulS" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.4" id="XCo-v4-7fw"/>
+                <constraint firstItem="Zmy-FU-ulS" firstAttribute="top" secondItem="RT6-Fq-JmR" secondAttribute="bottom" constant="10" id="b7l-jo-zds"/>
+                <constraint firstItem="C5A-Ha-GkV" firstAttribute="width" secondItem="Zmy-FU-ulS" secondAttribute="width" id="dSw-BP-cg1"/>
+                <constraint firstItem="Zmy-FU-ulS" firstAttribute="leading" secondItem="RT6-Fq-JmR" secondAttribute="leading" id="mZN-ZM-cj3"/>
+                <constraint firstItem="C5A-Ha-GkV" firstAttribute="leading" secondItem="Zmy-FU-ulS" secondAttribute="trailing" constant="20" id="oQM-cF-X8E"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+</document>

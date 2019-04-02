@@ -50,6 +50,9 @@
 		2E6D9E1720E4824B00F65B6F /* RuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6D9E1520E4824B00F65B6F /* RuntimeViewController.xib */; };
 		2E7E84B920AC1EA20093E65B /* BlueToothInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E84B820AC1EA20093E65B /* BlueToothInstance.m */; };
 		2E7E84BC20AC251B0093E65B /* CentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E84BB20AC251B0093E65B /* CentralManager.m */; };
+		2EC2341622522A1D009AAFBC /* LotteryRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC2341522522A1D009AAFBC /* LotteryRandom.m */; };
+		2EC234282253447D009AAFBC /* LotteryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC234262253447D009AAFBC /* LotteryViewController.m */; };
+		2EC234292253447D009AAFBC /* LotteryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EC234272253447D009AAFBC /* LotteryViewController.xib */; };
 		2ECC6F01209461A7004BF4A1 /* Hospital.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F00209461A7004BF4A1 /* Hospital.m */; };
 		2ECC6F0A209462A7004BF4A1 /* OutpatientService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F09209462A7004BF4A1 /* OutpatientService.m */; };
 		2ECC6F0D2094633E004BF4A1 /* Registration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F0C2094633E004BF4A1 /* Registration.m */; };
@@ -163,6 +166,11 @@
 		2E7E84B820AC1EA20093E65B /* BlueToothInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueToothInstance.m; sourceTree = "<group>"; };
 		2E7E84BA20AC251B0093E65B /* CentralManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CentralManager.h; sourceTree = "<group>"; };
 		2E7E84BB20AC251B0093E65B /* CentralManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CentralManager.m; sourceTree = "<group>"; };
+		2EC2341422522A1D009AAFBC /* LotteryRandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotteryRandom.h; sourceTree = "<group>"; };
+		2EC2341522522A1D009AAFBC /* LotteryRandom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotteryRandom.m; sourceTree = "<group>"; };
+		2EC234252253447D009AAFBC /* LotteryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotteryViewController.h; sourceTree = "<group>"; };
+		2EC234262253447D009AAFBC /* LotteryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotteryViewController.m; sourceTree = "<group>"; };
+		2EC234272253447D009AAFBC /* LotteryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LotteryViewController.xib; sourceTree = "<group>"; };
 		2ECC6EFF209461A7004BF4A1 /* Hospital.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hospital.h; sourceTree = "<group>"; };
 		2ECC6F00209461A7004BF4A1 /* Hospital.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hospital.m; sourceTree = "<group>"; };
 		2ECC6F08209462A7004BF4A1 /* OutpatientService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutpatientService.h; sourceTree = "<group>"; };
@@ -349,6 +357,7 @@
 		2E155A41207B472600A950DD /* MyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				2EC2342422534437009AAFBC /* 彩票 */,
 				A73A070221F0622900B21442 /* MyLearn.entitlements */,
 				A720FA9421B7C0040063BF69 /* Video */,
 				A72D180E21A7D43900783B70 /* Learn */,
@@ -458,6 +467,8 @@
 				2E6D9DC420E1214600F65B6F /* ChainProgrammingViewController.xib */,
 				2E6D9DC720E1218D00F65B6F /* Calculate.h */,
 				2E6D9DC820E1218D00F65B6F /* Calculate.m */,
+				2EC2341422522A1D009AAFBC /* LotteryRandom.h */,
+				2EC2341522522A1D009AAFBC /* LotteryRandom.m */,
 			);
 			path = "链式编程";
 			sourceTree = "<group>";
@@ -486,6 +497,16 @@
 				2E7E84BB20AC251B0093E65B /* CentralManager.m */,
 			);
 			path = BlueToothInstance;
+			sourceTree = "<group>";
+		};
+		2EC2342422534437009AAFBC /* 彩票 */ = {
+			isa = PBXGroup;
+			children = (
+				2EC234252253447D009AAFBC /* LotteryViewController.h */,
+				2EC234262253447D009AAFBC /* LotteryViewController.m */,
+				2EC234272253447D009AAFBC /* LotteryViewController.xib */,
+			);
+			path = "彩票";
 			sourceTree = "<group>";
 		};
 		2ECC6EF620944DB8004BF4A1 /* Facade */ = {
@@ -703,6 +724,7 @@
 				2E6D9E1720E4824B00F65B6F /* RuntimeViewController.xib in Resources */,
 				2E155A52207B472700A950DD /* LaunchScreen.storyboard in Resources */,
 				2E155A4F207B472700A950DD /* Assets.xcassets in Resources */,
+				2EC234292253447D009AAFBC /* LotteryViewController.xib in Resources */,
 				A7350FB321B8CB1C00856CA5 /* VideoCollectionViewCell.xib in Resources */,
 				2E6D9DC620E1214600F65B6F /* ChainProgrammingViewController.xib in Resources */,
 				2E155A4A207B472600A950DD /* Main.storyboard in Resources */,
@@ -757,12 +779,14 @@
 				A7350FAE21B8B50E00856CA5 /* ToolsVideo.m in Sources */,
 				2E0C768420A3F5FF009124D6 /* ZModel.m in Sources */,
 				2E155A47207B472600A950DD /* ViewController.m in Sources */,
+				2EC2341622522A1D009AAFBC /* LotteryRandom.m in Sources */,
 				2E7E84B920AC1EA20093E65B /* BlueToothInstance.m in Sources */,
 				2E6D9DC920E1218D00F65B6F /* Calculate.m in Sources */,
 				2E155A4D207B472600A950DD /* MyLearn.xcdatamodeld in Sources */,
 				2E6939D82101DDB100A3EC2D /* NextAnimationViewController.m in Sources */,
 				2ECC6F0D2094633E004BF4A1 /* Registration.m in Sources */,
 				2ECC6F01209461A7004BF4A1 /* Hospital.m in Sources */,
+				2EC234282253447D009AAFBC /* LotteryViewController.m in Sources */,
 				2ECC6F1320946561004BF4A1 /* Patient.m in Sources */,
 				2E0C769020A411ED009124D6 /* ZMVVMViewController.m in Sources */,
 				A7400A082199752700639DD9 /* MasonryTableViewCell.m in Sources */,

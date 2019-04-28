@@ -49,7 +49,7 @@
         //遍历获取到中奖号所在index
         if (firstInterval > random) {
             //获取得是index为i的key
-            return [dict.allKeys objectAtIndex:i-1];
+            return key;
         }else{
             random -= firstInterval;
         }

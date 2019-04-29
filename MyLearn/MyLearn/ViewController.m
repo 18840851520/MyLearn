@@ -63,6 +63,7 @@
     if(!cell){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellID"];
     }
+    cell.clipsToBounds = YES;
     cell.textLabel.text = self.typeArray[indexPath.row];
     return cell;
 }
@@ -106,6 +107,16 @@
     }
     vc.title = self.typeArray[indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+#ifdef DEBUG
+    return 44;
+#else
+    if (indexPath.row != 12) {
+        return 0;
+    }
+    return 44;
+#endif
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

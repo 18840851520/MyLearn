@@ -9,6 +9,8 @@
 #import "LotteryViewController.h"
 #import "ZNetServer.h"
 #import "LotteryRandom.h"
+#import <AFNetworking.h>
+
 
 @interface LotteryViewController ()
 
@@ -39,6 +41,15 @@
     
     [self initDoubleDefalut];
     
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        if (status != AFNetworkReachabilityStatusNotReachable) {
+            [self getData];
+        }
+    }];
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    
+}
+- (void)getData{
     [ZNetServer postValueWithMethod:@"http://f.apiplus.net/dlt-20.json" andBody:nil successBlock:^(NSURLSessionDataTask * _Nonnull task, id _Nullable response) {
         self.arr = [response valueForKey:@"data"];
         self.openCode = [self.arr firstObject][@"opencode"];
@@ -47,7 +58,7 @@
         NSLog(@"2");
     }];
     
-//
+    //
     [ZNetServer postValueWithMethod:@"http://f.apiplus.net/ssq-20.json" andBody:nil successBlock:^(NSURLSessionDataTask * _Nonnull task, id _Nullable response) {
         self.doubleArr = [response valueForKey:@"data"];
         self.doubleOpenCode = [self.doubleArr firstObject][@"opencode"];

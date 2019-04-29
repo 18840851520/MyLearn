@@ -65,11 +65,8 @@
     for (int i = 0; i < arr.count; i++) {
         NSDictionary *dict = arr[i];
         if ([[dict valueForKey:@"expect"] integerValue] <= [[data valueForKey:@"doubleexpect"] integerValue]) {
+            [data setObject:[arr[0] valueForKey:@"expect"] forKey:@"doubleexpect"];
             break;
-        }
-        if (i == 0) {
-            [data setObject:[dict valueForKey:@"expect"] forKey:@"doubleexpect"];
-            NSLog(@"expect %@",[dict valueForKey:@"expect"]);
         }
         NSString *openCode = [dict valueForKey:@"opencode"];
         NSArray *blueArr = [[[openCode componentsSeparatedByString:@"+"] firstObject] componentsSeparatedByString:@","];
@@ -164,11 +161,8 @@
     for (int i = 0; i < arr.count; i++) {
         NSDictionary *dict = arr[i];
         if ([[dict valueForKey:@"expect"] integerValue] <= [[data valueForKey:@"expect"] integerValue]) {
+            [data setObject:[arr[0] valueForKey:@"expect"] forKey:@"expect"];
             break;
-        }
-        if (i == 0) {
-            [data setObject:[dict valueForKey:@"expect"] forKey:@"expect"];
-            NSLog(@"expect %@",[dict valueForKey:@"expect"]);
         }
         NSString *openCode = [dict valueForKey:@"opencode"];
         NSArray *blueArr = [[[openCode componentsSeparatedByString:@"+"] firstObject] componentsSeparatedByString:@","];

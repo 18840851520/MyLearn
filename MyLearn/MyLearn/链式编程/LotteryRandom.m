@@ -17,11 +17,7 @@
     NSMutableDictionary *data = [NSMutableDictionary dictionaryWithDictionary:dict];
     //移除杀号
     for (NSString *killNo in killArr) {
-        if (killNo.length == 1) {
-            [data removeObjectForKey:[NSString stringWithFormat:@"0%@",killNo]];
-        }else{
-            [data removeObjectForKey:killNo];
-        }
+        killNo.length == 1 ? [data removeObjectForKey:[NSString stringWithFormat:@"0%@",killNo]] : [data removeObjectForKey:killNo];
     }
     //生成中奖号码
     NSMutableArray *arr = [NSMutableArray array];
@@ -44,7 +40,7 @@
     //获取中奖者
     int random = (int)((long)([[NSDate date] timeIntervalSince1970] * 10000000) % arc4random() % statistical);
     for (int i = 1; i <= dict.count; i++) {
-        NSString *key = i < 10 ? [NSString stringWithFormat:@"0%d",i] : [NSString stringWithFormat:@"%d",i];
+        NSString *key = [NSString stringWithFormat:@"%@%d",i < 10 ? @"0":@"",i];
         int firstInterval = (int)[[dict valueForKey:key] integerValue];
         //遍历获取到中奖号所在index
         if (firstInterval > random) {

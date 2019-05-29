@@ -16,6 +16,8 @@
 @property (nonatomic, strong) NSString *openCode;
 @property (weak, nonatomic) IBOutlet UITextField *frontTF;
 @property (weak, nonatomic) IBOutlet UITextField *backTF;
+@property (weak, nonatomic) IBOutlet UILabel *redDoubleEntry;
+@property (weak, nonatomic) IBOutlet UILabel *blueDoubleEntry;
 
 @property (nonatomic, strong) NSArray *doubleArr;
 @property (nonatomic, strong) NSString *doubleOpenCode;
@@ -30,10 +32,19 @@
     str = [str stringByReplacingOccurrencesOfString:@"，" withString:@","];
     sender.text = str;
 }
+- (IBAction)redDoubleEntry:(UIStepper *)sender {
+    self.redDoubleEntry.text = [NSString stringWithFormat:@"%.f",sender.value];
+}
+- (IBAction)blueDoubleEntry:(UIStepper *)sender {
+     self.blueDoubleEntry.text = [NSString stringWithFormat:@"%.f",sender.value];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.redDoubleEntry.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
+    self.blueDoubleEntry.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
     
     [self initUserDefalut];
     
@@ -277,8 +288,9 @@
         str = @"杀号超出限制";
         
     }else{
-        NSArray *redArr = [LotteryRandom getResultNumber:frontZone andCount:5 andKillNo:redKillArr];
-        NSArray *blueArr = [LotteryRandom getResultNumber:backZone andCount:2 andKillNo:blueKillArr];
+        
+        NSArray *redArr = [LotteryRandom getResultNumber:frontZone andCount:5 + [self.redDoubleEntry.text intValue] andKillNo:redKillArr];
+        NSArray *blueArr = [LotteryRandom getResultNumber:backZone andCount:2 + [self.blueDoubleEntry.text intValue] andKillNo:blueKillArr];
         
         NSArray *result = [redArr sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
             return  [@([obj1 intValue]) compare:@([obj2 intValue])];
@@ -287,8 +299,8 @@
             return [@([obj1 intValue]) compare:@([obj2 intValue])];
         }];
         
-        NSArray *dredArr = [LotteryRandom getResultNumber:dfrontZone andCount:6 andKillNo:redKillArr];
-        NSArray *dblueArr = [LotteryRandom getResultNumber:dbackZone andCount:1 andKillNo:blueKillArr];
+        NSArray *dredArr = [LotteryRandom getResultNumber:dfrontZone andCount:6 + [self.redDoubleEntry.text intValue] andKillNo:redKillArr];
+        NSArray *dblueArr = [LotteryRandom getResultNumber:dbackZone andCount:1 + [self.blueDoubleEntry.text intValue] andKillNo:blueKillArr];
         
         NSArray *dresult = [dredArr sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
             return  [@([obj1 intValue]) compare:@([obj2 intValue])];

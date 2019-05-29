@@ -37,19 +37,20 @@
 + (NSString *)getWinningNumber:(NSDictionary *)dict{
     int statistical = 0;
     //中奖统计总和
+    NSArray *allKeys = [dict allKeys];
+    NSArray *allValues = [dict allValues];
     for (NSString *countStr in [dict allValues]) {
         statistical = statistical + (int)[countStr integerValue];
     }
-    NSLog(@"statistical = %d",statistical);
     //获取中奖者
-    int random = (int)((long)([[NSDate date] timeIntervalSince1970] * 10000000) % arc4random() % statistical);
-    for (int i = 1; i <= dict.count; i++) {
-        NSString *key = i < 10 ? [NSString stringWithFormat:@"0%d",i] : [NSString stringWithFormat:@"%d",i];
-        int firstInterval = (int)[[dict valueForKey:key] integerValue];
+    int random = (int)((long)([[NSDate date] timeIntervalSince1970] * 10000000) / arc4random() % statistical);
+    for (int i = 0; i < allKeys.count; i++) {
+        int firstInterval = (int)[[allKeys objectAtIndex:i] integerValue];
+        NSLog(@"firstInterval = %d , random = %d",firstInterval,random);
         //遍历获取到中奖号所在index
         if (firstInterval > random) {
             //获取得是index为i的key
-            return [dict.allKeys objectAtIndex:i-1];
+            return [allKeys objectAtIndex:i];
         }else{
             random -= firstInterval;
         }

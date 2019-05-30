@@ -12,13 +12,17 @@
 
 static int statistical;
 + (NSArray *)getResultNumber:(NSDictionary *)dict andCount:(int)count andKillNo:(NSArray *)killArr{
-    if (dict == nil) {
-        return @[];
+    if (dict == nil || count == 0) {
+        return nil;
     }
     NSMutableDictionary *data = [NSMutableDictionary dictionaryWithDictionary:dict];
     //移除杀号
     for (NSString *killNo in killArr) {
         killNo.length == 1 ? [data removeObjectForKey:[NSString stringWithFormat:@"0%@",killNo]] : [data removeObjectForKey:killNo];
+    }
+    //当选号个数大于可选个数，返回所有
+    if (count >= data.count) {
+        return [dict allKeys];
     }
     //生成中奖号码
     NSMutableArray *arr = [NSMutableArray array];
@@ -42,10 +46,11 @@ static int statistical;
     }
     //获取中奖随机数
     double timein = [[NSDate date] timeIntervalSince1970] * 10000000;
+    //随机正整数
     int arc = abs((int)arc4random());
-    
+    //中奖区间数
     int random = (int)((long)timein % arc % statistical);
-    NSLog(@"statistical = %ld",(long)timein % arc);
+    
     for (int i = 1; i <= dict.count; i++) {
         NSString *key = [NSString stringWithFormat:@"%@%d",i < 10 ? @"0":@"",i];
         int firstInterval = (int)[[dict valueForKey:key] integerValue];

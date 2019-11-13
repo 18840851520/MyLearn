@@ -31,6 +31,7 @@
 		2E155A5F207B472800A950DD /* MyLearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A5E207B472800A950DD /* MyLearnTests.m */; };
 		2E155A6A207B472800A950DD /* MyLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A69207B472800A950DD /* MyLearnUITests.m */; };
 		2E155A7A207B485300A950DD /* ShapeLayerLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A79207B485300A950DD /* ShapeLayerLearn.m */; };
+		2E461E9422DC9E10005200B4 /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 2E461E9322DC9E10005200B4 /* Location.gpx */; };
 		2E515CB320847F0E0008C7BE /* ShareInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E515CB220847F0E0008C7BE /* ShareInstance.m */; };
 		2E57905B2106CC6E00521E9B /* GCDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E57905A2106CC6E00521E9B /* GCDViewController.xib */; };
 		2E69399F20EA13BD00A3EC2D /* RuntimeGetSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E69399E20EA13BD00A3EC2D /* RuntimeGetSelector.m */; };
@@ -134,6 +135,8 @@
 		2E155A6B207B472800A950DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E155A78207B485200A950DD /* ShapeLayerLearn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapeLayerLearn.h; sourceTree = "<group>"; };
 		2E155A79207B485300A950DD /* ShapeLayerLearn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeLayerLearn.m; sourceTree = "<group>"; };
+		2E461E9322DC9E10005200B4 /* Location.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
+		2E461E9522DCC986005200B4 /* HZD.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HZD.gpx; sourceTree = "<group>"; };
 		2E515CB120847F0E0008C7BE /* ShareInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareInstance.h; sourceTree = "<group>"; };
 		2E515CB220847F0E0008C7BE /* ShareInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareInstance.m; sourceTree = "<group>"; };
 		2E57905A2106CC6E00521E9B /* GCDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCDViewController.xib; sourceTree = "<group>"; };
@@ -335,6 +338,8 @@
 		2E155A36207B472600A950DD = {
 			isa = PBXGroup;
 			children = (
+				2E461E9322DC9E10005200B4 /* Location.gpx */,
+				2E461E9522DCC986005200B4 /* HZD.gpx */,
 				2E155A41207B472600A950DD /* MyLearn */,
 				2E155A5D207B472800A950DD /* MyLearnTests */,
 				2E155A68207B472800A950DD /* MyLearnUITests */,
@@ -727,6 +732,7 @@
 				2E155A4F207B472700A950DD /* Assets.xcassets in Resources */,
 				2EC234292253447D009AAFBC /* LotteryViewController.xib in Resources */,
 				A7350FB321B8CB1C00856CA5 /* VideoCollectionViewCell.xib in Resources */,
+				2E461E9422DC9E10005200B4 /* Location.gpx in Resources */,
 				2E6D9DC620E1214600F65B6F /* ChainProgrammingViewController.xib in Resources */,
 				2E155A4A207B472600A950DD /* Main.storyboard in Resources */,
 			);
@@ -1009,7 +1015,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MyLearn/MyLearn.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77VE52S484;
+				DEVELOPMENT_TEAM = 66R335K49S;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MyLearn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1017,7 +1023,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hualuoyongheng.ganqishie.MyLearn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hualuoyongheng.MyLearn.zjh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyLearn/MyLearn-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1034,7 +1040,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MyLearn/MyLearn.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 77VE52S484;
+				DEVELOPMENT_TEAM = 66R335K49S;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MyLearn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1042,7 +1048,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hualuoyongheng.ganqishie.MyLearn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hualuoyongheng.MyLearn.zjh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyLearn/MyLearn-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

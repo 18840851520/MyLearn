@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -59,7 +60,21 @@ typedef void(^ToolsProgressBlock)(CGFloat progress);
  *@param    fileUrl 视频路径
  */
 + (UIImage*)getVideoPreViewImage:(NSURL *)fileUrl;
+/**
+ 视频添加水印并保存到相册
+ @param path 视频本地路径
+ */
++ (void)addWaterPicWithVideoPath:(AVURLAsset*)path withWaterMark:(UIImageView *)waterImage withSize:(CGSize)bgSize;
 
+/**
+ 设置水印及其对应视频的位置
+
+ @param composition 视频的结构
+ @param size 视频的尺寸
+ */
++ (void)applyVideoEffectsToComposition:(AVMutableVideoComposition *)composition size:(CGSize)size;
+
++ (void)addWaterPicWithVideoAsset:(AVURLAsset*)path withWaterMarkImage:(UIImage *)waterMarkImage;
 
 @end
 

@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LotteryViewController : UIViewController
 
+- (void)getRedCount:(NSInteger)redCount andBlueCount:(NSInteger)blueCount;
+
 @end
 
 NS_ASSUME_NONNULL_END

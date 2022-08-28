@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-MyLearn/Pods-MyLearn-frameworks.sh
+${PODS_ROOT}/AgoraMediaPlayer_iOS/AgoraMediaPlayer.framework
+${PODS_ROOT}/AgoraMediaPlayer_iOS/AgoraPlayerFFmpeg.framework

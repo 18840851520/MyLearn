@@ -1,26 +1,31 @@
 PODS:
-  - FLEX (2.4.0)
+  - FLEX (4.2.2)
   - GPUImage (0.1.7)
-  - SDWebImage (4.4.2):
-    - SDWebImage/Core (= 4.4.2)
-  - SDWebImage/Core (4.4.2)
+  - SDWebImage (5.10.0):
+    - SDWebImage/Core (= 5.10.0)
+  - SDWebImage/Core (5.10.0)
+  - ZLPhotoBrowser (3.2.0):
+    - SDWebImage
 
 DEPENDENCIES:
   - FLEX
   - GPUImage
   - SDWebImage
+  - ZLPhotoBrowser
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - FLEX
     - GPUImage
     - SDWebImage
+    - ZLPhotoBrowser
 
 SPEC CHECKSUMS:
-  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
+  FLEX: dbd68ae9c67fcc872c79c9e5a728f38243dfaa78
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
+  ZLPhotoBrowser: 3748fdbeb2b28961c2495d15131dbf413082e1b9
 
-PODFILE CHECKSUM: 936f669e4be9a636bb722279d4b206ed03adfedf
+PODFILE CHECKSUM: cc326314173717b6b506f9b33075e1f6e097f31b
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.10.0

@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (AFHTTPSessionManager *)requestServerSuccess:(SuccessBlock)successBlock AndFailBlock:(FailBlock)failBlock;
 
 + (AFHTTPSessionManager *)postValueWithMethod:(NSString *)method andBody:(id)body successBlock:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))successBlock failBlock:(void (^)(NSURLSessionDataTask * _Nonnull, NSError * _Nonnull))failBlock;
++ (AFHTTPSessionManager *)getValueWithMethod:(NSString *)method andBody:(id)body successBlock:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))successBlock failBlock:(void (^)(NSURLSessionDataTask * _Nonnull, NSError * _Nonnull))failBlock;
 @end
 
 NS_ASSUME_NONNULL_END

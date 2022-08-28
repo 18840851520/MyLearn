@@ -7,7 +7,8 @@
 //
 
 #import "LookViewController.h"
-#import <UIImage+GIF.h>
+#import <SDWebImage/UIImage+GIF.h>
+
 #import <Photos/Photos.h>
 
 @interface LookViewController ()
@@ -46,7 +47,7 @@
     
     NSString *str = [NSTemporaryDirectory() stringByAppendingPathComponent:self.str] ;
     NSData *gifData = [NSData dataWithContentsOfFile:str];
-    self.image.image = [UIImage sd_animatedGIFWithData:gifData];
+    self.image.image = [UIImage sd_imageWithGIFData:gifData];
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self dismissViewControllerAnimated:YES completion:^{

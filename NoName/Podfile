@@ -4,4 +4,5 @@ target 'NoName' do
 	pod 'SDWebImage'
 	pod 'GPUImage'
 	pod 'FLEX'
+    pod 'ZLPhotoBrowser'
 end

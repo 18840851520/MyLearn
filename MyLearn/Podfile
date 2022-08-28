@@ -1,14 +1,15 @@
+source 'https://gitee.com/mirrors/CocoaPods-Specs.git'
+
 platform :ios, '9.0'
 
 target 'MyLearn' do
 
     # Masonry
     pod 'Masonry'
-    pod 'YYCategories'
+#    pod 'CocoaAsyncSocket'
+#    pod 'YYCategories'
     pod 'AFNetworking'
-    pod 'GoogleWebRTC'
-    
+#    pod 'GoogleWebRTC'
+#pod 'AgoraMediaPlayer_iOS'
+
 end
-
-
-

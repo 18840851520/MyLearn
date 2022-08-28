@@ -11,8 +11,11 @@
 #import "LoginView.h"
 #import "JHBounceView.h"
 #import "NextAnimationViewController.h"
+#import "BrokenLineView.h"
+#import "VideoCollectionViewCell.h"
+#import "PageFlowLayout.h"
 
-@interface AnimationViewController ()
+@interface AnimationViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic, strong) LoginView *loginView;
 @property (nonatomic, strong) LoginView *forgetView;
@@ -67,6 +70,66 @@
     self.forgetView.isSelect = NO;
     self.loginView.isSelect = YES;
     
+    BrokenLineView *view = [[BrokenLineView alloc] initWithFrame:CGRectMake(0, 80, 768, 300) withDataArray:@[
+    @{
+        @"dayDate":@"9-24",
+        @"correctQuestions":@"10",
+        @"completeQuestions":@"5",
+        @"promotion":@"0"
+    },
+    @{
+        @"dayDate":@"9-25",
+        @"correctQuestions":@"20",
+        @"completeQuestions":@"12",
+        @"promotion":@"0"
+    },
+    @{
+        @"dayDate":@"9-26",
+        @"correctQuestions":@"30",
+        @"completeQuestions":@"20",
+        @"promotion":@"1"
+    },
+    @{
+        @"dayDate":@"9-26",
+        @"correctQuestions":@"40",
+        @"completeQuestions":@"24",
+        @"promotion":@"1"
+    },
+    @{
+        @"dayDate":@"9-26",
+        @"correctQuestions":@"30",
+        @"completeQuestions":@"27",
+        @"promotion":@"1"
+    },
+    @{
+        @"dayDate":@"9-26",
+        @"correctQuestions":@"10",
+        @"completeQuestions":@"3",
+        @"promotion":@"1"
+    }]];
+    view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:view];
+    
+    PageFlowLayout *layout = ({
+        PageFlowLayout *layout = [[PageFlowLayout alloc] init];
+        layout.itemSize = CGSizeMake(160, 160);
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        CGFloat margin = (768 - 160) *0.5;
+        layout.sectionInset = UIEdgeInsetsMake(0, margin, 0, margin);//四周的边距
+        //设置最小边距
+        layout.minimumLineSpacing = 50;
+        
+        layout;
+    });
+    
+    
+    UICollectionView *collectView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 100, 768, 300) collectionViewLayout:layout];
+    collectView.backgroundColor = [UIColor whiteColor];
+    collectView.delegate = self;
+    collectView.dataSource = self;
+    [self.view addSubview:collectView];
+    [collectView registerNib:[UINib nibWithNibName:@"VideoCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"VideoCollectionViewCell"];
+    
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -96,5 +159,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 10;
+}
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    VideoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"VideoCollectionViewCell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor grayColor];
+    return cell;
+}
 @end

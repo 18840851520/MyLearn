@@ -26,7 +26,11 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
+		<key>NSExceptionDomains</key>
+		<dict/>
 	</dict>
+	<key>NSFaceIDUsageDescription</key>
+	<string>人脸识别</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>相册</string>
 	<key>NSPhotoLibraryUsageDescription</key>

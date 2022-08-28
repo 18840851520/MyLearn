@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,6 +31,11 @@
 		2E155A5F207B472800A950DD /* MyLearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A5E207B472800A950DD /* MyLearnTests.m */; };
 		2E155A6A207B472800A950DD /* MyLearnUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A69207B472800A950DD /* MyLearnUITests.m */; };
 		2E155A7A207B485300A950DD /* ShapeLayerLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E155A79207B485300A950DD /* ShapeLayerLearn.m */; };
+		2E245B71241F634900137EF9 /* JHPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E245B70241F634900137EF9 /* JHPlayer.m */; };
+		2E3E5A8023A09A270086CC6B /* LotteryViewController_Update.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3E5A7F23A09A270086CC6B /* LotteryViewController_Update.m */; };
+		2E3E5A8223A09A320086CC6B /* LotteryViewController_Update.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E3E5A8123A09A320086CC6B /* LotteryViewController_Update.xib */; };
+		2E3E5A8B23A0C5100086CC6B /* AwardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3E5A8923A0C5100086CC6B /* AwardsViewController.m */; };
+		2E3E5A8C23A0C5100086CC6B /* AwardsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E3E5A8A23A0C5100086CC6B /* AwardsViewController.xib */; };
 		2E461E9422DC9E10005200B4 /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 2E461E9322DC9E10005200B4 /* Location.gpx */; };
 		2E515CB320847F0E0008C7BE /* ShareInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E515CB220847F0E0008C7BE /* ShareInstance.m */; };
 		2E57905B2106CC6E00521E9B /* GCDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E57905A2106CC6E00521E9B /* GCDViewController.xib */; };
@@ -42,27 +47,42 @@
 		2E6939C820FF31B000A3EC2D /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6939C720FF31B000A3EC2D /* LoginView.m */; };
 		2E6939CE20FF31EF00A3EC2D /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6939CD20FF31EF00A3EC2D /* LoginView.xib */; };
 		2E6939D1210060BB00A3EC2D /* JHBounceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6939D0210060BB00A3EC2D /* JHBounceView.m */; };
-		2E6939D521007DE000A3EC2D /* 123456.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E6939D421007DE000A3EC2D /* 123456.png */; };
 		2E6939D82101DDB100A3EC2D /* NextAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6939D72101DDB100A3EC2D /* NextAnimationViewController.m */; };
+		2E6C6BB026AAAF7B00908FF0 /* PageFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C6BAF26AAAF7B00908FF0 /* PageFlowLayout.m */; };
+		2E6CF34726A00CA10063974E /* CustomPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6CF34626A00CA10063974E /* CustomPosition.m */; };
 		2E6D9DC520E1214600F65B6F /* ChainProgrammingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D9DC320E1214600F65B6F /* ChainProgrammingViewController.m */; };
 		2E6D9DC620E1214600F65B6F /* ChainProgrammingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6D9DC420E1214600F65B6F /* ChainProgrammingViewController.xib */; };
 		2E6D9DC920E1218D00F65B6F /* Calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D9DC820E1218D00F65B6F /* Calculate.m */; };
 		2E6D9E1620E4824B00F65B6F /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D9E1420E4824B00F65B6F /* RuntimeViewController.m */; };
 		2E6D9E1720E4824B00F65B6F /* RuntimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E6D9E1520E4824B00F65B6F /* RuntimeViewController.xib */; };
+		2E73A6D32591E80D00501B33 /* SwiftDoCatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73A6D22591E80D00501B33 /* SwiftDoCatch.swift */; };
+		2E777A32269BF24600FE54F2 /* *.12306.cn.cer in Resources */ = {isa = PBXBuildFile; fileRef = 2E777A31269BF24600FE54F2 /* *.12306.cn.cer */; };
 		2E7E84B920AC1EA20093E65B /* BlueToothInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E84B820AC1EA20093E65B /* BlueToothInstance.m */; };
 		2E7E84BC20AC251B0093E65B /* CentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E84BB20AC251B0093E65B /* CentralManager.m */; };
+		2E886D6B26AEA74000707545 /* LayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E886D6A26AEA74000707545 /* LayoutManager.m */; };
+		2EB4EBE42611C2230002FF1D /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB4EBE22611C2230002FF1D /* PlayerViewController.m */; };
+		2EB4EBE52611C2230002FF1D /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EB4EBE32611C2230002FF1D /* PlayerViewController.xib */; };
+		2EB4EBEE2611C5D00002FF1D /* JHMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB4EBED2611C5D00002FF1D /* JHMusicPlayer.m */; };
+		2EB59299238BC493000CA8B6 /* BrokenLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB59298238BC493000CA8B6 /* BrokenLineView.m */; };
 		2EC2341622522A1D009AAFBC /* LotteryRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC2341522522A1D009AAFBC /* LotteryRandom.m */; };
 		2EC234282253447D009AAFBC /* LotteryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC234262253447D009AAFBC /* LotteryViewController.m */; };
 		2EC234292253447D009AAFBC /* LotteryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EC234272253447D009AAFBC /* LotteryViewController.xib */; };
+		2EC8F309257E14FE0019C81A /* SwiftLearn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC8F308257E14FE0019C81A /* SwiftLearn.swift */; };
+		2EC8F3592580AE480019C81A /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC8F3582580AE480019C81A /* DeviceModel.swift */; };
+		2EC8F35E2580CD380019C81A /* DeviceModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2EC8F35D2580CD380019C81A /* DeviceModel.plist */; };
+		2EC8F363258719400019C81A /* SwiftLearnEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC8F3622587193F0019C81A /* SwiftLearnEX.swift */; };
 		2ECC6F01209461A7004BF4A1 /* Hospital.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F00209461A7004BF4A1 /* Hospital.m */; };
 		2ECC6F0A209462A7004BF4A1 /* OutpatientService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F09209462A7004BF4A1 /* OutpatientService.m */; };
 		2ECC6F0D2094633E004BF4A1 /* Registration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F0C2094633E004BF4A1 /* Registration.m */; };
 		2ECC6F1020946545004BF4A1 /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F0F20946545004BF4A1 /* Medicine.m */; };
 		2ECC6F1320946561004BF4A1 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC6F1220946561004BF4A1 /* Patient.m */; };
+		2EF20EA628A8E8780041A586 /* Lottery1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF20EA428A8E8780041A586 /* Lottery1ViewController.m */; };
+		2EF20EA728A8E8780041A586 /* Lottery1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF20EA528A8E8780041A586 /* Lottery1ViewController.xib */; };
+		2EF20EAB28A8E89F0041A586 /* Lottery1CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF20EA928A8E89F0041A586 /* Lottery1CollectionViewCell.m */; };
+		2EF20EAC28A8E89F0041A586 /* Lottery1CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EF20EAA28A8E89F0041A586 /* Lottery1CollectionViewCell.xib */; };
 		A720FA9821B7C0400063BF69 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A720FA9621B7C0400063BF69 /* VideoViewController.m */; };
 		A720FA9921B7C0400063BF69 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A720FA9721B7C0400063BF69 /* VideoViewController.xib */; };
 		A72D180A21A78F7900783B70 /* ErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72D180921A78F7900783B70 /* ErrorViewController.m */; };
-		A72D180D21A79F6B00783B70 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72D180C21A79F6B00783B70 /* File.swift */; };
 		A72D181221A7D44E00783B70 /* LearnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72D181021A7D44E00783B70 /* LearnViewController.m */; };
 		A72D181321A7D44E00783B70 /* LearnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A72D181121A7D44E00783B70 /* LearnViewController.xib */; };
 		A72D181621A7DED800783B70 /* ZNetServer.m in Sources */ = {isa = PBXBuildFile; fileRef = A72D181521A7DED800783B70 /* ZNetServer.m */; };
@@ -92,6 +112,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E04C82F23B353C100422A84 /* jinmen.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = jinmen.gpx; sourceTree = "<group>"; };
 		2E0C763520A1A1DE009124D6 /* ThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadViewController.h; sourceTree = "<group>"; };
 		2E0C763620A1A1DE009124D6 /* ThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadViewController.m; sourceTree = "<group>"; };
 		2E0C763820A1A27B009124D6 /* GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
@@ -135,6 +156,15 @@
 		2E155A6B207B472800A950DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E155A78207B485200A950DD /* ShapeLayerLearn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapeLayerLearn.h; sourceTree = "<group>"; };
 		2E155A79207B485300A950DD /* ShapeLayerLearn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeLayerLearn.m; sourceTree = "<group>"; };
+		2E16256F237D514000F04A8A /* Xiamen.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Xiamen.gpx; sourceTree = "<group>"; };
+		2E245B6F241F634900137EF9 /* JHPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHPlayer.h; sourceTree = "<group>"; };
+		2E245B70241F634900137EF9 /* JHPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHPlayer.m; sourceTree = "<group>"; };
+		2E3E5A7E23A09A270086CC6B /* LotteryViewController_Update.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotteryViewController_Update.h; sourceTree = "<group>"; };
+		2E3E5A7F23A09A270086CC6B /* LotteryViewController_Update.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotteryViewController_Update.m; sourceTree = "<group>"; };
+		2E3E5A8123A09A320086CC6B /* LotteryViewController_Update.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryViewController_Update.xib; sourceTree = "<group>"; };
+		2E3E5A8823A0C5100086CC6B /* AwardsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AwardsViewController.h; sourceTree = "<group>"; };
+		2E3E5A8923A0C5100086CC6B /* AwardsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AwardsViewController.m; sourceTree = "<group>"; };
+		2E3E5A8A23A0C5100086CC6B /* AwardsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AwardsViewController.xib; sourceTree = "<group>"; };
 		2E461E9322DC9E10005200B4 /* Location.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		2E461E9522DCC986005200B4 /* HZD.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HZD.gpx; sourceTree = "<group>"; };
 		2E515CB120847F0E0008C7BE /* ShareInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareInstance.h; sourceTree = "<group>"; };
@@ -154,9 +184,12 @@
 		2E6939CD20FF31EF00A3EC2D /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		2E6939CF210060BB00A3EC2D /* JHBounceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHBounceView.h; sourceTree = "<group>"; };
 		2E6939D0210060BB00A3EC2D /* JHBounceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHBounceView.m; sourceTree = "<group>"; };
-		2E6939D421007DE000A3EC2D /* 123456.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123456.png; sourceTree = "<group>"; };
 		2E6939D62101DDB100A3EC2D /* NextAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextAnimationViewController.h; sourceTree = "<group>"; };
 		2E6939D72101DDB100A3EC2D /* NextAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextAnimationViewController.m; sourceTree = "<group>"; };
+		2E6C6BAE26AAAF7B00908FF0 /* PageFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageFlowLayout.h; sourceTree = "<group>"; };
+		2E6C6BAF26AAAF7B00908FF0 /* PageFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageFlowLayout.m; sourceTree = "<group>"; };
+		2E6CF34526A00CA10063974E /* CustomPosition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomPosition.h; sourceTree = "<group>"; };
+		2E6CF34626A00CA10063974E /* CustomPosition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomPosition.m; sourceTree = "<group>"; };
 		2E6D9DC220E1214600F65B6F /* ChainProgrammingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChainProgrammingViewController.h; sourceTree = "<group>"; };
 		2E6D9DC320E1214600F65B6F /* ChainProgrammingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChainProgrammingViewController.m; sourceTree = "<group>"; };
 		2E6D9DC420E1214600F65B6F /* ChainProgrammingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChainProgrammingViewController.xib; sourceTree = "<group>"; };
@@ -165,15 +198,30 @@
 		2E6D9E1320E4824B00F65B6F /* RuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
 		2E6D9E1420E4824B00F65B6F /* RuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
 		2E6D9E1520E4824B00F65B6F /* RuntimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RuntimeViewController.xib; sourceTree = "<group>"; };
+		2E73A6D22591E80D00501B33 /* SwiftDoCatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDoCatch.swift; sourceTree = "<group>"; };
+		2E777A31269BF24600FE54F2 /* *.12306.cn.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "*.12306.cn.cer"; sourceTree = "<group>"; };
 		2E7E84B720AC1EA20093E65B /* BlueToothInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueToothInstance.h; sourceTree = "<group>"; };
 		2E7E84B820AC1EA20093E65B /* BlueToothInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueToothInstance.m; sourceTree = "<group>"; };
 		2E7E84BA20AC251B0093E65B /* CentralManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CentralManager.h; sourceTree = "<group>"; };
 		2E7E84BB20AC251B0093E65B /* CentralManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CentralManager.m; sourceTree = "<group>"; };
+		2E886D6926AEA74000707545 /* LayoutManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayoutManager.h; sourceTree = "<group>"; };
+		2E886D6A26AEA74000707545 /* LayoutManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LayoutManager.m; sourceTree = "<group>"; };
+		2EB4EBE12611C2230002FF1D /* PlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		2EB4EBE22611C2230002FF1D /* PlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		2EB4EBE32611C2230002FF1D /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
+		2EB4EBEC2611C5D00002FF1D /* JHMusicPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHMusicPlayer.h; sourceTree = "<group>"; };
+		2EB4EBED2611C5D00002FF1D /* JHMusicPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHMusicPlayer.m; sourceTree = "<group>"; };
+		2EB59297238BC493000CA8B6 /* BrokenLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenLineView.h; sourceTree = "<group>"; };
+		2EB59298238BC493000CA8B6 /* BrokenLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenLineView.m; sourceTree = "<group>"; };
 		2EC2341422522A1D009AAFBC /* LotteryRandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotteryRandom.h; sourceTree = "<group>"; };
 		2EC2341522522A1D009AAFBC /* LotteryRandom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotteryRandom.m; sourceTree = "<group>"; };
 		2EC234252253447D009AAFBC /* LotteryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotteryViewController.h; sourceTree = "<group>"; };
 		2EC234262253447D009AAFBC /* LotteryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotteryViewController.m; sourceTree = "<group>"; };
 		2EC234272253447D009AAFBC /* LotteryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LotteryViewController.xib; sourceTree = "<group>"; };
+		2EC8F308257E14FE0019C81A /* SwiftLearn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLearn.swift; sourceTree = "<group>"; };
+		2EC8F3582580AE480019C81A /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
+		2EC8F35D2580CD380019C81A /* DeviceModel.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DeviceModel.plist; sourceTree = "<group>"; };
+		2EC8F3622587193F0019C81A /* SwiftLearnEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLearnEX.swift; sourceTree = "<group>"; };
 		2ECC6EFF209461A7004BF4A1 /* Hospital.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hospital.h; sourceTree = "<group>"; };
 		2ECC6F00209461A7004BF4A1 /* Hospital.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hospital.m; sourceTree = "<group>"; };
 		2ECC6F08209462A7004BF4A1 /* OutpatientService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutpatientService.h; sourceTree = "<group>"; };
@@ -184,6 +232,12 @@
 		2ECC6F0F20946545004BF4A1 /* Medicine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Medicine.m; sourceTree = "<group>"; };
 		2ECC6F1120946561004BF4A1 /* Patient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
 		2ECC6F1220946561004BF4A1 /* Patient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
+		2EF20EA328A8E8780041A586 /* Lottery1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lottery1ViewController.h; sourceTree = "<group>"; };
+		2EF20EA428A8E8780041A586 /* Lottery1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lottery1ViewController.m; sourceTree = "<group>"; };
+		2EF20EA528A8E8780041A586 /* Lottery1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Lottery1ViewController.xib; sourceTree = "<group>"; };
+		2EF20EA828A8E89F0041A586 /* Lottery1CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lottery1CollectionViewCell.h; sourceTree = "<group>"; };
+		2EF20EA928A8E89F0041A586 /* Lottery1CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lottery1CollectionViewCell.m; sourceTree = "<group>"; };
+		2EF20EAA28A8E89F0041A586 /* Lottery1CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Lottery1CollectionViewCell.xib; sourceTree = "<group>"; };
 		2F516F27BF3DDDDA33CFCA77 /* Pods-MyLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLearn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyLearn/Pods-MyLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		A720FA9521B7C0400063BF69 /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		A720FA9621B7C0400063BF69 /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
@@ -191,7 +245,6 @@
 		A72D180821A78F7900783B70 /* ErrorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorViewController.h; sourceTree = "<group>"; };
 		A72D180921A78F7900783B70 /* ErrorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErrorViewController.m; sourceTree = "<group>"; };
 		A72D180B21A79F6A00783B70 /* MyLearn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyLearn-Bridging-Header.h"; sourceTree = "<group>"; };
-		A72D180C21A79F6B00783B70 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		A72D180F21A7D44E00783B70 /* LearnViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LearnViewController.h; sourceTree = "<group>"; };
 		A72D181021A7D44E00783B70 /* LearnViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LearnViewController.m; sourceTree = "<group>"; };
 		A72D181121A7D44E00783B70 /* LearnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LearnViewController.xib; sourceTree = "<group>"; };
@@ -338,8 +391,11 @@
 		2E155A36207B472600A950DD = {
 			isa = PBXGroup;
 			children = (
+				2E777A31269BF24600FE54F2 /* *.12306.cn.cer */,
 				2E461E9322DC9E10005200B4 /* Location.gpx */,
 				2E461E9522DCC986005200B4 /* HZD.gpx */,
+				2E16256F237D514000F04A8A /* Xiamen.gpx */,
+				2E04C82F23B353C100422A84 /* jinmen.gpx */,
 				2E155A41207B472600A950DD /* MyLearn */,
 				2E155A5D207B472800A950DD /* MyLearnTests */,
 				2E155A68207B472800A950DD /* MyLearnUITests */,
@@ -362,6 +418,10 @@
 		2E155A41207B472600A950DD /* MyLearn */ = {
 			isa = PBXGroup;
 			children = (
+				2E6CF34426A00C720063974E /* 响应机制 */,
+				2EB4EBE02611BFC40002FF1D /* 播放器 */,
+				2EC8F307257E14F00019C81A /* Swift */,
+				2E245B6E241F615D00137EF9 /* Player */,
 				2EC2342422534437009AAFBC /* 彩票 */,
 				A73A070221F0622900B21442 /* MyLearn.entitlements */,
 				A720FA9421B7C0040063BF69 /* Video */,
@@ -386,7 +446,6 @@
 				A72D181421A7DED800783B70 /* ZNetServer.h */,
 				A72D181521A7DED800783B70 /* ZNetServer.m */,
 				A72D181721A7E21C00783B70 /* URLConfigs.h */,
-				A72D180C21A79F6B00783B70 /* File.swift */,
 				2E155A48207B472600A950DD /* Main.storyboard */,
 				2E155A4E207B472700A950DD /* Assets.xcassets */,
 				2E155A50207B472700A950DD /* LaunchScreen.storyboard */,
@@ -431,6 +490,17 @@
 			path = Animation;
 			sourceTree = "<group>";
 		};
+		2E245B6E241F615D00137EF9 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				2E245B6F241F634900137EF9 /* JHPlayer.h */,
+				2E245B70241F634900137EF9 /* JHPlayer.m */,
+				2EB4EBEC2611C5D00002FF1D /* JHMusicPlayer.h */,
+				2EB4EBED2611C5D00002FF1D /* JHMusicPlayer.m */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 		2E515CB020847EB50008C7BE /* Design patterns */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,15 +523,29 @@
 		2E6939C520FF317C00A3EC2D /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				2E6939D421007DE000A3EC2D /* 123456.png */,
 				2E155A78207B485200A950DD /* ShapeLayerLearn.h */,
 				2E155A79207B485300A950DD /* ShapeLayerLearn.m */,
 				2E6939C220FF311C00A3EC2D /* JHSlideView.h */,
 				2E6939C320FF311C00A3EC2D /* JHSlideView.m */,
 				2E6939CF210060BB00A3EC2D /* JHBounceView.h */,
 				2E6939D0210060BB00A3EC2D /* JHBounceView.m */,
+				2EB59297238BC493000CA8B6 /* BrokenLineView.h */,
+				2EB59298238BC493000CA8B6 /* BrokenLineView.m */,
+				2E6C6BAE26AAAF7B00908FF0 /* PageFlowLayout.h */,
+				2E6C6BAF26AAAF7B00908FF0 /* PageFlowLayout.m */,
+				2E886D6926AEA74000707545 /* LayoutManager.h */,
+				2E886D6A26AEA74000707545 /* LayoutManager.m */,
 			);
 			path = Class;
+			sourceTree = "<group>";
+		};
+		2E6CF34426A00C720063974E /* 响应机制 */ = {
+			isa = PBXGroup;
+			children = (
+				2E6CF34526A00CA10063974E /* CustomPosition.h */,
+				2E6CF34626A00CA10063974E /* CustomPosition.m */,
+			);
+			path = "响应机制";
 			sourceTree = "<group>";
 		};
 		2E6D9DC120E120DC00F65B6F /* 链式编程 */ = {
@@ -504,14 +588,48 @@
 			path = BlueToothInstance;
 			sourceTree = "<group>";
 		};
+		2EB4EBE02611BFC40002FF1D /* 播放器 */ = {
+			isa = PBXGroup;
+			children = (
+				2EB4EBE12611C2230002FF1D /* PlayerViewController.h */,
+				2EB4EBE22611C2230002FF1D /* PlayerViewController.m */,
+				2EB4EBE32611C2230002FF1D /* PlayerViewController.xib */,
+			);
+			path = "播放器";
+			sourceTree = "<group>";
+		};
 		2EC2342422534437009AAFBC /* 彩票 */ = {
 			isa = PBXGroup;
 			children = (
 				2EC234252253447D009AAFBC /* LotteryViewController.h */,
 				2EC234262253447D009AAFBC /* LotteryViewController.m */,
 				2EC234272253447D009AAFBC /* LotteryViewController.xib */,
+				2E3E5A7E23A09A270086CC6B /* LotteryViewController_Update.h */,
+				2E3E5A7F23A09A270086CC6B /* LotteryViewController_Update.m */,
+				2E3E5A8123A09A320086CC6B /* LotteryViewController_Update.xib */,
+				2E3E5A8823A0C5100086CC6B /* AwardsViewController.h */,
+				2E3E5A8923A0C5100086CC6B /* AwardsViewController.m */,
+				2E3E5A8A23A0C5100086CC6B /* AwardsViewController.xib */,
+				2EF20EA328A8E8780041A586 /* Lottery1ViewController.h */,
+				2EF20EA428A8E8780041A586 /* Lottery1ViewController.m */,
+				2EF20EA528A8E8780041A586 /* Lottery1ViewController.xib */,
+				2EF20EA828A8E89F0041A586 /* Lottery1CollectionViewCell.h */,
+				2EF20EA928A8E89F0041A586 /* Lottery1CollectionViewCell.m */,
+				2EF20EAA28A8E89F0041A586 /* Lottery1CollectionViewCell.xib */,
 			);
 			path = "彩票";
+			sourceTree = "<group>";
+		};
+		2EC8F307257E14F00019C81A /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				2EC8F308257E14FE0019C81A /* SwiftLearn.swift */,
+				2EC8F3622587193F0019C81A /* SwiftLearnEX.swift */,
+				2EC8F3582580AE480019C81A /* DeviceModel.swift */,
+				2EC8F35D2580CD380019C81A /* DeviceModel.plist */,
+				2E73A6D22591E80D00501B33 /* SwiftDoCatch.swift */,
+			);
+			path = Swift;
 			sourceTree = "<group>";
 		};
 		2ECC6EF620944DB8004BF4A1 /* Facade */ = {
@@ -615,7 +733,6 @@
 				2E155A3B207B472600A950DD /* Sources */,
 				2E155A3C207B472600A950DD /* Frameworks */,
 				2E155A3D207B472600A950DD /* Resources */,
-				FD9EC1CC54C833F14C70CCE5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -718,19 +835,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E6939D521007DE000A3EC2D /* 123456.png in Resources */,
 				2E6939C020F8811400A3EC2D /* RunLoopViewController.xib in Resources */,
+				2EF20EAC28A8E89F0041A586 /* Lottery1CollectionViewCell.xib in Resources */,
+				2E3E5A8223A09A320086CC6B /* LotteryViewController_Update.xib in Resources */,
+				2E777A32269BF24600FE54F2 /* *.12306.cn.cer in Resources */,
 				A72D181321A7D44E00783B70 /* LearnViewController.xib in Resources */,
 				2E0C768920A3F655009124D6 /* ZTableViewCell.xib in Resources */,
 				2E6939CE20FF31EF00A3EC2D /* LoginView.xib in Resources */,
 				2E0C769120A411ED009124D6 /* ZMVVMViewController.xib in Resources */,
 				A7400A092199752700639DD9 /* MasonryTableViewCell.xib in Resources */,
+				2EB4EBE52611C2230002FF1D /* PlayerViewController.xib in Resources */,
+				2E3E5A8C23A0C5100086CC6B /* AwardsViewController.xib in Resources */,
 				2E57905B2106CC6E00521E9B /* GCDViewController.xib in Resources */,
 				A720FA9921B7C0400063BF69 /* VideoViewController.xib in Resources */,
 				2E6D9E1720E4824B00F65B6F /* RuntimeViewController.xib in Resources */,
+				2EC8F35E2580CD380019C81A /* DeviceModel.plist in Resources */,
 				2E155A52207B472700A950DD /* LaunchScreen.storyboard in Resources */,
 				2E155A4F207B472700A950DD /* Assets.xcassets in Resources */,
 				2EC234292253447D009AAFBC /* LotteryViewController.xib in Resources */,
+				2EF20EA728A8E8780041A586 /* Lottery1ViewController.xib in Resources */,
 				A7350FB321B8CB1C00856CA5 /* VideoCollectionViewCell.xib in Resources */,
 				2E461E9422DC9E10005200B4 /* Location.gpx in Resources */,
 				2E6D9DC620E1214600F65B6F /* ChainProgrammingViewController.xib in Resources */,
@@ -773,24 +896,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FD9EC1CC54C833F14C70CCE5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MyLearn/Pods-MyLearn-frameworks.sh",
-				"${PODS_ROOT}/GoogleWebRTC/Frameworks/frameworks/WebRTC.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyLearn/Pods-MyLearn-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -800,10 +905,14 @@
 			files = (
 				2E6D9DC520E1214600F65B6F /* ChainProgrammingViewController.m in Sources */,
 				2E0C763720A1A1DE009124D6 /* ThreadViewController.m in Sources */,
+				2E3E5A8B23A0C5100086CC6B /* AwardsViewController.m in Sources */,
 				2E0C769A20A41254009124D6 /* ZTableViewDataSource.m in Sources */,
+				2EB59299238BC493000CA8B6 /* BrokenLineView.m in Sources */,
 				A7350FAE21B8B50E00856CA5 /* ToolsVideo.m in Sources */,
+				2E6C6BB026AAAF7B00908FF0 /* PageFlowLayout.m in Sources */,
 				2E0C768420A3F5FF009124D6 /* ZModel.m in Sources */,
 				2E155A47207B472600A950DD /* ViewController.m in Sources */,
+				2E73A6D32591E80D00501B33 /* SwiftDoCatch.swift in Sources */,
 				2EC2341622522A1D009AAFBC /* LotteryRandom.m in Sources */,
 				2E7E84B920AC1EA20093E65B /* BlueToothInstance.m in Sources */,
 				2E6D9DC920E1218D00F65B6F /* Calculate.m in Sources */,
@@ -815,23 +924,32 @@
 				2ECC6F1320946561004BF4A1 /* Patient.m in Sources */,
 				2E0C769020A411ED009124D6 /* ZMVVMViewController.m in Sources */,
 				A7400A082199752700639DD9 /* MasonryTableViewCell.m in Sources */,
+				2EC8F363258719400019C81A /* SwiftLearnEX.swift in Sources */,
 				2E6939D1210060BB00A3EC2D /* JHBounceView.m in Sources */,
+				2EB4EBE42611C2230002FF1D /* PlayerViewController.m in Sources */,
 				2E155A7A207B485300A950DD /* ShapeLayerLearn.m in Sources */,
 				A72D180A21A78F7900783B70 /* ErrorViewController.m in Sources */,
-				A72D180D21A79F6B00783B70 /* File.swift in Sources */,
+				2E3E5A8023A09A270086CC6B /* LotteryViewController_Update.m in Sources */,
 				2E0C769D20A41C86009124D6 /* FacadeViewController.m in Sources */,
 				2E6939B920EB68AE00A3EC2D /* RuntimeGetSelector+Associated.m in Sources */,
 				2E0C768820A3F655009124D6 /* ZTableViewCell.m in Sources */,
 				2ECC6F1020946545004BF4A1 /* Medicine.m in Sources */,
 				2ECC6F0A209462A7004BF4A1 /* OutpatientService.m in Sources */,
 				A72D181621A7DED800783B70 /* ZNetServer.m in Sources */,
+				2E886D6B26AEA74000707545 /* LayoutManager.m in Sources */,
+				2EF20EA628A8E8780041A586 /* Lottery1ViewController.m in Sources */,
 				2E0C763E20A29CBB009124D6 /* PThreadViewController.m in Sources */,
 				2E0C763A20A1A27B009124D6 /* GCDViewController.m in Sources */,
 				2E6D9E1620E4824B00F65B6F /* RuntimeViewController.m in Sources */,
 				2E69399F20EA13BD00A3EC2D /* RuntimeGetSelector.m in Sources */,
+				2EB4EBEE2611C5D00002FF1D /* JHMusicPlayer.m in Sources */,
 				A720FA9821B7C0400063BF69 /* VideoViewController.m in Sources */,
 				2E0C768C20A410C2009124D6 /* ZViewModel.m in Sources */,
+				2EC8F309257E14FE0019C81A /* SwiftLearn.swift in Sources */,
 				A7400A012199749600639DD9 /* MasonryViewController.m in Sources */,
+				2EC8F3592580AE480019C81A /* DeviceModel.swift in Sources */,
+				2E245B71241F634900137EF9 /* JHPlayer.m in Sources */,
+				2E6CF34726A00CA10063974E /* CustomPosition.m in Sources */,
 				2E155A55207B472700A950DD /* main.m in Sources */,
 				2E515CB320847F0E0008C7BE /* ShareInstance.m in Sources */,
 				A7350FB221B8CB1C00856CA5 /* VideoCollectionViewCell.m in Sources */,
@@ -840,6 +958,7 @@
 				2E6939BF20F8811400A3EC2D /* RunLoopViewController.m in Sources */,
 				A72D181221A7D44E00783B70 /* LearnViewController.m in Sources */,
 				2E6939C420FF311C00A3EC2D /* JHSlideView.m in Sources */,
+				2EF20EAB28A8E89F0041A586 /* Lottery1CollectionViewCell.m in Sources */,
 				2E0C769720A4123C009124D6 /* ZTableViewDelegate.m in Sources */,
 				2E0C76A020A41CBB009124D6 /* AnimationViewController.m in Sources */,
 				2E7E84BC20AC251B0093E65B /* CentralManager.m in Sources */,
@@ -1014,17 +1133,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MyLearn/MyLearn.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66R335K49S;
 				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = MyLearn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hualuoyongheng.MyLearn.zjh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hualuoyongheng.MyLearn.zjh2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyLearn/MyLearn-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -1039,17 +1161,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MyLearn/MyLearn.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 66R335K49S;
 				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = MyLearn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hualuoyongheng.MyLearn.zjh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hualuoyongheng.MyLearn.zjh2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyLearn/MyLearn-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

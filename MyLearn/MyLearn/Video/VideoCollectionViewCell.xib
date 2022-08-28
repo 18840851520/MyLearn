@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,6 +46,7 @@
                     </button>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <constraints>
                 <constraint firstItem="J1X-xc-OQT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="22I-HI-gbI"/>
                 <constraint firstItem="5cu-c3-H8D" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DLC-XE-h5E"/>
@@ -57,7 +57,6 @@
                 <constraint firstItem="ciW-dS-MrW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="cPv-4n-egm"/>
                 <constraint firstAttribute="bottom" secondItem="5cu-c3-H8D" secondAttribute="bottom" id="j8J-Oq-X9I"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="163" height="181"/>
             <connections>
                 <outlet property="imageView" destination="5cu-c3-H8D" id="rgc-dS-E3r"/>
@@ -66,7 +65,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="删除" width="200" height="200"/>
-        <image name="加号" width="200" height="200"/>
+        <image name="删除" width="66.666664123535156" height="66.666664123535156"/>
+        <image name="加号" width="66.666664123535156" height="66.666664123535156"/>
     </resources>
 </document>

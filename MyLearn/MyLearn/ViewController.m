@@ -18,7 +18,85 @@
 #import "MasonryViewController.h"
 #import "ErrorViewController.h"
 #import "VideoViewController.h"
-#import "LotteryViewController.h"
+#import "Lottery1ViewController.h"
+#import "AwardsViewController.h"
+
+#import "MyLearn-Swift.h"
+
+
+
+@interface Father: NSObject
+-(void)easeapi;
+@end
+@implementation Father
+-(void)easeapi {
+    //your code
+    NSLog(@"test 1");
+}
+@end
+
+//Son1继承自Father
+@interface Son1: Father
+@end
+@implementation Son1
+
+- (instancetype)init{
+    if (self = [super init]) {
+        NSLog(@"%@",NSStringFromClass([self class]));
+        NSLog(@"%@",NSStringFromClass([super class]));
+    }
+    return self;
+}
+@end
+
+//Son2继承自Father，并HOOK了easeapi方法。
+@interface Son2: Father
+@end
+@implementation Son2
++ (void)load {
+    
+    Class class1 = [self class];
+
+    SEL fromSelector = @selector(easeapi);
+    SEL toSelector = @selector(new_easeapi);
+
+    Method fromMethod = class_getInstanceMethod(class1, fromSelector);
+    Method toMethod = class_getInstanceMethod(class1, toSelector);
+
+    method_exchangeImplementations(fromMethod, toMethod);
+    
+    
+    static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            Class class1 = [self class];
+
+            SEL fromSelector = @selector(easeapi);
+            SEL toSelector = @selector(new_easeapi);
+
+            Method fromMethod = class_getInstanceMethod(class1, fromSelector);
+            Method toMethod = class_getInstanceMethod(class1, toSelector);
+
+            if(class_addMethod(class1, fromSelector, method_getImplementation(toMethod), method_getTypeEncoding(toMethod))) {
+                class_replaceMethod(class1, toSelector, method_getImplementation(fromMethod), method_getTypeEncoding(fromMethod));
+            } else {
+                method_exchangeImplementations(fromMethod, toMethod);
+            }
+        });
+    
+}
+-(void)new_easeapi {
+    [self new_easeapi];
+    //your code
+    NSLog(@"test123");
+}
+-(void)easeapi {
+    //your code
+    NSLog(@"test 1");
+}
+@end
+
+
+
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -35,7 +113,13 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    Son2 *son = [[Son2 alloc] init];
+    [son easeapi];
+    Son1 *son1 = [[Son1 alloc] init];
+    [son1 easeapi];
     
+    MyLearnSwift *swiftClass = [[MyLearnSwift alloc] init];
+        
     dispatch_sync(dispatch_queue_create("net.bujige.testQueue", DISPATCH_QUEUE_CONCURRENT), ^{
         NSLog(@"ViewController：1");
         
@@ -43,7 +127,7 @@
         NSLog(@"ViewController：3");
     });
     
-    self.typeArray = @[@"动画",@"单例",@"Facade(门面模式)",@"MVVM",@"BlueTooth",@"链式编程",@"runtime",@"RunLoop",@"GCD",@"Masonry",@"验证",@"视频",@"彩票"];
+    self.typeArray = @[@"动画",@"单例",@"Facade(门面模式)",@"MVVM",@"BlueTooth",@"链式编程",@"runtime",@"RunLoop",@"GCD",@"Masonry",@"验证",@"视频",@"彩票",@"彩票1"];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
@@ -68,8 +152,17 @@
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIViewController *vc;
+    UIViewController *vc = nil;
     switch (indexPath.row) {
+        case 0:
+            vc = [[AnimationViewController alloc] init];
+            break;
+        case 2:
+            vc = [[FacadeViewController alloc] init];
+            break;
+        case 5:
+            vc = [[ChainProgrammingViewController alloc] init];
+            break;
         case 6:
             vc = [[RuntimeViewController alloc] init];
             break;
@@ -89,24 +182,22 @@
             vc = [[VideoViewController alloc] init];
             break;
         case 12:
-            vc = [[LotteryViewController alloc] init];
+            vc = [[Lottery1ViewController alloc] init];
+//            vc = [[AwardsViewController alloc] init];
+            break;
+        case 13:
+            vc = [[AwardsViewController alloc] init];
+            break;
+        case 14:
+            
             break;
         default:
             break;
     }
-    if(indexPath.row == 0){
-        vc = [[AnimationViewController alloc] init];
-    }else if (indexPath.row == 1){
-        
-    }else if (indexPath.row == 2){
-        vc = [[FacadeViewController alloc] init];
-    }else if(indexPath.row == 5){
-        vc = [[ChainProgrammingViewController alloc] init];
-    }else{
-        
+    if (vc) {
+        vc.title = self.typeArray[indexPath.row];
+        [self.navigationController pushViewController:vc animated:YES];
     }
-    vc.title = self.typeArray[indexPath.row];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 #ifdef DEBUG
@@ -121,6 +212,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
+- (void)faceID{
+    LAContext *context = [[LAContext alloc] init];
+    NSError *error = nil;
+    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"验证信息" reply:^(BOOL success, NSError * _Nullable error) {
+            if (success) {
+                NSLog(@"验证成功");
+            }else{
+                
+            }
+        }];
+    }else{
+        
+    }
+}
 
 @end

@@ -8,8 +8,7 @@
 
 #import "ViewController.h"
 #import "ZLPhotoActionSheet.h"
-#import "ZLPhotoModel.h"
-
+#import <ZLPhotoBrowser/ZLPhotoManager.h>
 #import "ToolsVideo.h"
 #import <UIImage+GIF.h>
 #import "GIFGenerator.h"
@@ -30,6 +29,8 @@
 @property (nonatomic, strong) NSString *preViewPath;
 
 @property (nonatomic, strong) NSArray *imagesArr;
+
+@property (nonatomic, copy)NSString *str;
 @end
 
 @implementation ViewController
@@ -67,14 +68,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSMutableString *str1 = [[NSMutableString alloc] initWithString:@"123"];
+    self.str = str1;
+    NSLog(@"%p,%p",str1,self.str);
+    [str1 appendString:@"999"];
+    NSLog(@"%p,%p,%@",str1,self.str,self.str);
 }
 - (IBAction)selectImage:(id)sender {
     self.actionSheet.configuration.allowSelectVideo = NO;
+    self.actionSheet.configuration.allowEditImage = YES;
     self.actionSheet.configuration.allowSelectImage = YES;
     [self.actionSheet showPhotoLibrary];
 }
 - (IBAction)selectVideo:(id)sender {
     self.actionSheet.configuration.allowSelectVideo = YES;
+    self.actionSheet.configuration.allowEditVideo = YES;
     self.actionSheet.configuration.allowSelectImage = NO;
     [self.actionSheet showPhotoLibrary];
 }
@@ -160,14 +168,13 @@
     
     NSData *gifData = [NSData dataWithContentsOfFile:path];
     if ([NSThread currentThread] == [NSThread mainThread]) {
-        self.gifImageView.image= [UIImage sd_animatedGIFWithData:gifData];
+        self.gifImageView.image= [UIImage sd_imageWithGIFData:gifData];
         self.saveView.hidden = !path;
     }else{
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.gifImageView.image= [UIImage sd_animatedGIFWithData:gifData];
+            self.gifImageView.image= [UIImage sd_imageWithGIFData:gifData];
             self.saveView.hidden = !path;
         });
     }
 }
-
 @end

@@ -330,4 +330,237 @@
     return img;
 }
 
+
+/**
+ 视频添加水印并保存到相册
+
+ @param path 视频本地路径
+ */
++ (void)addWaterPicWithVideoPath:(AVURLAsset*)path withWaterMark:(UIImageView *)waterImage withSize:(CGSize)bgSize;
+{
+    //1 创建AVAsset实例
+    AVURLAsset*videoAsset = path;
+    AVMutableComposition *mixComposition = [[AVMutableComposition alloc] init];
+    //3 视频通道
+    AVMutableCompositionTrack *videoTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeVideo
+                                                                        preferredTrackID:kCMPersistentTrackID_Invalid];
+    [videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration)
+                        ofTrack:[[videoAsset tracksWithMediaType:AVMediaTypeVideo] firstObject]
+                         atTime:kCMTimeZero error:nil];
+    
+    
+    //2 音频通道
+    AVMutableCompositionTrack *audioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio
+                                                                        preferredTrackID:kCMPersistentTrackID_Invalid];
+    [audioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration)
+                        ofTrack:[[videoAsset tracksWithMediaType:AVMediaTypeAudio] firstObject]
+                         atTime:kCMTimeZero error:nil];
+    
+    //3.1 AVMutableVideoCompositionInstruction 视频轨道中的一个视频，可以缩放、旋转等
+    AVMutableVideoCompositionInstruction *mainInstruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
+    mainInstruction.timeRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration);
+    
+    // 3.2 AVMutableVideoCompositionLayerInstruction 一个视频轨道，包含了这个轨道上的所有视频素材
+    AVMutableVideoCompositionLayerInstruction *videolayerInstruction = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
+
+    [videolayerInstruction setOpacity:0.0 atTime:videoAsset.duration];
+    
+    // 3.3 - Add instructions
+    mainInstruction.layerInstructions = [NSArray arrayWithObjects:videolayerInstruction,nil];
+    
+    //AVMutableVideoComposition：管理所有视频轨道，水印添加就在这上面
+    AVMutableVideoComposition *mainCompositionInst = [AVMutableVideoComposition videoComposition];
+    
+    AVAssetTrack *videoAssetTrack = [[videoAsset tracksWithMediaType:AVMediaTypeVideo] firstObject];
+    CGSize naturalSize = videoAssetTrack.naturalSize;
+    
+    float renderWidth, renderHeight;
+    renderWidth = naturalSize.width;
+    renderHeight = naturalSize.height;
+    mainCompositionInst.renderSize = CGSizeMake(renderWidth, renderHeight);
+    mainCompositionInst.instructions = [NSArray arrayWithObject:mainInstruction];
+    mainCompositionInst.frameDuration = CMTimeMake(1, 30);
+    [self applyVideoEffectsToComposition:mainCompositionInst videoSize:naturalSize imageView:waterImage BgSize:bgSize];
+    
+    //    // 4 - 输出路径
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *myPathDocs =  [documentsDirectory stringByAppendingPathComponent:
+                             [NSString stringWithFormat:@"FinalVideo-%d.mp4",arc4random() % 1000]];
+    NSURL* videoUrl = [NSURL fileURLWithPath:myPathDocs];
+    
+    // 5 - 视频文件输出
+    AVAssetExportSession *exporter = [[AVAssetExportSession alloc] initWithAsset:mixComposition
+                                                                      presetName:AVAssetExportPresetHighestQuality];
+    exporter.outputURL = videoUrl;
+    exporter.outputFileType = AVFileTypeMPEG4;
+    exporter.shouldOptimizeForNetworkUse = YES;
+    exporter.videoComposition = mainCompositionInst;
+    [exporter exportAsynchronouslyWithCompletionHandler:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if( exporter.status == AVAssetExportSessionStatusCompleted ){
+               
+                UISaveVideoAtPathToSavedPhotosAlbum(myPathDocs, nil, nil, nil);
+  
+            }else if( exporter.status == AVAssetExportSessionStatusFailed )
+            {
+                NSLog(@"failed");
+            }
+            
+        });
+    }];
+}
+/**
+ 设置水印及其对应视频的位置
+
+ @param composition 视频的结构
+ @param videoSize 视频的尺寸
+ */
++ (void)applyVideoEffectsToComposition:(AVMutableVideoComposition *)composition videoSize:(CGSize)videoSize imageView:(UIImageView *)imageView BgSize:(CGSize)bgSize
+{
+    //图片
+    CALayer*picLayer = [CALayer layer];
+    picLayer.contents = (id)imageView.image.CGImage;
+    
+    //图片相对于视频的比例
+    CGFloat fitScale = bgSize.width / videoSize.width;
+//    picLayer.frame = CGRectMake(videoSize.width * fitScale, 15, fitScale * imageView.bounds.size.width, fitScale * imageView.bounds.size.height);
+    
+    picLayer.frame = CGRectMake(videoSize.width - imageView.bounds.size.width, videoSize.height - imageView.bounds.size.height, imageView.bounds.size.width, imageView.bounds.size.height);
+    
+//    picLayer.transform = imageView.layer.transform;
+    // 2 - The usual overlay
+    CALayer *overlayLayer = [CALayer layer];
+    [overlayLayer addSublayer:picLayer];
+    overlayLayer.frame = CGRectMake(0, 0, videoSize.width, videoSize.height);
+    [overlayLayer setMasksToBounds:YES];
+    
+    CALayer *parentLayer = [CALayer layer];
+    CALayer *videoLayer = [CALayer layer];
+    parentLayer.frame = CGRectMake(0, 0, videoSize.width, videoSize.height);
+    videoLayer.frame = CGRectMake(0, 0, videoSize.width, videoSize.height);
+    [parentLayer addSublayer:videoLayer];
+    [parentLayer addSublayer:overlayLayer];
+    
+    composition.animationTool = [AVVideoCompositionCoreAnimationTool
+                                 videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
+    
+}
+
+
+#pragma mark 添加水印
++ (void)addWaterPicWithVideoAsset:(AVURLAsset*)videoAsset withWaterMarkImage:(UIImage *)waterMarkImage{
+    //创建混合集合
+    AVMutableComposition *mixComposition = [[AVMutableComposition alloc] init];
+    
+    AVAssetTrack *videoAssetTrack = [[videoAsset tracksWithMediaType:AVMediaTypeVideo] firstObject];
+    AVAssetTrack *audioAssetTrack = [[videoAsset tracksWithMediaType:AVMediaTypeAudio] firstObject];
+    //创建视频轨道
+    AVMutableCompositionTrack *videoTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
+    //加入视频的轨道
+    [videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero,videoAsset.duration) ofTrack:videoAssetTrack atTime:kCMTimeZero error:nil];
+    //创建音频轨道
+    AVMutableCompositionTrack *audioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+    //加入音频的轨道
+    [audioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:audioAssetTrack atTime:kCMTimeZero error:nil];
+    //轨道视频
+    AVMutableVideoCompositionInstruction *mainInstruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
+    mainInstruction.timeRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration);
+    
+    AVMutableVideoCompositionLayerInstruction *videoLayerInstruction = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
+    [videoLayerInstruction setOpacity:0 atTime:videoAsset.duration];
+    
+    mainInstruction.layerInstructions = [NSArray arrayWithObjects:videoLayerInstruction, nil];
+    
+    AVMutableVideoComposition *mainCompositionInst = [AVMutableVideoComposition videoComposition];
+    
+    CGSize naturalSize = videoTrack.naturalSize;
+    if (naturalSize.width == 0) {
+        CGFloat a = (1280.f / 720);
+        naturalSize.width =  a * naturalSize.height;
+    }
+    float renderWidth, renderHeight;
+    renderWidth = naturalSize.width;
+    renderHeight = naturalSize.height;
+    mainCompositionInst.renderSize = CGSizeMake(renderWidth, renderHeight);
+    mainCompositionInst.instructions = [NSArray arrayWithObject:mainInstruction];
+    mainCompositionInst.frameDuration = CMTimeMake(1, 30);
+    
+    [self applyVideoEffectsToComposition:mainCompositionInst size:naturalSize];
+//    NSArray *arr = [NSArray arrayWithObjects:mixComposition,mainCompositionInst, nil];
+
+    NSLog(@"开始保存视频");
+    AVAssetExportSession *session = [[AVAssetExportSession alloc] initWithAsset:mixComposition presetName:AVAssetExportPresetMediumQuality];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:
+                          [NSString stringWithFormat:@"FinalVideo-%d.mp4",arc4random() % 1000]];//获取路径
+    NSURL *filUrl = [NSURL fileURLWithPath:filePath];
+    session.outputURL = filUrl;//视频输出地址
+    session.outputFileType = AVFileTypeMPEG4;//AVFileTypeQuickTimeMovie;//AVFileTypeMPEG4;
+    
+    // 这个一般设置为yes（指示输出文件应针对网络使用进行优化，例如QuickTime电影文件应支持“快速启动”）
+    session.shouldOptimizeForNetworkUse = YES;
+    // 文件的最大多大的设置
+//    session.fileLengthLimit = 30 * 1024 * 1024;
+    
+    session.videoComposition = mainCompositionInst;
+    
+    [session exportAsynchronouslyWithCompletionHandler:^(void){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //视频导入成功
+            //failPath为本地视频地址
+            if( session.status == AVAssetExportSessionStatusCompleted ){
+               
+                UISaveVideoAtPathToSavedPhotosAlbum(filePath, nil, nil, nil);
+                NSLog(@"保存");
+            }else if( session.status == AVAssetExportSessionStatusFailed )
+            {
+                NSLog(@"failed");
+            }
+        });
+    }];
+    
+    
+}
++ (void)applyVideoEffectsToComposition:(AVMutableVideoComposition *)composition size:(CGSize)size
+{
+    // 文字
+    CATextLayer *subtitle1Text = [[CATextLayer alloc] init];
+    //    [subtitle1Text setFont:@"Helvetica-Bold"];
+    [subtitle1Text setFontSize:36];
+    [subtitle1Text setFrame:CGRectMake(10, size.height-10-230, size.width, 100)];
+    [subtitle1Text setString:@"央视体育5 水印"];
+    //    [subtitle1Text setAlignmentMode:kCAAlignmentCenter];
+    [subtitle1Text setForegroundColor:[[UIColor whiteColor] CGColor]];
+    
+    //图片
+    CALayer*picLayer = [CALayer layer];
+    
+    //picLayer.contents = (id)[UIImage imageNamed:@"CTVITTRIMSource.bundle/QQ"].CGImage; //本地图片
+    picLayer.contents = (id)[UIImage imageNamed:@"videoWater"].CGImage; //本地图片2
+    //NSString *imageUrl = @"http://p1.img.cctvpic.com/photoAlbum/templet/special/PAGEQ1KSin2j2U5FERGWHp1h160415/ELMTnGlKHUJZi7lz19PEnqhM160415_1460715755.png";
+    //picLayer.contents = (id)[self getImageFromURL:imageUrl].CGImage; //远程图片
+    picLayer.frame = CGRectMake(0, 0, [UIImage imageNamed:@"videoWater"].size.width, [UIImage imageNamed:@"videoWater"].size.height);
+    
+    // 2 - The usual overlay
+    CALayer *overlayLayer = [CALayer layer];
+    [overlayLayer addSublayer:picLayer];
+    [overlayLayer addSublayer:subtitle1Text];
+    overlayLayer.frame = CGRectMake(0, 0, size.width, size.height);
+    [overlayLayer setMasksToBounds:YES];
+    
+    CALayer *parentLayer = [CALayer layer];
+    CALayer *videoLayer = [CALayer layer];
+    parentLayer.frame = CGRectMake(0, 0, size.width, size.height);
+    videoLayer.frame = CGRectMake(0, 0, size.width, size.height);
+    [parentLayer addSublayer:videoLayer];
+    [parentLayer addSublayer:overlayLayer];
+    
+    composition.animationTool = [AVVideoCompositionCoreAnimationTool
+                                 videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
+    
+}
 @end

@@ -14,31 +14,21 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - GoogleWebRTC (1.1.24036)
   - Masonry (1.1.0)
-  - YYCategories (1.0.4):
-    - YYCategories/no-arc (= 1.0.4)
-  - YYCategories/no-arc (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking
-  - GoogleWebRTC
   - Masonry
-  - YYCategories
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://gitee.com/mirrors/CocoaPods-Specs.git:
     - AFNetworking
-    - GoogleWebRTC
     - Masonry
-    - YYCategories
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  GoogleWebRTC: ff6a893e5d91d49575f4135ee82d347d0ca49b8f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
 
-PODFILE CHECKSUM: 2bbc029cd7ce5890f7355d743db7262747ffc623
+PODFILE CHECKSUM: 0ec056dee07cec3be406b3f36923b8f3b57cae34
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.10.1

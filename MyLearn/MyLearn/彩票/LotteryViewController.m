@@ -54,18 +54,20 @@ typedef enum : NSUInteger {
 //    [self initUserDefalut];
 //
 //    [self initDoubleDefalut];
+//    https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1&termLimits=100
+//    http://f.apiplus.net/dlt-10.json
     
-    [ZNetServer postValueWithMethod:@"http://f.apiplus.net/dlt-20.json" andBody:nil successBlock:^(NSURLSessionDataTask * _Nonnull task, id _Nullable response) {
-        self.arr = [response valueForKey:@"data"];
-        self.openCode = [self.arr firstObject][@"opencode"];
+    [ZNetServer getValueWithMethod:@"https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo=1&termLimits=100" andBody:nil successBlock:^(NSURLSessionDataTask * _Nonnull task, id _Nullable response) {
+        self.arr = [[response valueForKey:@"value"] valueForKey:@"list"];
+        self.openCode = [self.arr firstObject][@"lotteryDrawResult"];
 //        [self updateData:self.arr];
-        [self totalOpen:[response valueForKey:@"data"] withType:LotterySuper];
+        [self totalOpen:self.arr withType:LotterySuper];
     } failBlock:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
         NSLog(@"2");
     }];
     
 //
-    [ZNetServer postValueWithMethod:@"http://f.apiplus.net/ssq-20.json" andBody:nil successBlock:^(NSURLSessionDataTask * _Nonnull task, id _Nullable response) {
+    [ZNetServer postValueWithMethod:@"http://f.apiplus.net/ssq-10.json" andBody:nil successBlock:^(NSURLSessionDataTask * _Nonnull task, id _Nullable response) {
         self.doubleArr = [response valueForKey:@"data"];
         self.doubleOpenCode = [self.doubleArr firstObject][@"opencode"];
 //        [self updateDoubleData:self.doubleArr];
@@ -81,9 +83,9 @@ typedef enum : NSUInteger {
     NSMutableDictionary *blueDict = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"LotteryType%luBackZone",(unsigned long)type]]];
     
     for (int i = 0; i < openArray.count; i ++) {
-        NSArray *opencode = [openArray[i][@"opencode"] componentsSeparatedByString:@"+"];
-        NSArray *redArr = [[opencode firstObject] componentsSeparatedByString:@","];
-        NSArray *blueArr = [[opencode lastObject] componentsSeparatedByString:@","];
+        NSArray *opencode = [openArray[i][@"lotteryDrawResult"] componentsSeparatedByString:@" "];
+        NSArray *redArr = [opencode subarrayWithRange:NSMakeRange(0, 5)];
+        NSArray *blueArr = [opencode subarrayWithRange:NSMakeRange(5, 2)];
         for (NSString *str in redArr) {
             [redDict setValue:[NSString stringWithFormat:@"%d",(int)[redDict[str] intValue] + 1] forKey:str];
         }
@@ -221,57 +223,57 @@ typedef enum : NSUInteger {
         return;
     }
     NSDictionary *frontZone = @{
-                                @"01":@"22",
-                                @"02":@"19",
-                                @"03":@"17",
-                                @"04":@"17",
-                                @"05":@"21",
-                                @"06":@"20",
-                                @"07":@"17",
-                                @"08":@"19",
-                                @"09":@"14",
-                                @"10":@"24",
-                                @"11":@"26",
-                                @"12":@"10",
-                                @"13":@"19",
-                                @"14":@"17",
-                                @"15":@"23",
-                                @"16":@"15",
-                                @"17":@"13",
-                                @"18":@"22",
-                                @"19":@"23",
-                                @"20":@"18",
-                                @"21":@"18",
-                                @"22":@"19",
-                                @"23":@"21",
-                                @"24":@"16",
-                                @"25":@"22",
-                                @"26":@"16",
-                                @"27":@"15",
-                                @"28":@"17",
-                                @"29":@"13",
-                                @"30":@"11",
-                                @"31":@"15",
-                                @"32":@"21",
-                                @"33":@"20",
+                                @"01":@"0",
+                                @"02":@"0",
+                                @"03":@"0",
+                                @"04":@"0",
+                                @"05":@"0",
+                                @"06":@"0",
+                                @"07":@"0",
+                                @"08":@"0",
+                                @"09":@"0",
+                                @"10":@"0",
+                                @"11":@"0",
+                                @"12":@"0",
+                                @"13":@"0",
+                                @"14":@"0",
+                                @"15":@"0",
+                                @"16":@"0",
+                                @"17":@"0",
+                                @"18":@"0",
+                                @"19":@"0",
+                                @"20":@"0",
+                                @"21":@"0",
+                                @"22":@"0",
+                                @"23":@"0",
+                                @"24":@"0",
+                                @"25":@"0",
+                                @"26":@"0",
+                                @"27":@"0",
+                                @"28":@"0",
+                                @"29":@"0",
+                                @"30":@"0",
+                                @"31":@"0",
+                                @"32":@"0",
+                                @"33":@"0",
                                 };
     NSDictionary *backZone = @{
-                               @"01":@"10",
-                               @"02":@"7",
-                               @"03":@"4",
-                               @"04":@"7",
-                               @"05":@"6",
-                               @"06":@"4",
-                               @"07":@"6",
-                               @"08":@"2",
-                               @"09":@"7",
-                               @"10":@"4",
-                               @"11":@"7",
-                               @"12":@"8",
-                               @"13":@"6",
-                               @"14":@"6",
-                               @"15":@"8",
-                               @"16":@"8"
+                               @"01":@"0",
+                               @"02":@"0",
+                               @"03":@"0",
+                               @"04":@"0",
+                               @"05":@"0",
+                               @"06":@"0",
+                               @"07":@"0",
+                               @"08":@"0",
+                               @"09":@"0",
+                               @"10":@"0",
+                               @"11":@"0",
+                               @"12":@"0",
+                               @"13":@"0",
+                               @"14":@"0",
+                               @"15":@"0",
+                               @"16":@"0"
                                };
     [[NSUserDefaults standardUserDefaults] setObject:frontZone forKey:@"doubleFrontZone"];
     [[NSUserDefaults standardUserDefaults] setObject:backZone forKey:@"doubleBackZone"];
@@ -320,59 +322,58 @@ typedef enum : NSUInteger {
         return;
     }
     NSDictionary *frontZone = @{
-                                @"01":@"15",
-                                @"02":@"7",
-                                @"03":@"19",
-                                @"04":@"16",
-                                @"05":@"10",
-                                @"06":@"16",
-                                @"07":@"20",
-                                @"08":@"16",
-                                @"09":@"11",
-                                @"10":@"10",
-                                @"11":@"14",
-                                @"12":@"17",
-                                @"13":@"15",
-                                @"14":@"21",
-                                @"15":@"11",
-                                @"16":@"20",
-                                @"17":@"12",
-                                @"18":@"19",
-                                @"19":@"16",
-                                @"20":@"12",
-                                @"21":@"17",
-                                @"22":@"13",
-                                @"23":@"10",
-                                @"24":@"15",
-                                @"25":@"11",
-                                @"26":@"16",
-                                @"27":@"14",
-                                @"28":@"17",
-                                @"29":@"17",
-                                @"30":@"12",
-                                @"31":@"13",
-                                @"32":@"9",
-                                @"33":@"18",
-                                @"34":@"14",
-                                @"35":@"7"
+                                @"01":@"0",
+                                @"02":@"0",
+                                @"03":@"0",
+                                @"04":@"0",
+                                @"05":@"0",
+                                @"06":@"0",
+                                @"07":@"0",
+                                @"08":@"0",
+                                @"09":@"0",
+                                @"10":@"0",
+                                @"11":@"0",
+                                @"12":@"0",
+                                @"13":@"0",
+                                @"14":@"0",
+                                @"15":@"0",
+                                @"16":@"0",
+                                @"17":@"0",
+                                @"18":@"0",
+                                @"19":@"0",
+                                @"20":@"0",
+                                @"21":@"0",
+                                @"22":@"0",
+                                @"23":@"0",
+                                @"24":@"0",
+                                @"25":@"0",
+                                @"26":@"0",
+                                @"27":@"0",
+                                @"28":@"0",
+                                @"29":@"0",
+                                @"30":@"0",
+                                @"31":@"0",
+                                @"32":@"0",
+                                @"33":@"0",
+                                @"34":@"0",
+                                @"35":@"0"
                                 };
     NSDictionary *backZone = @{
-                               @"01":@"19",
-                               @"02":@"21",
-                               @"03":@"18",
-                               @"04":@"20",
-                               @"05":@"16",
-                               @"06":@"19",
-                               @"07":@"16",
-                               @"08":@"13",
-                               @"09":@"12",
-                               @"10":@"16",
-                               @"11":@"16",
-                               @"12":@"14"
+                               @"01":@"0",
+                               @"02":@"0",
+                               @"03":@"0",
+                               @"04":@"0",
+                               @"05":@"0",
+                               @"06":@"0",
+                               @"07":@"0",
+                               @"08":@"0",
+                               @"09":@"0",
+                               @"10":@"0",
+                               @"11":@"0",
+                               @"12":@"0"
                                };
     [[NSUserDefaults standardUserDefaults] setObject:frontZone forKey:@"frontZone"];
     [[NSUserDefaults standardUserDefaults] setObject:backZone forKey:@"backZone"];
-    [[NSUserDefaults standardUserDefaults] setObject:@"2019034" forKey:@"expect"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
+#if !TARGET_OS_MACCATALYST && (TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE)
 #import <OpenGLES/EAGL.h>
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>

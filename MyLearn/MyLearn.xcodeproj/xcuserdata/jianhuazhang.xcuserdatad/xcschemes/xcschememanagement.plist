@@ -12,7 +12,25 @@
 		<key>MyLearn.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>2E155A3E207B472600A950DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2E155A59207B472800A950DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2E155A64207B472800A950DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
